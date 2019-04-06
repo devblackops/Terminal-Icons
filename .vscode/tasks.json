@@ -1,0 +1,74 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+
+    // Start PowerShell (pwsh on *nix)
+    "windows": {
+        "options": {
+            "shell": {
+                "executable": "powershell.exe",
+                "args": [ "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command" ]
+            }
+        }
+    },
+    "linux": {
+        "options": {
+            "shell": {
+                "executable": "/usr/bin/pwsh",
+                "args": [ "-NoProfile", "-Command" ]
+            }
+        }
+    },
+    "osx": {
+        "options": {
+            "shell": {
+                "executable": "/usr/local/bin/pwsh",
+                "args": [ "-NoProfile", "-Command" ]
+            }
+        }
+    },
+
+    "tasks": [
+        {
+            "label": "Clean",
+            "type": "shell",
+            "command": "${cwd}/build.ps1 -Task Clean -Verbose"
+        },
+        {
+            "label": "Test",
+            "type": "shell",
+            "command": "${cwd}/build.ps1 -Task Test -Verbose",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "problemMatcher": "$pester"
+        },
+        {
+            "label": "Analyze",
+            "type": "shell",
+            "command": "${cwd}/build.ps1 -Task Analyze -Verbose"
+        },
+        {
+            "label": "Pester",
+            "type": "shell",
+            "command": "${cwd}/build.ps1 -Task Pester -Verbose",
+            "problemMatcher": "$pester"
+        },
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "${cwd}/build.ps1 -Task Build -Verbose",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Publish",
+            "type": "shell",
+            "command": "${cwd}/build.ps1 -Task Publish -Verbose"
+        }
+    ]
+}
