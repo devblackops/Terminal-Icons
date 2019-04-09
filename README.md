@@ -6,7 +6,7 @@ PowerShell module to show file and folder icons in the terminal.
 
 > This is very much a work in progress. This means the structure and functionality will most likely change prior to release. Right now, it just BARELY works. *USE AT YOUR OWN RISK*.
 
-*Teriminal-Icons* is a PowerShell module that adds file and folder icons when displaying items in the terminal.
+*Terminal-Icons* is a PowerShell module that adds file and folder icons when displaying items in the terminal.
 This relies on the custom fonts provided by [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts).
 
 > You must be using one of the fonts provided by Nerd Fonts for this module to work as these fonts include tons of custom glyphs/icons that are referenced by their unicode number.
