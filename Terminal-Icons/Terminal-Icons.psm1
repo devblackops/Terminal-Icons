@@ -10,14 +10,26 @@ $private = @(Get-ChildItem -Path (Join-Path -Path $PSScriptRoot -ChildPath 'priv
     }
 })
 
-$color = . $PSScriptRoot/data/colors.ps1
+# Import theme files
+$colorThemes = @{}
+(Get-ChildItem -Path $PSScriptRoot/data/colorThemes).Foreach({
+    $colorThemes.Add($_.Basename, (Import-PowerShellDataFile -Path $_))
+})
+$iconThemes = @{}
+(Get-ChildItem -Path $PSScriptRoot/data/iconThemes).Foreach({
+    $iconThemes.Add($_.Basename, (Import-PowerShellDataFile -Path $_))
+})
+
+# Import current themes
+$currentTheme = @{
+    color = $colorThemes.jaykul
+    icon  = $iconThemes.jaykul
+}
 
 $icons = @{}
 (. $PSScriptRoot/data/icons.ps1).GetEnumerator().ForEach({
     $icons[$_.Name] = [char][int]('0x' + $_.Value)
 })
-
-$mappings = . $PSScriptRoot/data/fileExtensionMappings.ps1
 
 Export-ModuleMember -Function $public.Basename
 

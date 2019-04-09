@@ -5,27 +5,52 @@ function Resolve-Icon {
         [System.IO.FileSystemInfo]$FileInfo
     )
 
-    # Attempt to resolve display info based on well known file names
-    $displayInfo = Resolve-WellKnownNames $FileInfo
+    if ($FileInfo.PSIsContainer) {
 
-    if (-not $displayInfo) {
+        # Determine directory icon
+        $icon  = $currentTheme.icon.types.directories.wellKnown[$FileInfo.Name]
+        if (-not $icon) {
+            $icon = $currentTheme.icon.types.directories[$FileInfo.Name]
+            if (-not $icon) {
+                $icon = $currentTheme.icon.types.directories['']
+            }
+        }
 
-        # Default directory icon/color
-        if ($FileInfo.PSIsContainer) {
-            $displayInfo = @{
-                Icon = $icons.folder
-                Color = $colors.Grey
+        # Determine directory color
+        $color = $currentTheme.color.types.directories.wellKnown[$FileInfo.Name]
+        if (-not $color) {
+            $color = $currentTheme.color.types.directories[$FileInfo.Name]
+            if (-not $color) {
+                $color = $currentTheme.color.types.directories['']
             }
-        } else {
-            # Attemp to resolve display info based on file extension
-            $ext         = $FileInfo.Extension.TrimStart('.')
-            $displayInfo = $mappings[$ext]
-            if (-not $displayInfo) {
-                $displayInfo = @{
-                    Icon = $icons.generic_file
-                    Color = $color.Reset
-                }
+        }
+
+        $displayInfo = @{
+            Icon  = $icon
+            Color = $color
+        }
+    } else {
+        # Determine file icon
+        $icon = $currentTheme.icon.types.files.wellKnown[$FileInfo.Name]
+        if (-not $icon) {
+            $icon = $currentTheme.icon.types.files[$FileInfo.Extension]
+            if (-not $icon) {
+                $icon = $currentTheme.icon.types.files['']
             }
+        }
+
+
+        $color = $currentTheme.color.types.files.wellKnown[$FileInfo.Name]
+        if (-not $color) {
+            $color = $currentTheme.color.types.files[$FileInfo.Extension]
+            if (-not $color) {
+                $color = $currentTheme.color.types.files['']
+            }
+        }
+
+        $displayInfo = @{
+            Icon  = $icon
+            Color = $color
         }
     }
 
