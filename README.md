@@ -33,7 +33,7 @@ Get-ChildItem | Format-Wide
 Get-ChildItem -Path . -Force
 ```
 
-![Screenshot 1](./media/screenshot1.png)
+![Screenshot 1](./media/screenshot1.PNG)
 
 ## Contributions
 
