@@ -29,7 +29,11 @@ Get-ChildItem | Format-Wide
 
 ## Screenshots
 
-TODO
+```powershell
+Get-ChildItem -Path . -Force
+```
+
+![Screenshot 1](./media/screenshot1.png)
 
 ## Contributions
 
