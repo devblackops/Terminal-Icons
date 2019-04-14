@@ -9,7 +9,7 @@
     # PowerShellVersion = ''
     # PowerShellHostName = ''
     # PowerShellHostVersion = ''
-    # RequiredModules = @()
+    RequiredModules = @('Configuration')
     FunctionsToExport = '*'
     CmdletsToExport   = @()
     VariablesToExport = @()

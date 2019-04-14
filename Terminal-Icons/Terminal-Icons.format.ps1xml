@@ -16,31 +16,31 @@ https://github.com/DHowett/DirColors -->
 	<Controls>
 		<Control>
 			<Name>FileSystemTypes-GroupingFormat</Name>
-					<CustomControl>
-						<CustomEntries>
-							<CustomEntry>
+			<CustomControl>
+				<CustomEntries>
+					<CustomEntry>
+						<CustomItem>
+							<Frame>
+								<LeftIndent>4</LeftIndent>
 								<CustomItem>
-									<Frame>
-										<LeftIndent>4</LeftIndent>
-										<CustomItem>
-											<Text AssemblyName="System.Management.Automation" BaseName="FileSystemProviderStrings" ResourceId="DirectoryDisplayGrouping"/>
-											<ExpressionBinding>
-											  <ScriptBlock>
+									<Text AssemblyName="System.Management.Automation" BaseName="FileSystemProviderStrings" ResourceId="DirectoryDisplayGrouping"/>
+									<ExpressionBinding>
+										<ScriptBlock>
 												  $_.PSParentPath.Replace("Microsoft.PowerShell.Core\FileSystem::", "")
-											  </ScriptBlock>
-											</ExpressionBinding>
-											<NewLine/>
-										</CustomItem>
-									</Frame>
+										</ScriptBlock>
+									</ExpressionBinding>
+									<NewLine/>
 								</CustomItem>
-							</CustomEntry>
-						</CustomEntries>
+							</Frame>
+						</CustomItem>
+					</CustomEntry>
+				</CustomEntries>
 			</CustomControl>
 		</Control>
 	</Controls>
 
 	<ViewDefinitions>
-	   <View>
+		<View>
 			<Name>children</Name>
 			<ViewSelectedBy>
 				<SelectionSetName>FileSystemTypes</SelectionSetName>
@@ -51,11 +51,11 @@ https://github.com/DHowett/DirColors -->
 			</GroupBy>
 			<TableControl>
 				<TableHeaders>
-				   <TableColumnHeader>
-					  <Label>Mode</Label>
-					  <Width>7</Width>
-					  <Alignment>left</Alignment>
-				   </TableColumnHeader>
+					<TableColumnHeader>
+						<Label>Mode</Label>
+						<Width>7</Width>
+						<Alignment>left</Alignment>
+					</TableColumnHeader>
 					<TableColumnHeader>
 						<Label>LastWriteTime</Label>
 						<Width>25</Width>
@@ -83,7 +83,7 @@ https://github.com/DHowett/DirColors -->
 								</ScriptBlock>
 							</TableColumnItem>
 							<TableColumnItem>
-						   	<PropertyName>Length</PropertyName>
+								<PropertyName>Length</PropertyName>
 							</TableColumnItem>
 							<TableColumnItem>
 								<ScriptBlock>
@@ -120,7 +120,7 @@ https://github.com/DHowett/DirColors -->
 							<ListItem>
 								<PropertyName>Length</PropertyName>
 							</ListItem>
-						   <ListItem>
+							<ListItem>
 								<PropertyName>CreationTime</PropertyName>
 							</ListItem>
 							<ListItem>
@@ -163,18 +163,18 @@ https://github.com/DHowett/DirColors -->
 							<ListItem>
 								<PropertyName>LastAccessTime</PropertyName>
 							</ListItem>
-						  <ListItem>
-							<PropertyName>Mode</PropertyName>
-						  </ListItem>
-						  <ListItem>
-							<PropertyName>LinkType</PropertyName>
-						  </ListItem>
-						  <ListItem>
-							<Label>Target</Label>
-							<ScriptBlock>
+							<ListItem>
+								<PropertyName>Mode</PropertyName>
+							</ListItem>
+							<ListItem>
+								<PropertyName>LinkType</PropertyName>
+							</ListItem>
+							<ListItem>
+								<Label>Target</Label>
+								<ScriptBlock>
 								Terminal-Icons\Format-TerminalIcons $_
-							</ScriptBlock>
-						  </ListItem>
+								</ScriptBlock>
+							</ListItem>
 						</ListItems>
 					</ListEntry>
 				</ListEntries>

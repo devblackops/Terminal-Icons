@@ -1,3 +1,4 @@
+
 # Dot source public/private functions
 $public  = @(Get-ChildItem -Path (Join-Path -Path $PSScriptRoot -ChildPath 'public/*.ps1')  -Recurse -ErrorAction Stop)
 $private = @(Get-ChildItem -Path (Join-Path -Path $PSScriptRoot -ChildPath 'private/*.ps1') -Recurse -ErrorAction Stop)
@@ -21,15 +22,15 @@ $iconThemes = @{}
 })
 
 # Import current themes
-$currentTheme = @{
-    color = $colorThemes.jaykul
-    icon  = $iconThemes.jaykul
+$currentTheme = Import-Configuration
+if ($currentTheme.Keys.Count -eq 0) {
+    Write-Warning 'No Terminal-Icons theme set. Using default [Jaykul]...'
+    $currentTheme = @{
+        Color = $colorThemes.Jaykul
+        Icon  = $iconThemes.Jaykul
+    }
 }
-
-$icons = @{}
-(. $PSScriptRoot/data/icons.ps1).GetEnumerator().ForEach({
-    $icons[$_.Name] = [char][int]('0x' + $_.Value)
-})
+$currentTheme | Export-Configuration
 
 Export-ModuleMember -Function $public.Basename
 
