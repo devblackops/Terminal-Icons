@@ -14,3 +14,12 @@ Locale: en-US
 ### [Format-TerminalIcons](Format-TerminalIcons.md)
 {{ Fill in the Description }}
 
+### [Get-TerminalIconsColorTheme](Get-TerminalIconsColorTheme.md)
+{{ Fill in the Description }}
+
+### [Get-TerminalIconsIconTheme](Get-TerminalIconsIconTheme.md)
+{{ Fill in the Description }}
+
+### [Get-TerminalIconsTheme](Get-TerminalIconsTheme.md)
+{{ Fill in the Description }}
+
