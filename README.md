@@ -2,6 +2,10 @@
 
 PowerShell module to show file and folder icons in the terminal.
 
+| Azure Pipelines | PSGallery | License |
+|-----------------|-----------|---------|
+[![Azure Pipelines Build Status][azure-pipeline-badge]][azure-pipeline-build] | [![PowerShell Gallery][psgallery-badge]][psgallery] | [![License][license-badge]][license]
+
 ## Overview
 
 > This is very much a work in progress. This means the structure and functionality will most likely change prior to release. Right now, it just BARELY works. *USE AT YOUR OWN RISK*.
@@ -38,3 +42,10 @@ Get-ChildItem -Path . -Force
 ## Contributions
 
 TODO
+
+[azure-pipeline-badge]: https://dev.azure.com/devblackops/Terminal-Icons/_apis/build/status/devblackops.Terminal-Icons?branchName=master
+[azure-pipeline-build]: https://dev.azure.com/devblackops/Terminal-Icons/_build/latest?definitionId=6&branchName=master
+[psgallery-badge]: https://img.shields.io/powershellgallery/dt/terminal-icons.svg
+[psgallery]: https://www.powershellgallery.com/packages/terminal-icons
+[license-badge]: https://img.shields.io/github/license/poshbotio/poshbot.svg
+[license]: https://www.powershellgallery.com/packages/poshbot
