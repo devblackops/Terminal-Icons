@@ -24,7 +24,10 @@ if ($Bootstrap.IsPresent) {
     if (-not (Get-Module -Name psake -ListAvailable | Where-Object Version -eq 4.8.0).Count -eq 1) {
         Install-Module -Name psake -RequiredVersion '4.8.0-alpha' -AllowPrerelease -Repository PSGallery
     }
-    Import-Module -Name psake, PSDepend -Verbose:$false
+    if (-not (Get-Module -Name PowerShellBuild -ListAvailable | Where-Object Version -eq 0.3.0).Count -eq 1) {
+        Install-Module -Name PowerShellBuild -RequiredVersion '0.3.0-beta2' -AllowPrerelease -Repository PSGallery
+    }
+    Import-Module -Name PowerShellBuild, psake, PSDepend -Verbose:$false
     Invoke-PSDepend -Path './requirements.psd1' -Install -Import -Force -WarningAction SilentlyContinue
 }
 
