@@ -21,7 +21,7 @@ if ($Bootstrap.IsPresent) {
     if (-not (Get-Module -Name PSDepend -ListAvailable)) {
         Install-Module -Name PSDepend -Repository PSGallery
     }
-    if (-not (Get-Module -Name psake -ListAvailable) | Where-Object Version -eq 4.8.0) {
+    if (-not (Get-Module -Name psake -ListAvailable | Where-Object Version -eq 4.8.0).Count -eq 1) {
         Install-Module -Name psake -RequiredVersion '4.8.0-alpha' -AllowPrerelease -Repository PSGallery
     }
     Import-Module -Name psake, PSDepend -Verbose:$false
