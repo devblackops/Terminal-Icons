@@ -11,15 +11,15 @@ $private = @(Get-ChildItem -Path (Join-Path -Path $PSScriptRoot -ChildPath 'priv
     }
 })
 
-$glyphs = . $PSScriptRoot/data/glyphs.ps1
+$glyphs = . $PSScriptRoot/Data/glyphs.ps1
 
 # Import theme files
 $colorThemes = @{}
-(Get-ChildItem -Path $PSScriptRoot/data/colorThemes).Foreach({
+(Get-ChildItem -Path $PSScriptRoot/Data/colorThemes).Foreach({
     $colorThemes.Add($_.Basename, (Import-PowerShellDataFile -Path $_))
 })
 $iconThemes = @{}
-(Get-ChildItem -Path $PSScriptRoot/data/iconThemes).Foreach({
+(Get-ChildItem -Path $PSScriptRoot/Data/iconThemes).Foreach({
     $iconThemes.Add($_.Basename, (Import-PowerShellDataFile -Path $_))
 })
 
