@@ -3,8 +3,7 @@ jobs:
     pool:
       vmImage: vs2017-win2016
     steps:
-    - powershell: |
-        ./build.ps1 -Task Test -Bootstrap -Verbose
+    - pwsh: ./build.ps1 -Task Test -Bootstrap -Verbose
       displayName: 'Build and Test'
     - task: PublishTestResults@2
       inputs:
@@ -17,8 +16,7 @@ jobs:
     pool:
       vmImage: ubuntu-16.04
     steps:
-    - script: |
-        pwsh -c './build.ps1 -Task Test -Bootstrap -Verbose'
+    - pwsh: './build.ps1 -Task Test -Bootstrap -Verbose'
       displayName: 'Build and Test'
     - task: PublishTestResults@2
       inputs:
@@ -31,8 +29,7 @@ jobs:
     pool:
       vmImage: xcode9-macos10.13
     steps:
-    - script: |
-        pwsh -c './build.ps1 -Task Test -Bootstrap -Verbose'
+    - pwsh: './build.ps1 -Task Test -Bootstrap -Verbose'
       displayName: 'Build and Test'
     - task: PublishTestResults@2
       inputs:
