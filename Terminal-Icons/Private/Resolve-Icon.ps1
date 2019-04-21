@@ -7,13 +7,14 @@ function Resolve-Icon {
 
     if ($FileInfo.PSIsContainer) {
         # Determine directory icon
-        $icon  = $currentTheme.Icon.Types.Directories.WellKnown[$FileInfo.Name]
-        if (-not $icon) {
-            $icon = $CurrentTheme.Icon.Types.Directories[$FileInfo.Name]
-            if (-not $icon) {
-                $icon = $currentTheme.Icon.Types.Directories['']
+        $iconName  = $currentTheme.Icon.Types.Directories.WellKnown[$FileInfo.Name]
+        if (-not $iconName) {
+            $iconName = $CurrentTheme.Icon.Types.Directories[$FileInfo.Name]
+            if (-not $iconName) {
+                $iconName = $currentTheme.Icon.Types.Directories['']
             }
         }
+        $icon = $glyphs[$iconName]
 
         # Determine directory color
         $color = $currentTheme.Color.Types.Directories.WellKnown[$FileInfo.Name]
@@ -25,13 +26,14 @@ function Resolve-Icon {
         }
     } else {
         # Determine file icon
-        $icon = $currentTheme.Icon.Types.Files.WellKnown[$FileInfo.Name]
-        if (-not $icon) {
-            $icon = $currentTheme.Icon.Types.Files[$FileInfo.Extension]
-            if (-not $icon) {
-                $icon = $currentTheme.Icon.Types.Files['']
+        $iconName = $currentTheme.Icon.Types.Files.WellKnown[$FileInfo.Name]
+        if (-not $iconName) {
+            $iconName = $currentTheme.Icon.Types.Files[$FileInfo.Extension]
+            if (-not $iconName) {
+                $iconName = $currentTheme.Icon.Types.Files['']
             }
         }
+        $icon = $glyphs[$iconName]
 
         # Determine file color
         $color = $currentTheme.Color.Types.Files.WellKnown[$FileInfo.Name]
