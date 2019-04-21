@@ -5,6 +5,7 @@
     BuildHelpers = @{
         Version = '2.0.0'
     }
+    Configuration = '1.3.1'
     Pester = @{
         Version = '4.4.1'
         Parameters = @{
