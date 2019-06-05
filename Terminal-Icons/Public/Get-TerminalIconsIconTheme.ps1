@@ -1,3 +1,3 @@
 function Get-TerminalIconsIconTheme {
-    $iconThemes.Keys | Sort-Object
+    $themeData.Themes.Icon
 }

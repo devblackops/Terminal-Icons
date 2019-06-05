@@ -1,3 +1,3 @@
 function Get-TerminalIconsColorTheme {
-    $colorThemes.Keys | Sort-Object
+    $themeData.Themes.Color
 }

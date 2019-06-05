@@ -13,7 +13,7 @@ $private = @(Get-ChildItem -Path (Join-Path -Path $PSScriptRoot -ChildPath 'Priv
 
 $glyphs = . $PSScriptRoot/Data/glyphs.ps1
 
-# Import theme files
+# Import module theme files
 $colorThemes = @{}
 (Get-ChildItem -Path $PSScriptRoot/Data/colorThemes).Foreach({
     $colorThemes.Add($_.Basename, (Import-PowerShellDataFile -Path $_))
@@ -23,16 +23,63 @@ $iconThemes = @{}
     $iconThemes.Add($_.Basename, (Import-PowerShellDataFile -Path $_))
 })
 
-# Import current themes
-$currentTheme = Import-Configuration
-if ($currentTheme.Keys.Count -eq 0) {
-    Write-Warning 'No Terminal-Icons theme set. Using default [Jaykul]...'
-    $currentTheme = @{
-        Color = $colorThemes.Jaykul
-        Icon  = $iconThemes.Jaykul
+$defaultTheme = 'devblackops'
+
+# Import local theme data
+$global:themeData = Import-Configuration
+if (-not $themeData) {
+    # We have no theme data saved (first time use?)
+    # Create one and save it
+    $themeData = @{
+        CurrentIconTheme  = $defaultTheme
+        CurrentColorTheme = $defaultTheme
+        Themes = @{
+            Color = $colorThemes
+            Icon  = $iconThemes
+        }
     }
+} else {
+    # Load or set default theme (if missing)
+    if ([string]::IsNullOrEmpty($themeData.CurrentColorTheme)) {
+        $themeData.CurrentColorTheme = $defaultTheme
+    }
+    if ([string]::IsNullOrEmpty($themeData.CurrentIconTheme)) {
+        $themeData.CurrentIconTheme = $defaultTheme
+    }
+
+    if ($null -eq $themeData.Themes -or $themeData.Themes.Count -eq 0) {
+        $themeData.Themes = @{
+            Color = @{}
+            Icon  = @{}
+        }
+    }
+
+    # Update the builtin themes
+    $colorThemes.GetEnumerator().ForEach({
+        $themeData.Themes.Color[$_.Name] = $_.Value
+    })
+    $iconThemes.GetEnumerator().ForEach({
+        $themeData.Themes.Icon[$_.Name] = $_.Value
+    })
 }
-$currentTheme | Export-Configuration
+
+# $currentTheme = @{
+#     Color = $themeData.Themes.Color[$themeData.CurrentColorTheme]
+#     Icon  = $themeData.Themes.Icon[$themeData.CurrentIconTheme]
+# }
+
+$themeData | Export-Configuration
+
+# # Import current themes
+# $currentTheme = Import-Configuration
+# if ($currentTheme.Keys.Count -eq 0) {
+#     Write-Warning 'No Terminal-Icons theme set. Using default [Jaykul]...'
+#     $currentTheme = @{
+#         Color = $colorThemes.Jaykul
+#         Icon  = $iconThemes.Jaykul
+#     }
+# }
+# $currentTheme | Export-Configuration
 
 Export-ModuleMember -Function $public.Basename
 

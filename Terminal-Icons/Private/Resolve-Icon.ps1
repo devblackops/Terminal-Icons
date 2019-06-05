@@ -7,40 +7,42 @@ function Resolve-Icon {
 
     if ($FileInfo.PSIsContainer) {
         # Determine directory icon
-        $iconName  = $currentTheme.Icon.Types.Directories.WellKnown[$FileInfo.Name]
+
+        $iconName  = $themeData.Themes.Icon[$themeData.CurrentIconTheme].Types.Directories.WellKnown[$FileInfo.Name]
         if (-not $iconName) {
-            $iconName = $CurrentTheme.Icon.Types.Directories[$FileInfo.Name]
+            $iconName =  $themeData.Themes.Icon[$themeData.CurrentIconTheme].Types.Directories[$FileInfo.Name]
             if (-not $iconName) {
-                $iconName = $currentTheme.Icon.Types.Directories['']
+                $iconName =  $themeData.Themes.Icon[$themeData.CurrentIconTheme].Types.Directories['']
             }
         }
         $icon = $glyphs[$iconName]
 
         # Determine directory color
-        $color = $currentTheme.Color.Types.Directories.WellKnown[$FileInfo.Name]
+        $color = $themeData.Themes.Color[$themeData.CurrentColorTheme].Types.Directories.WellKnown[$FileInfo.Name]
         if (-not $color) {
-            $color = $currentTheme.Color.Types.Directories[$FileInfo.Name]
+            $color = $themeData.Themes.Color[$themeData.CurrentColorTheme].Types.Directories[$FileInfo.Name]
             if (-not $color) {
-                $color = $currentTheme.Color.Types.Directories['']
+                $color = $themeData.Themes.Color[$themeData.CurrentColorTheme].Types.Directories['']
             }
         }
     } else {
         # Determine file icon
-        $iconName = $currentTheme.Icon.Types.Files.WellKnown[$FileInfo.Name]
+        $iconName = $themeData.Themes.Icon[$themeData.CurrentIconTheme].Types.Files.WellKnown[$FileInfo.Name]
         if (-not $iconName) {
-            $iconName = $currentTheme.Icon.Types.Files[$FileInfo.Extension]
+            $iconName = $themeData.Themes.Icon[$themeData.CurrentIconTheme].Types.Files[$FileInfo.Extension]
             if (-not $iconName) {
-                $iconName = $currentTheme.Icon.Types.Files['']
+                $iconName = $themeData.Themes.Icon[$themeData.CurrentIconTheme].Types.Files['']
             }
         }
         $icon = $glyphs[$iconName]
 
         # Determine file color
-        $color = $currentTheme.Color.Types.Files.WellKnown[$FileInfo.Name]
+        $themeData.Themes.Color[$themeData.CurrentColorTheme]
+        $color = $themeData.Themes.Color[$themeData.CurrentColorTheme].Types.Files.WellKnown[$FileInfo.Name]
         if (-not $color) {
-            $color = $currentTheme.Color.Types.Files[$FileInfo.Extension]
+            $color = $themeData.Themes.Color[$themeData.CurrentColorTheme].Types.Files[$FileInfo.Extension]
             if (-not $color) {
-                $color = $currentTheme.Color.Types.Files['']
+                $color = $themeData.Themes.Color[$themeData.CurrentColorTheme].Types.Files['']
             }
         }
     }
