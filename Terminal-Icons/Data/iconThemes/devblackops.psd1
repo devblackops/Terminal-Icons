@@ -4,44 +4,104 @@
         Directories = @{
             # Default directory icon
             ''        = 'nf-fa-folder'
-
             WellKnown = @{
                 docs      = 'nf-fa-folder'
                 images    = 'nf-mdi-folder_image'
                 '.vscode' = 'nf-custom-folder_config'
+                '.git'    = 'nf-custom-folder_git'
+                '.github' = 'nf-custom-folder_github'
             }
         }
 
         Files       = @{
-
             # Default file icon
             ''                      = 'nf-fa-file'
-
             WellKnown               = @{
-                '.gitattributes' = 'nf-mdi-git'
-                '.gitignore'     = 'nf-mdi-git'
-                'LICENSE'        = 'nf-mdi-certificate'
-                'CHANGELOG.md'   = 'nf-fae-checklist_o'
-                'README.md'      = 'nf-mdi-library_books'
-                '.DS_Store'      = 'nf-fa-file_o'
-                'Dockerfile'     = 'nf-dev-docker'
-                '.tsbuildinfo'   = 'nf-seti-json'
-                '.jscsrc'        = 'nf-seti-json'
-                '.jshintrc'      = 'nf-seti-json'
-                'tsconfig.json'  = 'nf-seti-json'
-                'tslint.json'    = 'nf-seti-json'
-                'composer.lock'  = 'nf-seti-json'
-                '.jsbeautifyrc'  = 'nf-seti-json'
-                '.esformatter'   = 'nf-seti-json'
-                'cdp.pid'        = 'nf-seti-json'
-                '.htaccess'      = 'nf-mdi-xml'
-                '.jshintignore'  = 'nf-fa-gear'
-                '.buildignore'   = 'nf-fa-gear'
-                '.mrconfig'      = 'nf-fa-gear'
-                '.yardopts'      = 'nf-fa-gear'
-                'manifest.mf'    = 'nf-fa-gear'
-                '.clang-format'  = 'nf-fa-gear'
-                '.clang-tidy'    = 'nf-fa-gear'
+                '.gitattributes'                = 'nf-dev-git'
+                '.gitignore'                    = 'nf-dev-git'
+                '.gitmodules'                   = 'nf-dev-git'
+                '.gitkeep'                      = 'nf-dev-git'
+                'git-history'                   = 'nf-dev-git'
+                'LICENSE'                       = 'nf-mdi-certificate'
+                'CHANGELOG.md'                  = 'nf-fae-checklist_o'
+                'CHANGELOG.txt'                 = 'nf-fae-checklist_o'
+                'CHANGELOG'                     = 'nf-fae-checklist_o'
+                'README.md'                     = 'nf-mdi-library_books'
+                'README.txt'                    = 'nf-mdi-library_books'
+                'README'                        = 'nf-mdi-library_books'
+                '.DS_Store'                     = 'nf-fa-file_o'
+                '.tsbuildinfo'                  = 'nf-seti-json'
+                '.jscsrc'                       = 'nf-seti-json'
+                '.jshintrc'                     = 'nf-seti-json'
+                'tsconfig.json'                 = 'nf-seti-json'
+                'tslint.json'                   = 'nf-seti-json'
+                'composer.lock'                 = 'nf-seti-json'
+                '.jsbeautifyrc'                 = 'nf-seti-json'
+                '.esformatter'                  = 'nf-seti-json'
+                'cdp.pid'                       = 'nf-seti-json'
+                '.htaccess'                     = 'nf-mdi-xml'
+                '.jshintignore'                 = 'nf-fa-gear'
+                '.buildignore'                  = 'nf-fa-gear'
+                '.mrconfig'                     = 'nf-fa-gear'
+                '.yardopts'                     = 'nf-fa-gear'
+                'manifest.mf'                   = 'nf-fa-gear'
+                '.clang-format'                 = 'nf-fa-gear'
+                '.clang-tidy'                   = 'nf-fa-gear'
+                'favicon.ico'                   = 'nf-seti-favicon'
+                '.travis.yml'                   = 'nf-dev-travis'
+                '.gitlab-ci.yml'                = 'nf-fa-gitlab'
+                '.jenkinsfile'                  = 'nf-dev-jenkins'
+                'bitbucket-pipelines.yml'       = 'nf-dev-bitbucket'
+                'bitbucket-pipelines.yaml'      = 'nf-dev-bitbucket'
+                '.azure-pipelines.yml'          = 'nf-mdi-azure'
+                # Firebase
+                'firebase.json'                 = 'nf-dev-firebase'
+                '.firebaserc'                   = 'nf-dev-firebase'
+
+                # Bower
+                '.bowerrc'                      = 'nf-dev-bower'
+                'bower.json'                    = 'nf-dev-bower'
+
+                # Conduct
+                'code_of_conduct.md'            = 'nf-mdi-check_circle'
+                'code_of_conduct.txt'           = 'nf-mdi-check_circle'
+
+                # Docker
+                'Dockerfile'                    = 'nf-dev-docker'
+                'docker-compose.yml'            = 'nf-dev-docker'
+                'docker-compose.yaml'           = 'nf-dev-docker'
+                'docker-compose.dev.yml'        = 'nf-dev-docker'
+                'docker-compose.local.yml'      = 'nf-dev-docker'
+                'docker-compose.ci.yml'         = 'nf-dev-docker'
+                'docker-compose.override.yml'   = 'nf-dev-docker'
+                'docker-compose.staging.yml'    = 'nf-dev-docker'
+                'docker-compose.prod.yml'       = 'nf-dev-docker'
+                'docker-compose.production.yml' = 'nf-dev-docker'
+                'docker-compose.test.yml'       = 'nf-dev-docker'
+
+                # Vue
+                'vue.config.js'                 = 'nf-mdi-vuejs'
+                'vue.config.ts'                 = 'nf-mdi-vuejs'
+
+                # Gulp
+                'gulpfile.js'                   = 'nf-dev-gulp'
+                'gulpfile.ts'                   = 'nf-dev-gulp'
+                'gulpfile.babel.js'             = 'nf-dev-gulp'
+
+                # NodeJS
+                'package.json'                  = 'nf-dev-nodejs_small'
+                'package-lock.json'             = 'nf-dev-nodejs_small'
+                '.nvmrc'                        = 'nf-dev-nodejs_small'
+                '.esmrc'                        = 'nf-dev-nodejs_small'
+
+                # NPM
+                '.nmpignore'                    = 'nf-dev-npm'
+                '.npmrc'                        = 'nf-dev-npm'
+
+                # Authors
+                'authors'                       = 'nf-oct-person'
+                'authors.md'                    = 'nf-oct-person'
+                'authors.txt'                   = 'nf-oct-person'
             }
 
             # Archive files
@@ -63,9 +123,16 @@
             '.cmd'                  = 'nf-custom-msdos'
             '.exe'                  = 'nf-mdi-application'
             '.pl'                   = 'nf-dev-perl'
-            '.ps1'                  = 'nf-dev-terminal_badge'
-            '.rb'                   = 'nf-oct-ruby'
+
             '.sh'                   = 'nf-oct-terminal'
+
+            # PowerShell
+            '.ps1'                  = 'nf-dev-terminal_badge'
+            '.psm1'                 = 'nf-dev-terminal_badge'
+            '.psd1'                 = 'nf-dev-terminal_badge'
+            '.ps1xml'               = 'nf-dev-terminal_badge'
+            '.psc1'                 = 'nf-dev-terminal_badge'
+            'pssc'                  = 'nf-dev-terminal_badge'
 
             # Javascript
             '.js'                   = 'nf-dev-javascript'
@@ -81,14 +148,11 @@
 
             # Not-executable code files
             '.dll'                  = 'nf-fa-archive'
-            '.psm1'                 = 'nf-fa-archive'
 
             # Importable Data files
             '.clixml'               = 'nf-dev-code_badge'
             '.csv'                  = 'nf-mdi-file_excel'
             '.tsv'                  = 'nf-mdi-file_excel'
-            '.ps1xml'               = 'nf-mdi-file_xml'
-            '.psd1'                 = 'nf-mdi-code_braces'
 
             # Settings
             '.ini'                  = 'nf-fa-gear'
@@ -110,7 +174,6 @@
             # Source Files
             '.c'                    = 'nf-mdi-language_c'
             '.cpp'                  = 'nf-mdi-language_cpp'
-            '.fs'                   = 'nf-dev-fsharp'
             '.go'                   = 'nf-dev-go'
             '.php'                  = 'nf-dev-php'
 
@@ -130,6 +193,15 @@
             '.cs'                   = 'nf-mdi-language_csharp'
             '.csx'                  = 'nf-mdi-language_csharp'
 
+            # Haskell
+            '.hs'                   = 'nf-dev-haskell'
+
+            # XAML
+            '.xaml'                 = 'nf-mdi-xaml'
+
+            # Rust
+            '.rs'                   = 'nf-dev-rust'
+
             # Database
             '.pdb'                  = 'nf-dev-database'
             '.sql'                  = 'nf-dev-database'
@@ -143,16 +215,14 @@
             '.psql'                 = 'nf-dev-database'
 
             # Source Control
-            '.git'                  = 'nf-dev-git'
-            '.gitignore'            = 'nf-dev-git'
-            '.gitattribute'         = 'nf-dev-git'
+            '.patch'                = 'nf-dev-git'
 
             # Project files
             '.user'                 = 'nf-mdi-visualstudio'
             '.code-workspace'       = 'nf-mdi-visualstudio'
 
             # Text data files
-            '.log'                  = 'nf-mdi-file_document'
+            '.log'                  = 'nf-mdi-view_list'
             '.txt'                  = 'nf-mdi-file_document'
 
             # HTML/css
@@ -178,6 +248,38 @@
             '.yml'                  = 'nf-mdi-format_align_left'
             '.yaml'                 = 'nf-mdi-format_align_left'
 
+            # LUA
+            '.lua'                  = 'nf-seti-lua'
+
+            # Clojure
+            '.clj'                  = 'nf-dev-clojure'
+            '.cljs'                 = 'nf-dev-clojure'
+            '.cljc'                 = 'nf-dev-clojure'
+
+            # Groovy
+            '.groovy'               = 'nf-dev-groovy'
+
+            # Vue
+            '.vue'                  = 'nf-mdi-vuejs'
+
+            # Dart
+            '.dart'                 = 'nf-dev-dart'
+
+            # Elixir
+            '.ex'                   = 'nf-custom-elixir'
+            '.exs'                  = 'nf-custom-elixir'
+            '.eex'                  = 'nf-custom-elixir'
+            '.leex'                 = 'nf-custom-elixir'
+
+            # Erlang
+            '.erl'                  = 'nf-dev-erlang'
+
+            # Elm
+            '.elm'                  = 'nf-custom-elm'
+
+            # Applescript
+            '.applescript'          = 'nf-dev-apple'
+
             # XML
             '.xml'                  = 'nf-mdi-xml'
             '.plist'                = 'nf-mdi-xml'
@@ -194,11 +296,35 @@
 
             # Documents
             '.chm'                  = 'nf-mdi-help_box'
-            '.doc'                  = 'nf-mdi-file_word'
-            '.docx'                 = 'nf-mdi-file_word'
             '.pdf'                  = 'nf-mdi-file_pdf'
+
+            # Excel
             '.xls'                  = 'nf-mdi-file_excel'
             '.xlsx'                 = 'nf-mdi-file_excel'
+
+            # PowerPoint
+            '.pptx'                 = 'nf-mdi-file_powerpoint'
+            '.ppt'                  = 'nf-mdi-file_powerpoint'
+            '.pptm'                 = 'nf-mdi-file_powerpoint'
+            '.potx'                 = 'nf-mdi-file_powerpoint'
+            '.potm'                 = 'nf-mdi-file_powerpoint'
+            '.ppsx'                 = 'nf-mdi-file_powerpoint'
+            '.ppsm'                 = 'nf-mdi-file_powerpoint'
+            '.pps'                  = 'nf-mdi-file_powerpoint'
+            '.ppam'                 = 'nf-mdi-file_powerpoint'
+            '.ppa'                  = 'nf-mdi-file_powerpoint'
+
+            # Word
+            '.doc'                  = 'nf-mdi-file_word'
+            '.docx'                 = 'nf-mdi-file_word'
+            '.rtf'                  = 'nf-mdi-file_word'
+
+            # Audio
+            '.mp3'                  = 'nf-fa-file_audio_o'
+            '.flac'                 = 'nf-fa-file_audio_o'
+            '.m4a'                  = 'nf-fa-file_audio_o'
+            '.wma'                  = 'nf-fa-file_audio_o'
+            '.aiff'                 = 'nf-fa-file_audio_o'
 
             # Images
             '.png'                  = 'nf-fa-file_image_o'
@@ -232,6 +358,79 @@
             '.pic'                  = 'nf-fa-file_image_o'
             '.raw'                  = 'nf-fa-file_image_o'
             '.webp'                 = 'nf-fa-file_image_o'
+            'svg'                   = 'nf-mdi-svg'
+
+            # Video
+            '.webm'                 = 'nf-fa-file_video_o'
+            '.mkv'                  = 'nf-fa-file_video_o'
+            '.flv'                  = 'nf-fa-file_video_o'
+            '.vob'                  = 'nf-fa-file_video_o'
+            '.ogv'                  = 'nf-fa-file_video_o'
+            '.ogg'                  = 'nf-fa-file_video_o'
+            '.gifv'                 = 'nf-fa-file_video_o'
+            '.avi'                  = 'nf-fa-file_video_o'
+            '.mov'                  = 'nf-fa-file_video_o'
+            '.qt'                   = 'nf-fa-file_video_o'
+            '.wmv'                  = 'nf-fa-file_video_o'
+            '.yuv'                  = 'nf-fa-file_video_o'
+            '.rm'                   = 'nf-fa-file_video_o'
+            '.rmvb'                 = 'nf-fa-file_video_o'
+            '.mp4'                  = 'nf-fa-file_video_o'
+            '.mpg'                  = 'nf-fa-file_video_o'
+            '.mp2'                  = 'nf-fa-file_video_o'
+            '.mpeg'                 = 'nf-fa-file_video_o'
+            '.mpe'                  = 'nf-fa-file_video_o'
+            '.mpv'                  = 'nf-fa-file_video_o'
+            '.m2v'                  = 'nf-fa-file_video_o'
+
+            # Email
+            '.ics'                  = 'nf-fa-calendar'
+
+            # Certifactes
+            '.cer'                  = 'nf-fa-certificate'
+            '.cert'                 = 'nf-fa-certificate'
+            '.crt'                  = 'nf-fa-certificate'
+            '.pfx'                  = 'nf-fa-certificate'
+
+            # Keys
+            '.pem'                  = 'nf-fa-key'
+            '.pub'                  = 'nf-fa-key'
+            '.key'                  = 'nf-fa-key'
+            '.asc'                  = 'nf-fa-key'
+            '.gpg'                  = 'nf-fa-key'
+
+            # Fonts
+            '.woff'                 = 'nf-fa-font'
+            '.woff2'                = 'nf-fa-font'
+            '.ttf'                  = 'nf-fa-font'
+            '.eot'                  = 'nf-fa-font'
+            '.suit'                 = 'nf-fa-font'
+            '.otf'                  = 'nf-fa-font'
+            '.bmap'                 = 'nf-fa-font'
+            '.fnt'                  = 'nf-fa-font'
+            '.odttf'                = 'nf-fa-font'
+            '.ttc'                  = 'nf-fa-font'
+            '.font'                 = 'nf-fa-font'
+            '.fonts'                = 'nf-fa-font'
+            '.sui'                  = 'nf-fa-font'
+            '.ntf'                  = 'nf-fa-font'
+            '.mrg'                  = 'nf-fa-font'
+
+            # Ruby
+            '.rb'                   = 'nf-oct-ruby'
+            '.erb'                  = 'nf-oct-ruby'
+            '.gemfile'              = 'nf-oct-ruby'
+
+            # FSharp
+            '.fs'                   = 'nf-dev-fsharp'
+            '.fsx'                  = 'nf-dev-fsharp'
+            '.fsi'                  = 'nf-dev-fsharp'
+            '.fsproj'               = 'nf-dev-fsharp'
+
+            # Docker
+            '.dockerignore'         = 'nf-dev-docker'
+            '.dockerfile'           = 'nf-dev-docker'
+
 
             # VSCode
             '.vscodeignore'         = 'nf-fa-gear'
@@ -242,6 +441,8 @@
             # Sublime
             '.sublime-project'      = 'nf-dev-sublime'
             '.sublime-workspace'    = 'nf-dev-sublime'
+
+            '.lock'                 = 'nf-fa-lock'
         }
     }
 }
