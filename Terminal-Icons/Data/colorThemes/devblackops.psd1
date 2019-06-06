@@ -1,96 +1,449 @@
-# Based on Jayku's color theme
-# https://github.com/Jaykul/Profile/blob/master/Configuration.psd1
-
 @{
     Name  = 'devblackops'
     Types = @{
         Directories = @{
-            # Default directory color
-            ''        = "`e[0m"
-
             WellKnown = @{
-                docs = "`e[38;2;255;255;255m"
-                src  = "`e[38;2;30;144;255m"
+                docs      = '00BFFF'
+                fonts     = 'DC143C'
+                images    = '9ACD32'
+                media     = 'D3D3D3'
+                src       = '00FF7F'
+                tests     = '87CEEB'
+                '.vscode' = '87CEFA'
+                '.git'    = 'FF4500'
+                '.github' = 'C0C0C0'
             }
         }
-
         Files       = @{
+            WellKnown = @{
+                '.gitattributes'                = 'FF4500'
+                '.gitignore'                    = 'FF4500'
+                '.gitmodules'                   = 'FF4500'
+                '.gitkeep'                      = 'FF4500'
+                'git-history'                   = 'FF4500'
+                'LICENSE'                       = 'CD5C5C'
+                'LICENSE.md'                    = 'CD5C5C'
+                'LICENSE.txt'                   = 'CD5C5C'
+                'CHANGELOG.md'                  = '98FB98'
+                'CHANGELOG.txt'                 = '98FB98'
+                'CHANGELOG'                     = '98FB98'
+                'README.md'                     = '00FFFF'
+                'README.txt'                    = '00FFFF'
+                'README'                        = '00FFFF'
+                '.DS_Store'                     = '696969'
+                '.tsbuildinfo'                  = 'F4A460'
+                '.jscsrc'                       = 'F4A460'
+                '.jshintrc'                     = 'F4A460'
+                'tsconfig.json'                 = 'F4A460'
+                'tslint.json'                   = 'F4A460'
+                'composer.lock'                 = 'F4A460'
+                '.jsbeautifyrc'                 = 'F4A460'
+                '.esformatter'                  = 'F4A460'
+                'cdp.pid'                       = 'F4A460'
+                '.htaccess'                     = '9ACD32'
+                '.jshintignore'                 = '87CEEB'
+                '.buildignore'                  = '87CEEB'
+                '.mrconfig'                     = '87CEEB'
+                '.yardopts'                     = '87CEEB'
+                'manifest.mf'                   = '87CEEB'
+                '.clang-format'                 = '87CEEB'
+                '.clang-tidy'                   = '87CEEB'
+                'favicon.ico'                   = 'FFD700'
+                '.travis.yml'                   = 'FFE4B5'
+                '.gitlab-ci.yml'                = 'FF4500'
+                '.jenkinsfile'                  = '6495ED'
+                'bitbucket-pipelines.yml'       = '87CEFA'
+                'bitbucket-pipelines.yaml'      = '87CEFA'
+                '.azure-pipelines.yml'          = '00BFFF'
 
-            WellKnown         = @{
-                '.gitattributes' = "`e[38;2;30;144;255m"
-                '.gitignore'     = "`e[38;2;30;144;255m"
-                'LICENSE'        = "`e[38;2;255;215;0m"
-                'README.md'      = "`e[38;2;255;215;0m"
-                '.DS_Store'      = "`e[39m"
+                # Firebase
+                'firebase.json'                 = 'FFA500'
+                '.firebaserc'                   = 'FFA500'
+
+                # Bower
+                '.bowerrc'                      = 'CD5C5C'
+                'bower.json'                    = 'CD5C5C'
+
+                # Conduct
+                'code_of_conduct.md'            = 'FFFFE0'
+                'code_of_conduct.txt'           = 'FFFFE0'
+
+                # Docker
+                'Dockerfile'                    = '4682B4'
+                'docker-compose.yml'            = '4682B4'
+                'docker-compose.yaml'           = '4682B4'
+                'docker-compose.dev.yml'        = '4682B4'
+                'docker-compose.local.yml'      = '4682B4'
+                'docker-compose.ci.yml'         = '4682B4'
+                'docker-compose.override.yml'   = '4682B4'
+                'docker-compose.staging.yml'    = '4682B4'
+                'docker-compose.prod.yml'       = '4682B4'
+                'docker-compose.production.yml' = '4682B4'
+                'docker-compose.test.yml'       = '4682B4'
+
+                # Vue
+                'vue.config.js'                 = '778899'
+                'vue.config.ts'                 = '778899'
+
+                # Gulp
+                'gulpfile.js'                   = 'CD5C5C'
+                'gulpfile.ts'                   = 'CD5C5C'
+                'gulpfile.babel.js'             = 'CD5C5C'
+
+                # NodeJS
+                'package.json'                  = '6B8E23'
+                'package-lock.json'             = '6B8E23'
+                '.nvmrc'                        = '6B8E23'
+                '.esmrc'                        = '6B8E23'
+
+                # NPM
+                '.nmpignore'                    = '00BFFF'
+                '.npmrc'                        = '00BFFF'
+
+                # Authors
+                'authors'                       = 'FF6347'
+                'authors.md'                    = 'FF6347'
+                'authors.txt'                   = 'FF6347'
             }
+            # Archive files
+            '.7z'                   = 'DAA520'
+            '.bz'                   = 'DAA520'
+            '.tar'                  = 'DAA520'
+            '.zip'                  = 'DAA520'
+            '.gz'                   = 'DAA520'
+            '.xz'                   = 'DAA520'
+            '.br'                   = 'DAA520'
+            '.bzip2'                = 'DAA520'
+            '.gzip'                 = 'DAA520'
+            '.brotli'               = 'DAA520'
+            '.rar'                  = 'DAA520'
+            '.tgz'                  = 'DAA520'
 
-            ''                = "`e[0m"
+            # Executable things
+            '.bat'                  = '008000'
+            '.cmd'                  = '008000'
+            '.exe'                  = '00FA9A'
+            '.pl'                   = '8A2BE2'
 
-            # Archive files are some shade of green
-            '.7z'             = "`e[38;2;179;230;204m"
-            '.bz'             = "`e[38;2;179;230;204m"
-            '.tar'            = "`e[38;2;179;230;204m"
-            '.zip'            = "`e[38;2;179;230;204m"
+            '.sh'                   = 'FF4500'
 
-            # Executable things are shades of red
-            '.bat'            = "`e[38;2;255;99;71m"
-            '.cmd'            = "`e[38;2;255;99;71m"
-            '.exe'            = "`e[38;2;220;20;60m"
-            '.js'             = "`e[38;2;255;99;71m"
-            '.pl'             = "`e[38;2;255;99;71m"
-            '.ps1'            = "`e[38;2;255;99;71m"
-            '.rb'             = "`e[38;2;255;99;71m"
-            '.sh'             = "`e[38;2;255;99;71m"
+            # PowerShell
+            '.ps1'                  = '00BFFF'
+            '.psm1'                 = '00BFFF'
+            '.psd1'                 = '00BFFF'
+            '.ps1xml'               = '00BFFF'
+            '.psc1'                 = '00BFFF'
+            'pssc'                  = '00BFFF'
 
-            # Not-executable code files are shades of yellow
-            '.dll'            = "`e[38;2;255;215;0m"
-            '.pdb'            = "`e[38;2;255;204;0m"
-            '.psm1'           = "`e[38;2;255;215;0m"
+            # Javascript
+            '.js'                   = 'F0E68C'
+            '.esx'                  = 'F0E68C'
+            '.mjs'                  = 'F0E68C'
 
-            # Importable Data files are shades of blue
-            '.clixml'         = "`e[38;2;30;144;255m"
-            '.csv'            = "`e[38;2;30;144;255m"
-            '.json'           = "`e[38;2;30;144;255m"
-            '.ps1xml'         = "`e[38;2;30;144;255m"
-            '.psd1'           = "`e[38;2;30;144;255m"
-            '.yml'            = "`e[38;2;30;144;255m"
-            '.xml'            = "`e[38;2;30;144;255m"
+            # React
+            '.jsx'                  = '20B2AA'
+            '.tsx'                  = '20B2AA'
 
-            # Config files
-            '.conf'           = "`e[38;2;64;224;208m"
-            '.config'         = "`e[38;2;64;224;208m"
-            '.reg'            = "`e[38;2;64;224;208m"
-            '.vscode'         = "`e[38;2;64;224;208m"
+            # Typescript
+            '.ts'                   = 'F0E68C'
+
+            # Not-executable code files
+            '.dll'                  = '87CEEB'
+
+            # Importable Data files
+            '.clixml'               = '00BFFF'
+            '.csv'                  = '9ACD32'
+            '.tsv'                  = '9ACD32'
+
+            # Settings
+            '.ini'                  = '6495ED'
+            '.dlc'                  = '6495ED'
+            '.config'               = '6495ED'
+            '.conf'                 = '6495ED'
+            '.properties'           = '6495ED'
+            '.prop'                 = '6495ED'
+            '.settings'             = '6495ED'
+            '.option'               = '6495ED'
+            '.reg'                  = '6495ED'
+            '.props'                = '6495ED'
+            '.toml'                 = '6495ED'
+            '.prefs'                = '6495ED'
+            '.sln.dotsettings'      = '6495ED'
+            '.sln.dotsettings.user' = '6495ED'
+            '.cfg'                  = '6495ED'
 
             # Source Files
-            '.cs'             = "`e[38;2;255;215;0m"
-            '.fs'             = "`e[38;2;255;215;0m"
+            '.c'                    = 'A9A9A9'
+            '.cpp'                  = 'A9A9A9'
+            '.go'                   = '20B2AA'
+            '.php'                  = '6A5ACD'
+
+            # Visual Studio
+            '.csproj'               = 'EE82EE'
+            '.ruleset'              = 'EE82EE'
+            '.sln'                  = 'EE82EE'
+            '.suo'                  = 'EE82EE'
+            '.vb'                   = 'EE82EE'
+            '.vbs'                  = 'EE82EE'
+            '.vcxitems'             = 'EE82EE'
+            '.vcxitems.filters'     = 'EE82EE'
+            '.vcxproj'              = 'EE82EE'
+            '.vsxproj.filters'      = 'EE82EE'
+
+            # CSharp
+            '.cs'                   = '7B68EE'
+            '.csx'                  = '7B68EE'
+
+            # Haskell
+            '.hs'                   = '9932CC'
+
+            # XAML
+            '.xaml'                 = '87CEFA'
+
+            # Rust
+            '.rs'                   = 'FF4500'
+
+            # Database
+            '.pdb'                  = 'FFD700'
+            '.sql'                  = 'FFD700'
+            '.pks'                  = 'FFD700'
+            '.pkb'                  = 'FFD700'
+            '.accdb'                = 'FFD700'
+            '.mdb'                  = 'FFD700'
+            '.sqlite'               = 'FFD700'
+            '.pgsql'                = 'FFD700'
+            '.postgres'             = 'FFD700'
+            '.psql'                 = 'FFD700'
 
             # Source Control
-            '.git'            = "`e[38;2;255;69;0m"
-            '.gitignore'      = "`e[38;2;255;69;0m"
-            '.gitattribute'   = "`e[38;2;255;69;0m"
+            '.patch'                = 'FF4500'
 
             # Project files
-            '.csproj'         = "`e[38;2;199;21;133m"
-            '.sln'            = "`e[38;2;199;21;133m"
-            '.user'           = "`e[38;2;64;224;208m"
-            '.code-workspace' = "`e[38;2;0;204;0m"
+            '.user'                 = '00BFFF'
+            '.code-workspace'       = '00BFFF'
 
-            # Text data file #00BFFF
-            '.log'            = "`e[38;2;0;191;255m"
-            '.txt'            = "`e[38;2;0;191;255m"
+            # Text data files
+            '.log'                  = 'F0E68C'
+            '.txt'                  = '00CED1'
+
+            # HTML/css
+            '.html'                 = 'CD5C5C'
+            '.htm'                  = 'CD5C5C'
+            '.xhtml'                = 'CD5C5C'
+            '.html_vm'              = 'CD5C5C'
+            '.asp'                  = 'CD5C5C'
+            '.css'                  = '87CEFA'
+            '.sass'                 = 'FF00FF'
+            '.less'                 = '6B8E23'
+
+            # Markdown
+            '.md'                   = '00BFFF'
+            '.markdown'             = '00BFFF'
+            '.rst'                  = '00BFFF'
+
+            # JSON
+            '.json'                 = 'FFD700'
+            '.tsbuildinfo'          = 'FFD700'
+
+            # YAML
+            '.yml'                  = 'FF6347'
+            '.yaml'                 = 'FF6347'
+
+            # LUA
+            '.lua'                  = '87CEFA'
+
+            # Clojure
+            '.clj'                  = '00FF7F'
+            '.cljs'                 = '00FF7F'
+            '.cljc'                 = '00FF7F'
+
+            # Groovy
+            '.groovy'               = '87CEFA'
+
+            # Vue
+            '.vue'                  = '20B2AA'
+
+            # Dart
+            '.dart'                 = '4682B4'
+
+            # Elixir
+            '.ex'                   = '8B4513'
+            '.exs'                  = '8B4513'
+            '.eex'                  = '8B4513'
+            '.leex'                 = '8B4513'
+
+            # Erlang
+            '.erl'                  = 'FF6347'
+
+            # Elm
+            '.elm'                  = '9932CC'
+
+            # Applescript
+            '.applescript'          = '4682B4'
+
+            # XML
+            '.xml'                  = '98FB98'
+            '.plist'                = '98FB98'
+            '.xsd'                  = '98FB98'
+            '.dtd'                  = '98FB98'
+            '.xsl'                  = '98FB98'
+            '.xslt'                 = '98FB98'
+            '.resx'                 = '98FB98'
+            '.iml'                  = '98FB98'
+            '.xquery'               = '98FB98'
+            '.tmLanguage'           = '98FB98'
+            '.manifest'             = '98FB98'
+            '.project'              = '98FB98'
 
             # Documents
-            '.chm'            = "`e[38;2;127;255;212m"
-            '.doc'            = "`e[38;2;127;255;212m"
-            '.docx'           = "`e[38;2;127;255;212m"
-            '.htm'            = "`e[38;2;127;255;212m"
-            '.html'           = "`e[38;2;127;255;212m"
-            '.pdf'            = "`e[38;2;127;255;212m"
-            '.md'             = "`e[38;2;127;255;212m"
-            '.xls'            = "`e[38;2;127;255;212m"
-            '.xlsx'           = "`e[38;2;127;255;212m"
+            '.chm'                  = '87CEEB'
+            '.pdf'                  = 'CD5C5C'
+
+            # Excel
+            '.xls'                  = '9ACD32'
+            '.xlsx'                 = '9ACD32'
+
+            # PowerPoint
+            '.pptx'                 = 'DC143C'
+            '.ppt'                  = 'DC143C'
+            '.pptm'                 = 'DC143C'
+            '.potx'                 = 'DC143C'
+            '.potm'                 = 'DC143C'
+            '.ppsx'                 = 'DC143C'
+            '.ppsm'                 = 'DC143C'
+            '.pps'                  = 'DC143C'
+            '.ppam'                 = 'DC143C'
+            '.ppa'                  = 'DC143C'
+
+            # Word
+            '.doc'                  = '00BFFF'
+            '.docx'                 = '00BFFF'
+            '.rtf'                  = '00BFFF'
+
+            # Audio
+            '.mp3'                  = 'DB7093'
+            '.flac'                 = 'DB7093'
+            '.m4a'                  = 'DB7093'
+            '.wma'                  = 'DB7093'
+            '.aiff'                 = 'DB7093'
+
+            # Images
+            '.png'                  = '20B2AA'
+            '.jpeg'                 = '20B2AA'
+            '.jpg'                  = '20B2AA'
+            '.gif'                  = '20B2AA'
+            '.ico'                  = '20B2AA'
+            '.tif'                  = '20B2AA'
+            '.tiff'                 = '20B2AA'
+            '.psd'                  = '20B2AA'
+            '.psb'                  = '20B2AA'
+            '.ami'                  = '20B2AA'
+            '.apx'                  = '20B2AA'
+            '.bmp'                  = '20B2AA'
+            '.bpg'                  = '20B2AA'
+            '.brk'                  = '20B2AA'
+            '.cur'                  = '20B2AA'
+            '.dds'                  = '20B2AA'
+            '.dng'                  = '20B2AA'
+            '.eps'                  = '20B2AA'
+            '.exr'                  = '20B2AA'
+            '.fpx'                  = '20B2AA'
+            '.gbr'                  = '20B2AA'
+            '.img'                  = '20B2AA'
+            '.jbig2'                = '20B2AA'
+            '.jb2'                  = '20B2AA'
+            '.jng'                  = '20B2AA'
+            '.jxr'                  = '20B2AA'
+            '.pbm'                  = '20B2AA'
+            '.pgf'                  = '20B2AA'
+            '.pic'                  = '20B2AA'
+            '.raw'                  = '20B2AA'
+            '.webp'                 = '20B2AA'
+            'svg'                   = 'F4A460'
+
+            # Video
+            '.webm'                 = 'FFA500'
+            '.mkv'                  = 'FFA500'
+            '.flv'                  = 'FFA500'
+            '.vob'                  = 'FFA500'
+            '.ogv'                  = 'FFA500'
+            '.ogg'                  = 'FFA500'
+            '.gifv'                 = 'FFA500'
+            '.avi'                  = 'FFA500'
+            '.mov'                  = 'FFA500'
+            '.qt'                   = 'FFA500'
+            '.wmv'                  = 'FFA500'
+            '.yuv'                  = 'FFA500'
+            '.rm'                   = 'FFA500'
+            '.rmvb'                 = 'FFA500'
+            '.mp4'                  = 'FFA500'
+            '.mpg'                  = 'FFA500'
+            '.mp2'                  = 'FFA500'
+            '.mpeg'                 = 'FFA500'
+            '.mpe'                  = 'FFA500'
+            '.mpv'                  = 'FFA500'
+            '.m2v'                  = 'FFA500'
+
+            # Email
+            '.ics'                  = '00CED1'
+
+            # Certifactes
+            '.cer'                  = 'FF6347'
+            '.cert'                 = 'FF6347'
+            '.crt'                  = 'FF6347'
+            '.pfx'                  = 'FF6347'
+
+            # Keys
+            '.pem'                  = '66CDAA'
+            '.pub'                  = '66CDAA'
+            '.key'                  = '66CDAA'
+            '.asc'                  = '66CDAA'
+            '.gpg'                  = '66CDAA'
+
+            # Fonts
+            '.woff'                 = 'DC143C'
+            '.woff2'                = 'DC143C'
+            '.ttf'                  = 'DC143C'
+            '.eot'                  = 'DC143C'
+            '.suit'                 = 'DC143C'
+            '.otf'                  = 'DC143C'
+            '.bmap'                 = 'DC143C'
+            '.fnt'                  = 'DC143C'
+            '.odttf'                = 'DC143C'
+            '.ttc'                  = 'DC143C'
+            '.font'                 = 'DC143C'
+            '.fonts'                = 'DC143C'
+            '.sui'                  = 'DC143C'
+            '.ntf'                  = 'DC143C'
+            '.mrg'                  = 'DC143C'
+
+            # Ruby
+            '.rb'                   = 'FF0000'
+            '.erb'                  = 'FF0000'
+            '.gemfile'              = 'FF0000'
+
+            # FSharp
+            '.fs'                   = '00BFFF'
+            '.fsx'                  = '00BFFF'
+            '.fsi'                  = '00BFFF'
+            '.fsproj'               = '00BFFF'
+
+            # Docker
+            '.dockerignore'         = '4682B4'
+            '.dockerfile'           = '4682B4'
+
+
+            # VSCode
+            '.vscodeignore'         = '6495ED'
+            '.vsixmanifest'         = '6495ED'
+            '.vsix'                 = '6495ED'
+            '.code-workplace'       = '6495ED'
+
+            # Sublime
+            '.sublime-project'      = 'F4A460'
+            '.sublime-workspace'    = 'F4A460'
+
+            '.lock'                 = 'DAA520'
         }
     }
 }

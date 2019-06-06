@@ -15,8 +15,62 @@ $glyphs = . $PSScriptRoot/Data/glyphs.ps1
 
 # Import module theme files
 $colorThemes = @{}
-(Get-ChildItem -Path $PSScriptRoot/Data/colorThemes).Foreach({
-    $colorThemes.Add($_.Basename, (Import-PowerShellDataFile -Path $_))
+(Get-ChildItem -Path $PSScriptRoot/Data/colorThemes -Filter '*.psd1').Foreach({
+
+    # Import the color theme and convert to escape sequences
+    $colorData = Import-PowerShellDataFile -Path $_
+    $colorTheme = @{
+        Name = $colorData.Name
+        Types = @{
+            Directories = @{
+                ''        = "`e[0m"
+                WellKnown = @{
+
+                }
+            }
+            Files = @{
+                ''        = "`e[0m"
+                WellKnown = @{
+
+                }
+            }
+        }
+    }
+
+    # Directories
+    $colorData.Types.Directories.WellKnown.GetEnumerator().ForEach({
+        $directoryName = $_.Name
+        $rgbColor      = $_.Value.Replace('#', '')
+        $r = [convert]::ToInt32($rgbColor.SubString(0,2), 16)
+        $g = [convert]::ToInt32($rgbColor.SubString(2,2), 16)
+        $b = [convert]::ToInt32($rgbColor.SubString(4,2), 16)
+        $colorSequence = "`e[38;2;$r;$g;$b`m"
+        $colorTheme.Types.Directories[$directoryName] = $colorSequence
+    })
+
+    # Wellknown files
+    $colorData.Types.Files.WellKnown.GetEnumerator().ForEach({
+        $fileName = $_.Name
+        $rgbColor = $_.Value.Replace('#', '')
+        $r = [convert]::ToInt32($rgbColor.SubString(0,2), 16)
+        $g = [convert]::ToInt32($rgbColor.SubString(2,2), 16)
+        $b = [convert]::ToInt32($rgbColor.SubString(4,2), 16)
+        $colorSequence = "`e[38;2;$r;$g;$b`m"
+        $colorTheme.Types.Files.WellKnown[$fileName] = $colorSequence
+    })
+
+    # File extensions
+    $colorData.Types.Files.GetEnumerator().Where({$_.Name -ne 'WellKnown'}).ForEach({
+        $extension = $_.Name
+        $rgbColor  = $_.Value.Replace('#', '')
+        $r = [convert]::ToInt32($rgbColor.SubString(0,2), 16)
+        $g = [convert]::ToInt32($rgbColor.SubString(2,2), 16)
+        $b = [convert]::ToInt32($rgbColor.SubString(4,2), 16)
+        $colorSequence = "`e[38;2;$r;$g;$b`m"
+        $colorTheme.Types.Files[$extension] = $colorSequence
+    })
+
+    $colorThemes.Add($_.Basename, $colorTheme)
 })
 $iconThemes = @{}
 (Get-ChildItem -Path $PSScriptRoot/Data/iconThemes).Foreach({

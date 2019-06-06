@@ -7,7 +7,6 @@ function Resolve-Icon {
 
     if ($FileInfo.PSIsContainer) {
         # Determine directory icon
-
         $iconName  = $themeData.Themes.Icon[$themeData.CurrentIconTheme].Types.Directories.WellKnown[$FileInfo.Name]
         if (-not $iconName) {
             $iconName =  $themeData.Themes.Icon[$themeData.CurrentIconTheme].Types.Directories[$FileInfo.Name]

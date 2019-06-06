@@ -18,7 +18,7 @@ function Format-TerminalIcons {
         [System.IO.FileSystemInfo]$FileInfo
     )
 
+    $colorReset = "`e[0m"
     $displayInfo = Resolve-Icon $FileInfo
-
-    "$($displayInfo.Color)$($displayInfo.Icon)  $($FileInfo.Name)$($color.Reset)"
+    "$($displayInfo.Color)$($displayInfo.Icon)  $($FileInfo.Name)$colorReset"
 }
