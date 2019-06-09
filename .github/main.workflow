@@ -1,5 +1,5 @@
 workflow "psake" {
-  resolves = "publish"
+  resolves = "test"
   on       = "push"
 }
 
