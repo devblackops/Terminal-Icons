@@ -2,9 +2,9 @@
 
 PowerShell module to show file and folder icons in the terminal.
 
-| Azure Pipelines | PSGallery | License |
-|-----------------|-----------|---------|
-[![Azure Pipelines Build Status][azure-pipeline-badge]][azure-pipeline-build] | [![PowerShell Gallery][psgallery-badge]][psgallery] | [![License][license-badge]][license]
+| Azure Pipelines | GitHub Actions | PSGallery | License |
+|-----------------|----------------|-----------|---------|
+[![Azure Pipelines Build Status][azure-pipeline-badge]][azure-pipeline-build] | [![GitHub Actions Status][github-actions-badge]][github-actions] | [![PowerShell Gallery][psgallery-badge]][psgallery] | [![License][license-badge]][license]
 
 <p align="center">
     <img src="./media/icon_256.png" alt="Icon">
@@ -50,6 +50,8 @@ Any ideas on how to improve this module are welcome. If you have ideas for an ap
 
 [azure-pipeline-badge]: https://dev.azure.com/devblackops/Terminal-Icons/_apis/build/status/devblackops.Terminal-Icons?branchName=master
 [azure-pipeline-build]: https://dev.azure.com/devblackops/Terminal-Icons/_build/latest?definitionId=6&branchName=master
+[github-actions-badge]: https://wdp9fww0r9.execute-api.us-west-2.amazonaws.com/production/badge/devblackops/Terminal-Icons
+[github-actions]: https://wdp9fww0r9.execute-api.us-west-2.amazonaws.com/production/results/devblackops/Terminal-Icons
 [psgallery-badge]: https://img.shields.io/powershellgallery/dt/terminal-icons.svg
 [psgallery]: https://www.powershellgallery.com/packages/terminal-icons
 [license-badge]: https://img.shields.io/github/license/poshbotio/poshbot.svg
