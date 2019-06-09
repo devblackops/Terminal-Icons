@@ -3,11 +3,11 @@
         Target = 'CurrentUser'
     }
     BuildHelpers = @{
-        Version = '2.0.0'
+        Version = '2.0.9'
     }
     Configuration = '1.3.1'
     Pester = @{
-        Version = '4.4.1'
+        Version = '4.8.1'
         Parameters = @{
             SkipPublisherCheck = $true
         }
