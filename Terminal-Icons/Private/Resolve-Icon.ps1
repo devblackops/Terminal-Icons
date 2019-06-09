@@ -1,4 +1,5 @@
 function Resolve-Icon {
+    [OutputType([System.Collections.Hashtable])]
     [cmdletbinding()]
     param(
         [parameter(ValueFromPipeline=$true)]

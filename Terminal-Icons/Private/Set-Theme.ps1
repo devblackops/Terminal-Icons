@@ -1,4 +1,5 @@
 function Set-Theme {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseShouldProcessForStateChangingFunctions', '')]
     [cmdletbinding()]
     param(
         [parameter(mandatory)]

@@ -24,6 +24,7 @@ function Format-TerminalIcons {
 
         Outputs a colorized string with an icon prepended.
     #>
+    [OutputType([System.String])]
     [cmdletbinding()]
     param(
         [parameter(ValueFromPipeline=$true)]

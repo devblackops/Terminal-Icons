@@ -23,6 +23,7 @@ function Set-TerminalIconsColorTheme {
     .LINK
         Get-TerminalIconsIconTheme
     #>
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseShouldProcessForStateChangingFunctions', '')]
     [cmdletbinding()]
     param(
         [parameter(Mandatory)]

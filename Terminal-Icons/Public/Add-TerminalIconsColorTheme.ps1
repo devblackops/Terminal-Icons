@@ -32,6 +32,7 @@ function Add-TerminalIconsColorTheme {
     .LINK
         Add-TerminalIconsIconTheme
     #>
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSShouldProcess', '', Justification='Implemented in private function')]
     [cmdletbinding(DefaultParameterSetName = 'Path', SupportsShouldProcess)]
     param(
         [parameter(
