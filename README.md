@@ -6,6 +6,10 @@ PowerShell module to show file and folder icons in the terminal.
 |-----------------|-----------|---------|
 [![Azure Pipelines Build Status][azure-pipeline-badge]][azure-pipeline-build] | [![PowerShell Gallery][psgallery-badge]][psgallery] | [![License][license-badge]][license]
 
+<p align="center">
+    <img src="./media/icon_256.png" alt="Icon">
+</p>
+
 ## Overview
 
 > This is very much a work in progress. This means the structure and functionality will most likely change prior to release. Right now, it just BARELY works. *USE AT YOUR OWN RISK*.
