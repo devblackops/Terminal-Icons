@@ -80,7 +80,7 @@ $iconThemes = @{}
 $defaultTheme = 'devblackops'
 
 # Import local theme data
-$global:themeData = Import-Configuration
+$themeData = Import-Configuration
 if (-not $themeData) {
     # We have no theme data saved (first time use?)
     # Create one and save it
