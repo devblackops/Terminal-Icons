@@ -20,5 +20,4 @@ function Show-TerminalIconsTheme {
     })
 
     $directories + $wellKnownFiles + $extensions | Sort-Object
-    #Get-ChildItem -Path $examples | Format-Table
 }
