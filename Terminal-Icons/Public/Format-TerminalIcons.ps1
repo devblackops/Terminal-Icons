@@ -9,8 +9,12 @@ function Format-TerminalIcons {
         The file or folder to display
     .EXAMPLE
         Get-ChildItem
+
+        List a directory. Terminal-Icons will be invoked automatically for display.
     .EXAMPLE
         Get-Item ./README.md | Format-TerminalIcons
+
+        Get a file object and pass directly to Format-TerminalIcons.
     .INPUTS
         System.IO.FileSystemInfo
 

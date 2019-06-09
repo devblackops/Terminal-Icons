@@ -26,10 +26,15 @@ Take the provided file or folder object and look up the appropriate icon and col
 Get-ChildItem
 ```
 
+List a directory.
+Terminal-Icons will be invoked automatically for display.
+
 ### EXAMPLE 2
 ```
 Get-Item ./README.md | Format-TerminalIcons
 ```
+
+Get a file object and pass directly to Format-TerminalIcons.
 
 ## PARAMETERS
 

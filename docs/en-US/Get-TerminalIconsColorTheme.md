@@ -13,7 +13,7 @@ List the available color themes.
 ## SYNTAX
 
 ```
-Get-TerminalIconsColorTheme
+Get-TerminalIconsColorTheme [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -29,6 +29,9 @@ Get-TerminalIconsColorTheme
 Get the list of available color themes.
 
 ## PARAMETERS
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
