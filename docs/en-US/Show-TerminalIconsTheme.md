@@ -5,28 +5,29 @@ online version:
 schema: 2.0.0
 ---
 
-# Get-TerminalIconsTheme
+# Show-TerminalIconsTheme
 
 ## SYNOPSIS
-Get the currently applied color and icon theme.
+List example directories and files to show the currently applied color and icon themes.
 
 ## SYNTAX
 
 ```
-Get-TerminalIconsTheme [<CommonParameters>]
+Show-TerminalIconsTheme [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get the currently applied color and icon theme.
+List example directories and files to show the currently applied color and icon themes.
+The directory/file objects show are in memory only, they are not written to the filesystem.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```
-Get-TerminalIconsTheme
+Show-TerminalIconsTheme
 ```
 
-Get the currently applied Terminal-Icons color and icon theme.
+List example directories and files to show the currently applied color and icon themes.
 
 ## PARAMETERS
 
@@ -38,13 +39,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### None.
 ## OUTPUTS
 
-### System.Management.Automation.PSCustomObject
-### An object representing the currently applied color and icon theme.
+### System.IO.DirectoryInfo
+### System.IO.FileInfo
 ## NOTES
+Example directory and file objects only exist in memory.
+They are not written to the filesystem.
 
 ## RELATED LINKS
 
 [Get-TerminalIconsColorTheme]()
 
 [Get-TerminalIconsIconTheme]()
+
+[Get-TerminalIconsTheme]()
 

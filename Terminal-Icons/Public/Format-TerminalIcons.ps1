@@ -2,7 +2,7 @@
 function Format-TerminalIcons {
     <#
     .SYNOPSIS
-        When displaying in a terminal, prepend a custom icon (with color) to the provided file or folder object.
+        Prepend a custom icon (with color) to the provided file or folder object when displayed.
     .DESCRIPTION
         Take the provided file or folder object and look up the appropriate icon and color to display.
     .PARAMETER FileInfo
@@ -11,6 +11,14 @@ function Format-TerminalIcons {
         Get-ChildItem
     .EXAMPLE
         Get-Item ./README.md | Format-TerminalIcons
+    .INPUTS
+        System.IO.FileSystemInfo
+
+        You can pipe an objects that derive from System.IO.FileSystemInfo (System.IO.DIrectoryInfo and System.IO.FileInfo) to 'Format-TerminalIcons'.
+    .OUTPUTS
+        System.String
+
+        Outputs a colorized string with an icon prepended.
     #>
     [cmdletbinding()]
     param(

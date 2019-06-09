@@ -8,38 +8,40 @@ schema: 2.0.0
 # Get-TerminalIconsIconTheme
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+List the available icon themes.
 
 ## SYNTAX
 
 ```
-Get-TerminalIconsIconTheme [<CommonParameters>]
+Get-TerminalIconsIconTheme
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+List the available icon themes.
 
 ## EXAMPLES
 
-### Example 1
-```powershell
-PS C:> {{ Add example code here }}
+### EXAMPLE 1
+```
+Get-TerminalIconsIconTheme
 ```
 
-{{ Add example description here }}
+Get the list of available icon themes.
 
 ## PARAMETERS
 
-### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
-
 ## INPUTS
 
-### None
-
+### None.
 ## OUTPUTS
 
-### System.Object
+### System.Collections.Hashtable
+### An array of hashtables representing available icon themes.
 ## NOTES
 
 ## RELATED LINKS
+
+[Get-TerminalIconsColorTheme]()
+
+[Get-TerminalIconsTheme]()
+

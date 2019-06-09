@@ -5,46 +5,43 @@ online version:
 schema: 2.0.0
 ---
 
-# Format-TerminalIcons
+# Set-TerminalIconsIconTheme
 
 ## SYNOPSIS
-Prepend a custom icon (with color) to the provided file or folder object when displayed.
+Set the Terminal-Icons icon theme.
 
 ## SYNTAX
 
 ```
-Format-TerminalIcons [[-FileInfo] <FileSystemInfo>] [<CommonParameters>]
+Set-TerminalIconsIconTheme [-Name] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Take the provided file or folder object and look up the appropriate icon and color to display.
+Set the Terminal-Icons icon theme to a registered theme.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```
-Get-ChildItem
+Set-TerminalIconsIconTheme -Name devblackops
 ```
 
-### EXAMPLE 2
-```
-Get-Item ./README.md | Format-TerminalIcons
-```
+Set the icon theme to 'devblackops'.
 
 ## PARAMETERS
 
-### -FileInfo
-The file or folder to display
+### -Name
+The name of a registered icon theme.
 
 ```yaml
-Type: FileSystemInfo
+Type: String
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: 1
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -53,12 +50,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.IO.FileSystemInfo
-### You can pipe an objects that derive from System.IO.FileSystemInfo (System.IO.DIrectoryInfo and System.IO.FileInfo) to 'Format-TerminalIcons'.
+### System.String
+### The name of a registered icon theme.
 ## OUTPUTS
 
-### System.String
-### Outputs a colorized string with an icon prepended.
+### None.
 ## NOTES
 
 ## RELATED LINKS
+
+[Set-TerminalIconsColorTheme]()
+
+[Get-TerminalIconsColorTheme]()
+
+[Get-TerminalIconsIconTheme]()
+
