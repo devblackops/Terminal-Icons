@@ -6,7 +6,7 @@
     CompanyName       = 'Community'
     Copyright         = '(c) Brandon Olin. All rights reserved.'
     Description       = 'PowerShell module to add file icons to terminal based on file extension'
-    # PowerShellVersion = ''
+    PowerShellVersion = '3.0'
     # PowerShellHostName = ''
     # PowerShellHostVersion = ''
     RequiredModules = @('Configuration')
@@ -16,11 +16,11 @@
     AliasesToExport   = @()
     PrivateData       = @{
         PSData = @{
-            # Tags = @()
-            # LicenseUri = ''
-            # ProjectUri = ''
-            # IconUri = ''
-            # ReleaseNotes = ''
+            Tags         = @('Color', 'Terminal', 'Console', 'NerdFonts', 'Icon')
+            LicenseUri   = 'https://raw.githubusercontent.com/devblackops/Terminal-Icons/master/LICENSE'
+            ProjectUri   = 'https://github.com/devblackops/Terminal-Icons'
+            IconUri      = 'https://github.com/devblackops/Terminal-Icons/raw/master/media/icon_256.png'
+            ReleaseNotes = 'https://raw.githubusercontent.com/devblackops/Terminal-Icons/master/CHANGELOG.md'
         }
     }
 }
