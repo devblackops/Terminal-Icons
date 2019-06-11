@@ -8,7 +8,7 @@ $outputModVerDir = Join-Path -Path $outputModDir -ChildPath $manifest.ModuleVers
 
 # Get module commands
 # Remove all versions of the module from the session. Pester can't handle multiple versions.
-#Get-Module $env:BHProjectName | Remove-Module -Force
+Get-Module $env:BHProjectName | Remove-Module -Force
 Import-Module -Name (Join-Path -Path $outputModVerDir -ChildPath "$($env:BHProjectName).psd1") -Verbose:$false -ErrorAction Stop
 $commands = Get-Command -Module (Get-Module $env:BHProjectName) -CommandType Cmdlet, Function, Workflow  # Not alias
 
