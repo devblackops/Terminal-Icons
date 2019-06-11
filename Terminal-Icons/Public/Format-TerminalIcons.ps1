@@ -27,7 +27,7 @@ function Format-TerminalIcons {
     [OutputType([System.String])]
     [cmdletbinding()]
     param(
-        [parameter(ValueFromPipeline=$true)]
+        [parameter(Mandatory, ValueFromPipeline=$true)]
         [System.IO.FileSystemInfo]$FileInfo
     )
 

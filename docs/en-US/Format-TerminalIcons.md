@@ -13,7 +13,7 @@ Prepend a custom icon (with color) to the provided file or folder object when di
 ## SYNTAX
 
 ```
-Format-TerminalIcons [[-FileInfo] <FileSystemInfo>] [<CommonParameters>]
+Format-TerminalIcons [-FileInfo] <FileSystemInfo> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -46,7 +46,7 @@ Type: FileSystemInfo
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: 1
 Default value: None
 Accept pipeline input: True (ByValue)
