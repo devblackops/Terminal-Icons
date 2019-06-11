@@ -12,7 +12,7 @@ function Add-TerminalIconsColorTheme {
     .PARAMETER Force
         Overwrite the color theme if it already exists in the profile.
     .EXAMPLE
-        PS> Add-Terminal-IconsColorTHeme -Path ./my_color_theme.psd1
+        PS> Add-TerminalIconsColorTheme -Path ./my_color_theme.psd1
 
         Add the color theme contained in ./my_color_theme.psd1.
     .EXAMPLE
