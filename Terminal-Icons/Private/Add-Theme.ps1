@@ -46,6 +46,24 @@ function Add-Theme {
                 $operation  = "Add $($Type.ToLower())"
                 if ($PSCmdlet.ShouldProcess($statusMsg, $confirmMsg, $operation) -or $Force.IsPresent) {
                     if (-not $themeData.Themes.$Type.ContainsKey($item.BaseName) -or $Force.IsPresent) {
+
+                        # Convert color theme into escape sequences for lookup later
+                        if ($Type -eq 'Color') {
+                            $colorData = Import-PowerShellDataFile -Path $item.FullName
+                            # Directories
+                            $colorData.Types.Directories.WellKnown.GetEnumerator().ForEach({
+                                $script:colorSequences[$item.BaseName].Types.Directories[$_.Name] = ConvertFrom-RGBColor -RGB $_.Value
+                            })
+                            # Wellknown files
+                            $colorData.Types.Files.WellKnown.GetEnumerator().ForEach({
+                                $script:colorSequences[$item.BaseName].Types.Files.WellKnown[$_.Name] = ConvertFrom-RGBColor -RGB $_.Value
+                            })
+                            # File extensions
+                            $colorData.Types.Files.GetEnumerator().Where({$_.Name -ne 'WellKnown'}).ForEach({
+                                $script:colorSequences[$item.BaseName].Types.Files[$_.Name] = ConvertFrom-RGBColor -RGB $_.Value
+                            })
+                        }
+
                         $themeData.Themes.$Type[$item.Basename] = Import-PowerShellDataFile -Path $item.FullName
                         $themeData | Export-Configuration
                     } else {

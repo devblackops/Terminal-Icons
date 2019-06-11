@@ -13,68 +13,73 @@ $private = @(Get-ChildItem -Path (Join-Path -Path $PSScriptRoot -ChildPath 'Priv
 
 $glyphs = . $PSScriptRoot/Data/glyphs.ps1
 
+
+$colorReset = "`e[0m"
+
 # Import module theme files
 $colorThemes = @{}
+
+# Converted color themes
+$script:colorSequences = @{}
+
 (Get-ChildItem -Path $PSScriptRoot/Data/colorThemes -Filter '*.psd1').Foreach({
 
     # Import the color theme and convert to escape sequences
-    $colorData = Import-PowerShellDataFile -Path $_
-    $colorTheme = @{
+    $colorData = Import-PowerShellDataFile -Path $_.FullName
+    $script:colorSequences[$_.Basename] = @{
         Name = $colorData.Name
         Types = @{
             Directories = @{
-                ''        = "`e[0m"
-                WellKnown = @{
-
-                }
+                #''        = "`e[0m"
+                WellKnown = @{}
             }
             Files = @{
-                ''        = "`e[0m"
-                WellKnown = @{
-
-                }
+                #''        = "`e[0m"
+                WellKnown = @{}
             }
         }
     }
-
     # Directories
     $colorData.Types.Directories.WellKnown.GetEnumerator().ForEach({
-        $directoryName = $_.Name
-        $rgbColor      = $_.Value.Replace('#', '')
-        $r = [convert]::ToInt32($rgbColor.SubString(0,2), 16)
-        $g = [convert]::ToInt32($rgbColor.SubString(2,2), 16)
-        $b = [convert]::ToInt32($rgbColor.SubString(4,2), 16)
-        $colorSequence = "`e[38;2;$r;$g;$b`m"
-        $colorTheme.Types.Directories[$directoryName] = $colorSequence
+        $script:colorSequences[$colorData.Name].Types.Directories[$_.Name] = ConvertFrom-RGBColor -RGB $_.Value
     })
-
     # Wellknown files
     $colorData.Types.Files.WellKnown.GetEnumerator().ForEach({
-        $fileName = $_.Name
-        $rgbColor = $_.Value.Replace('#', '')
-        $r = [convert]::ToInt32($rgbColor.SubString(0,2), 16)
-        $g = [convert]::ToInt32($rgbColor.SubString(2,2), 16)
-        $b = [convert]::ToInt32($rgbColor.SubString(4,2), 16)
-        $colorSequence = "`e[38;2;$r;$g;$b`m"
-        $colorTheme.Types.Files.WellKnown[$fileName] = $colorSequence
+        $script:colorSequences[$colorData.Name].Types.Files.WellKnown[$_.Name] = ConvertFrom-RGBColor -RGB $_.Value
     })
-
     # File extensions
     $colorData.Types.Files.GetEnumerator().Where({$_.Name -ne 'WellKnown'}).ForEach({
-        $extension = $_.Name
-        $rgbColor  = $_.Value.Replace('#', '')
-        $r = [convert]::ToInt32($rgbColor.SubString(0,2), 16)
-        $g = [convert]::ToInt32($rgbColor.SubString(2,2), 16)
-        $b = [convert]::ToInt32($rgbColor.SubString(4,2), 16)
-        $colorSequence = "`e[38;2;$r;$g;$b`m"
-        $colorTheme.Types.Files[$extension] = $colorSequence
+        $script:colorSequences[$colorData.Name].Types.Files[$_.Name] = ConvertFrom-RGBColor -RGB $_.Value
     })
 
-    $colorThemes.Add($_.Basename, $colorTheme)
+    # # Directories
+    # $script:colorData.Types.Directories.WellKnown.GetEnumerator().ForEach({
+    #     $directoryName = $_.Name
+    #     $colorSequence = ConvertFrom-RGBColor -RGB $_.Value
+    #     $colorTheme.Types.Directories[$directoryName] = $colorSequence
+    # })
+
+    # # Wellknown files
+    # $script:colorData.Types.Files.WellKnown.GetEnumerator().ForEach({
+    #     $fileName      = $_.Name
+    #     $colorSequence = ConvertFrom-RGBColor -RGB $_.Value
+    #     $colorTheme.Types.Files.WellKnown[$fileName] = $colorSequence
+    # })
+
+    # # File extensions
+    # $script:colorData.Types.Files.GetEnumerator().Where({$_.Name -ne 'WellKnown'}).ForEach({
+    #     $extension     = $_.Name
+    #     $colorSequence = ConvertFrom-RGBColor -RGB $_.Value
+    #     $colorTheme.Types.Files[$extension] = $colorSequence
+    # })
+
+    $colorThemes.Add($colorData.Name, $colorData)
+    $colorThemes[$colorData.Name].Types.Directories[''] = $colorReset
+    $colorThemes[$colorData.Name].Types.Files['']       = $colorReset
 })
 $iconThemes = @{}
 (Get-ChildItem -Path $PSScriptRoot/Data/iconThemes).Foreach({
-    $iconThemes.Add($_.Basename, (Import-PowerShellDataFile -Path $_))
+    $iconThemes.Add($_.Basename, (Import-PowerShellDataFile -Path $_.FullName))
 })
 
 $defaultTheme = 'devblackops'

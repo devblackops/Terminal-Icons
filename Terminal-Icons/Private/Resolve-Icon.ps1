@@ -18,11 +18,14 @@ function Resolve-Icon {
         $icon = $glyphs[$iconName]
 
         # Determine directory color
-        $color = $themeData.Themes.Color[$themeData.CurrentColorTheme].Types.Directories.WellKnown[$FileInfo.Name]
+        $color = $script:colorSequences[$themeData.CurrentColorTheme].Types.Directories.WellKnown[$FileInfo.Name]
+        #$color = $themeData.Themes.Color[$themeData.CurrentColorTheme].Types.Directories.WellKnown[$FileInfo.Name]
         if (-not $color) {
-            $color = $themeData.Themes.Color[$themeData.CurrentColorTheme].Types.Directories[$FileInfo.Name]
+            #$color = $themeData.Themes.Color[$themeData.CurrentColorTheme].Types.Directories[$FileInfo.Name]
+            $color = $script:colorSequences[$themeData.CurrentColorTheme].Types.Directories[$FileInfo.Name]
             if (-not $color) {
-                $color = $themeData.Themes.Color[$themeData.CurrentColorTheme].Types.Directories['']
+                #$color = $themeData.Themes.Color[$themeData.CurrentColorTheme].Types.Directories['']
+                $color = $script:colorSequences[$themeData.CurrentColorTheme].Types.Directories['']
             }
         }
     } else {
@@ -38,11 +41,14 @@ function Resolve-Icon {
 
         # Determine file color
         $themeData.Themes.Color[$themeData.CurrentColorTheme]
-        $color = $themeData.Themes.Color[$themeData.CurrentColorTheme].Types.Files.WellKnown[$FileInfo.Name]
+        #$color = $themeData.Themes.Color[$themeData.CurrentColorTheme].Types.Files.WellKnown[$FileInfo.Name]
+        $color = $script:colorSequences[$themeData.CurrentColorTheme].Types.Files.WellKnown[$FileInfo.Name]
         if (-not $color) {
-            $color = $themeData.Themes.Color[$themeData.CurrentColorTheme].Types.Files[$FileInfo.Extension]
+            #$color = $themeData.Themes.Color[$themeData.CurrentColorTheme].Types.Files[$FileInfo.Extension]
+            $color = $script:colorSequences[$themeData.CurrentColorTheme].Types.Files[$FileInfo.Extension]
             if (-not $color) {
-                $color = $themeData.Themes.Color[$themeData.CurrentColorTheme].Types.Files['']
+                #$color = $themeData.Themes.Color[$themeData.CurrentColorTheme].Types.Files['']
+                $color = $script:colorSequences[$themeData.CurrentColorTheme].Types.Files['']
             }
         }
     }
