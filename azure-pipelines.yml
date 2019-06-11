@@ -1,9 +1,22 @@
 jobs:
-  - job: Build_PS_Win2016
+  - job: Build_PSCore_Win2016
     pool:
       vmImage: vs2017-win2016
     steps:
     - pwsh: ./build.ps1 -Task Test -Bootstrap -Verbose
+      displayName: 'Build and Test'
+    - task: PublishTestResults@2
+      inputs:
+        testRunner: 'NUnit'
+        testResultsFiles: '**/out/testResults.xml'
+        testRunTitle: 'PS_Win2016'
+      displayName: 'Publish Test Results'
+
+  - job: Build_PS_Win2016
+    pool:
+      vmImage: vs2017-win2016
+    steps:
+    - powershell: ./build.ps1 -Task Test -Bootstrap -Verbose
       displayName: 'Build and Test'
     - task: PublishTestResults@2
       inputs:
