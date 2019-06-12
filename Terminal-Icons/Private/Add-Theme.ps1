@@ -49,7 +49,7 @@ function Add-Theme {
 
                         # Convert color theme into escape sequences for lookup later
                         if ($Type -eq 'Color') {
-                            $colorData = Import-PowerShellDataFile -Path $item.FullName
+                            $colorData = ConvertFrom-Psd1 $item.FullName
                             # Directories
                             $colorData.Types.Directories.WellKnown.GetEnumerator().ForEach({
                                 $script:colorSequences[$item.BaseName].Types.Directories[$_.Name] = ConvertFrom-RGBColor -RGB $_.Value
@@ -64,7 +64,8 @@ function Add-Theme {
                             })
                         }
 
-                        $themeData.Themes.$Type[$item.Basename] = Import-PowerShellDataFile -Path $item.FullName
+                        $colorData = ConvertFrom-Psd1 $item.FullName
+                        $themeData.Themes.$Type[$item.Basename] = $colorData
                         $themeData | Export-Configuration
                     } else {
                         Write-Error "$Type theme [$($item.BaseName)] already exists. Use the -Force switch to overwrite."

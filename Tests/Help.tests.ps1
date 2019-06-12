@@ -3,8 +3,8 @@
 
 $outputDir       = Join-Path -Path $ENV:BHProjectPath -ChildPath 'Output'
 $outputModDir    = Join-Path -Path $outputDir -ChildPath $env:BHProjectName
-$manifest        = Import-PowerShellDataFile -Path $env:BHPSModuleManifest
-$outputModVerDir = Join-Path -Path $outputModDir -ChildPath $manifest.ModuleVersion
+$manifest        = Test-ModuleManifest $env:BHPSModuleManifest
+$outputModVerDir = Join-Path -Path $outputModDir -ChildPath $manifest.Version
 
 # Get module commands
 # Remove all versions of the module from the session. Pester can't handle multiple versions.

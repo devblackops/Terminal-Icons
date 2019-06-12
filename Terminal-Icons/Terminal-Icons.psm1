@@ -11,10 +11,9 @@ $private = @(Get-ChildItem -Path (Join-Path -Path $PSScriptRoot -ChildPath 'Priv
     }
 })
 
-$glyphs = . $PSScriptRoot/Data/glyphs.ps1
-
-
-$colorReset = "`e[0m"
+$glyphs     = . $PSScriptRoot/Data/glyphs.ps1
+$escape     = [char]27
+$colorReset = "${escape}[0m"
 
 # Import module theme files
 $colorThemes = @{}
@@ -25,7 +24,7 @@ $script:colorSequences = @{}
 (Get-ChildItem -Path $PSScriptRoot/Data/colorThemes -Filter '*.psd1').Foreach({
 
     # Import the color theme and convert to escape sequences
-    $colorData = Import-PowerShellDataFile -Path $_.FullName
+    $colorData = ConvertFrom-Psd1 $_.FullName
     $script:colorSequences[$_.Basename] = @{
         Name = $colorData.Name
         Types = @{

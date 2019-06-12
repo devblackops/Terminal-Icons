@@ -7,4 +7,4 @@ properties {
 
 task default -depends Test
 
-task Build -FromModule PowerShellBuild -Version '0.3.1'
+task Pester -FromModule PowerShellBuild -Version '0.3.1' -preaction {$script:modPath = $PSBPreference.General.ModuleManifestPath; Import-Module $script:modPath}

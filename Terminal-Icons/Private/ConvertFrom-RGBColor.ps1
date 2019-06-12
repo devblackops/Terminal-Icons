@@ -12,5 +12,6 @@ function ConvertFrom-RGBColor {
     $g   = [convert]::ToInt32($RGB.SubString(2,2), 16)
     $b   = [convert]::ToInt32($RGB.SubString(4,2), 16)
 
-    "`e[38;2;$r;$g;$b`m"
+    $escape = [char]27
+    "${escape}[38;2;$r;$g;$b`m"
 }
