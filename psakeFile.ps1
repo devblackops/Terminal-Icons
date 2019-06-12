@@ -3,6 +3,8 @@ properties {
     # This modifies the default behavior from the "Build" task
     # in the PowerShellBuild shared psake task module
     $PSBPreference.Build.CompileModule = $false
+    $PSBPreference.Build.CompileModule = $false
+    $PSBPreference.Test.OutputFile     = "$($PSBPreference.Build.OutDir)/testResults.xml"
 }
 
 task default -depends Test
