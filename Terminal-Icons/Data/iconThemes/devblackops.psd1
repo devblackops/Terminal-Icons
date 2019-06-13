@@ -95,7 +95,7 @@
                 '.esmrc'                        = 'nf-dev-nodejs_small'
 
                 # NPM
-                '.nmpignore'                    = 'nf-dev-npm'
+                '.npmignore'                    = 'nf-dev-npm'
                 '.npmrc'                        = 'nf-dev-npm'
 
                 # Authors
