@@ -26,7 +26,7 @@ function Set-TerminalIconsColorTheme {
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseShouldProcessForStateChangingFunctions', '')]
     [cmdletbinding()]
     param(
-        [parameter(Mandatory)]
+        [parameter(Mandatory, ValueFromPipeline, ValueFromPipelineByPropertyName)]
         [string]$Name
     )
 
