@@ -67,6 +67,12 @@ Get-ChildItem -Path . -Force
 
 ![Screenshot 1](./media/screenshot1.PNG)
 
+## Tips
+
+If using the default console in Windows and not something like VSCode, ConEmu, Terminus, etc., you may have issues getting a nerd font to be recognized correctly.
+Try following this [quick guide](https://gist.github.com/markwragg/6301bfcd56ce86c3de2bd7e2f09a8839) by [Mark Wragg](https://twitter.com/markwragg).
+[Issue #269](https://github.com/ryanoasis/nerd-fonts/issues/269) on Nerd Fonts has more information.
+
 ## Contributions
 
 Any ideas on how to improve this module are welcome.
