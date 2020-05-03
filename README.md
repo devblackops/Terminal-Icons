@@ -4,7 +4,7 @@ A PowerShell module to show file and folder icons in the terminal.
 
 | Azure Pipelines | GitHub Actions | PSGallery | License |
 |-----------------|----------------|-----------|---------|
-[![Azure Pipelines Build Status][azure-pipeline-badge]][azure-pipeline-build] | [![GitHub Actions Status][github-actions-badge]][github-actions] | [![PowerShell Gallery][psgallery-badge]][psgallery] | [![License][license-badge]][license]
+[![Azure Pipelines Build Status][azure-pipeline-badge]][azure-pipeline-build] | [![GitHub Actions Status][github-actions-badge]][github-actions-build] | [![PowerShell Gallery][psgallery-badge]][psgallery] | [![License][license-badge]][license]
 
 <p align="center">
     <img src="./media/icon_256.png" alt="Icon">
@@ -81,8 +81,8 @@ If you'd like to submit an entirely new color or icon theme, take a look at the 
 
 [azure-pipeline-badge]: https://dev.azure.com/devblackops/Terminal-Icons/_apis/build/status/devblackops.Terminal-Icons?branchName=master
 [azure-pipeline-build]: https://dev.azure.com/devblackops/Terminal-Icons/_build/latest?definitionId=6&branchName=master
-[github-actions-badge]: https://wdp9fww0r9.execute-api.us-west-2.amazonaws.com/production/badge/devblackops/Terminal-Icons
-[github-actions]:       https://wdp9fww0r9.execute-api.us-west-2.amazonaws.com/production/results/devblackops/Terminal-Icons
+[github-actions-badge]: https://github.com/devblackops/Terminal-Icons/workflows/CI/badge.svg
+[github-actions-build]: https://github.com/devblackops/Terminal-Icons/actions
 [psgallery-badge]:      https://img.shields.io/powershellgallery/dt/terminal-icons.svg
 [psgallery]:            https://www.powershellgallery.com/packages/terminal-icons
 [license-badge]:        https://img.shields.io/github/license/poshbotio/poshbot.svg
