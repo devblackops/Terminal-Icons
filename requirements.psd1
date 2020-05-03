@@ -13,7 +13,7 @@
         }
     }
     platyPS = '0.14.0'
-    PowerShellBuild = '0.3.1'
+    PowerShellBuild = '0.4.0'
     psake = '4.8.0'
     PSScriptAnalyzer = '1.18.0'
 }
