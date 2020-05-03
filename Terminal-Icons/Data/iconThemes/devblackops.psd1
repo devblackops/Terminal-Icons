@@ -63,8 +63,8 @@
                 'bower.json'                    = 'nf-dev-bower'
 
                 # Conduct
-                'code_of_conduct.md'            = 'nf-mdi-check_circle'
-                'code_of_conduct.txt'           = 'nf-mdi-check_circle'
+                'code_of_conduct.md'            = 'nf-fa-handshake_o'
+                'code_of_conduct.txt'           = 'nf-fa-handshake_o'
 
                 # Docker
                 'Dockerfile'                    = 'nf-dev-docker'
