@@ -381,7 +381,7 @@
             '.pic'                  = '20B2AA'
             '.raw'                  = '20B2AA'
             '.webp'                 = '20B2AA'
-            'svg'                   = 'F4A460'
+            '.svg'                  = 'F4A460'
 
             # Video
             '.webm'                 = 'FFA500'

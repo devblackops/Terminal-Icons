@@ -384,7 +384,7 @@
             '.pic'                  = 'nf-fa-file_image_o'
             '.raw'                  = 'nf-fa-file_image_o'
             '.webp'                 = 'nf-fa-file_image_o'
-            'svg'                   = 'nf-mdi-svg'
+            '.svg'                  = 'nf-mdi-svg'
 
             # Video
             '.webm'                 = 'nf-fa-file_video_o'
