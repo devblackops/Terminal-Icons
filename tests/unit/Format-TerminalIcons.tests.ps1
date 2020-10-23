@@ -14,7 +14,7 @@ describe 'Format-TerminalIcons' {
         $folder = New-Item -Path "TestDrive:/$folderName" -Type Directory
         $string = $folder | Format-TerminalIcons
         it 'Resolves a random directory to a default icon' {
-            $string.Substring(0,1) | should -be "$([char]0xf07b)"
+            $string.Substring(0,1) | should -be "$([char]0xf413)"
         }
     }
 
