@@ -3,13 +3,39 @@
     Types = @{
         Directories = @{
             # Default directory icon
-            ''        = 'nf-fa-folder'
+            ''        = 'nf-oct-file_directory'
             WellKnown = @{
-                docs      = 'nf-fa-folder'
-                images    = 'nf-mdi-folder_image'
-                '.vscode' = 'nf-custom-folder_config'
-                '.git'    = 'nf-custom-folder_git'
-                '.github' = 'nf-custom-folder_github'
+                docs           = 'nf-oct-repo'
+                documents      = 'nf-oct-repo'
+                desktop        = 'nf-mdi-desktop_classic'
+                contacts       = 'nf-mdi-contacts'
+                apps           = 'nf-mdi-apps'
+                applications   = 'nf-mdi-apps'
+                shortcuts      = 'nf-oct-file_symlink_directory'
+                links          = 'nf-oct-file_symlink_directory'
+                fonts          = 'nf-fa-font'
+                images         = 'nf-mdi-folder_image'
+                photos         = 'nf-mdi-folder_image'
+                pictures       = 'nf-mdi-folder_image'
+                videos         = 'nf-mdi-movie'
+                movies         = 'nf-mdi-movie'
+                media          = 'nf-dev-html5_multimedia'
+                music          = 'nf-mdi-library_music'
+                songs          = 'nf-mdi-library_music'
+                onedrive       = 'nf-mdi-onedrive'
+                downloads      = 'nf-mdi-folder_download'
+                src            = 'nf-oct-terminal'
+                development    = 'nf-oct-terminal'
+                projects       = 'nf-seti-project'
+                bin            = 'nf-oct-file_binary'
+                tests          = 'nf-mdi-test_tube'
+                '.config'      = 'nf-seti-config'
+                '.cache'       = 'nf-mdi-cached'
+                '.vscode'      = 'nf-custom-folder_config'
+                '.git'         = 'nf-custom-folder_git'
+                '.github'      = 'nf-custom-folder_github'
+                'github'       = 'nf-fa-github_alt'
+                'node_modules' = 'nf-custom-folder_npm'
             }
         }
 
@@ -358,7 +384,7 @@
             '.pic'                  = 'nf-fa-file_image_o'
             '.raw'                  = 'nf-fa-file_image_o'
             '.webp'                 = 'nf-fa-file_image_o'
-            'svg'                   = 'nf-mdi-svg'
+            '.svg'                  = 'nf-mdi-svg'
 
             # Video
             '.webm'                 = 'nf-fa-file_video_o'
