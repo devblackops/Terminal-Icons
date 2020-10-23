@@ -27,12 +27,14 @@ function Format-TerminalIcons {
     [OutputType([System.String])]
     [cmdletbinding()]
     param(
-        [parameter(Mandatory, ValueFromPipeline=$true)]
+        [parameter(Mandatory, ValueFromPipeline)]
         [System.IO.FileSystemInfo]$FileInfo
     )
 
-    $escape      = [char]27
-    $colorReset  = "${escape}[0m"
-    $displayInfo = Resolve-Icon $FileInfo
-    "$($displayInfo.Color)$($displayInfo.Icon)  $($FileInfo.Name)$colorReset"
+    process {
+        $escape      = [char]27
+        $colorReset  = "${escape}[0m"
+        $displayInfo = Resolve-Icon $FileInfo
+        "$($displayInfo.Color)$($displayInfo.Icon)  $($FileInfo.Name)$colorReset"
+    }
 }

@@ -1,4 +1,5 @@
 function ConvertFrom-Psd1 {
+    [OutputType([System.Collections.Hashtable])]
     [cmdletBinding()]
     param (
         [parameter(Mandatory, ValueFromPipeline)]
@@ -6,5 +7,7 @@ function ConvertFrom-Psd1 {
         [hashtable]$Data
     )
 
-    return $Data
+    process {
+        return $Data
+    }
 }

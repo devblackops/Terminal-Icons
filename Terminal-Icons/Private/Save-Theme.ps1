@@ -5,6 +5,8 @@ function Save-Theme {
         [hashtable]$Theme
     )
 
-    $themePath = Get-ThemeStoragePath
-    $themeData | Export-CliXml -Path $themePath -Force
+    process {
+        $themePath = Get-ThemeStoragePath
+        $Theme | Export-CliXml -Path $themePath -Force
+    }
 }

@@ -30,5 +30,7 @@ function Set-TerminalIconsIconTheme {
         [string]$Name
     )
 
-    Set-Theme -Name $Name -Type Icon
+    process {
+        Set-Theme -Name $Name -Type Icon
+    }
 }

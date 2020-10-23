@@ -30,5 +30,7 @@ function Set-TerminalIconsColorTheme {
         [string]$Name
     )
 
-    Set-Theme -Name $Name -Type Color
+    process {
+        Set-Theme -Name $Name -Type Color
+    }
 }
