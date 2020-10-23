@@ -5,6 +5,7 @@ properties {
     $PSBPreference.Build.CompileModule = $false
     $PSBPreference.Build.CompileModule = $false
     $PSBPreference.Test.OutputFile     = "$($PSBPreference.Build.OutDir)/testResults.xml"
+    $PSBPreference.Help.DefaultLocale  = 'en-US'
 }
 
 task default -depends Test
