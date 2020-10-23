@@ -66,7 +66,7 @@ function Add-Theme {
 
                         $colorData = ConvertFrom-Psd1 $item.FullName
                         $themeData.Themes.$Type[$item.Basename] = $colorData
-                        $themeData | Export-Configuration
+                        Save-Theme -Theme $themeData
                     } else {
                         Write-Error "$Type theme [$($item.BaseName)] already exists. Use the -Force switch to overwrite."
                     }

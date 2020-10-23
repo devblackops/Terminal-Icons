@@ -1,6 +1,6 @@
 @{
     RootModule        = 'Terminal-Icons.psm1'
-    ModuleVersion     = '0.1.1'
+    ModuleVersion     = '0.2.0'
     GUID              = '4419ddb6-3528-47cd-baf3-7fb9d8566620'
     Author            = 'Brandon Olin'
     CompanyName       = 'Community'
@@ -9,7 +9,7 @@
     PowerShellVersion = '4.0'
     # PowerShellHostName = ''
     # PowerShellHostVersion = ''
-    RequiredModules = @('Configuration')
+    RequiredModules = @()
     FunctionsToExport = @(
         'Add-TerminalIconsColorTheme'
         'Add-TerminalIconsIconTheme'

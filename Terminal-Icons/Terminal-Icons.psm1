@@ -84,7 +84,10 @@ $iconThemes = @{}
 $defaultTheme = 'devblackops'
 
 # Import local theme data
-$themeData = Import-Configuration
+$themePath = Get-ThemeStoragePath
+if (Test-Path $themePath) {
+    $themeData = Import-CliXml -Path $themePath
+}
 if (-not $themeData) {
     # We have no theme data saved (first time use?)
     # Create one and save it
@@ -126,7 +129,7 @@ if (-not $themeData) {
 #     Icon  = $themeData.Themes.Icon[$themeData.CurrentIconTheme]
 # }
 
-$themeData | Export-Configuration
+$themeData | Export-Clixml -Path $themePath -Force
 
 # # Import current themes
 # $currentTheme = Import-Configuration

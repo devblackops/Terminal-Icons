@@ -14,6 +14,6 @@ function Set-Theme {
         Write-Error "$Type theme [$Name] not found."
     } else {
         $themeData."Current$($Type)Theme" = $Name
-        $themeData | Export-Configuration
+        Save-Theme -Theme $themeData
     }
 }
