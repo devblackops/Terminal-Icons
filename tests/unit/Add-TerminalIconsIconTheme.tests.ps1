@@ -5,7 +5,7 @@ InModuleScope 'Terminal-Icons' {
 
             BeforeAll {
                 $tmpDir    = [IO.Path]::GetTempPath()
-                $themePath = [IO.Path]::Combine($tmpDir, 'MyAwesomeTheme.psd1')
+                $themePath = [IO.Path]::Combine($tmpDir, 'MyAwesomeTheme.xml')
                 $script:goodTheme = New-Item -Path $themePath -Force
             }
 
@@ -13,7 +13,7 @@ InModuleScope 'Terminal-Icons' {
                 $goodTheme | Remove-Item
             }
 
-            Mock Export-Configuration {}
+            Mock Export-CliXml {}
 
             $themeContent = @'
 @{
