@@ -8,7 +8,7 @@ InModuleScope 'Terminal-Icons' {
 
             BeforeAll {
                 $tmpDir    = [IO.Path]::GetTempPath()
-                $themePath = [IO.Path]::Combine($tmpDir, 'MyAwesomeTheme.xml')
+                $themePath = [IO.Path]::Combine($tmpDir, 'MyAwesomeTheme.psd1')
                 $script:goodTheme = New-Item -Path $themePath -Force
             }
 
