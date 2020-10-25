@@ -1,9 +1,9 @@
 function Resolve-Icon {
-    [OutputType([System.Collections.Hashtable])]
-    [cmdletbinding()]
+    [OutputType([hashtable])]
+    [CmdletBinding()]
     param(
-        [parameter(ValueFromPipeline)]
-        [System.IO.FileSystemInfo]$FileInfo
+        [Parameter(ValueFromPipeline)]
+        [IO.FileSystemInfo]$FileInfo
     )
 
     process {
@@ -20,12 +20,9 @@ function Resolve-Icon {
 
             # Determine directory color
             $color = $script:colorSequences[$themeData.CurrentColorTheme].Types.Directories.WellKnown[$FileInfo.Name]
-            #$color = $themeData.Themes.Color[$themeData.CurrentColorTheme].Types.Directories.WellKnown[$FileInfo.Name]
             if (-not $color) {
-                #$color = $themeData.Themes.Color[$themeData.CurrentColorTheme].Types.Directories[$FileInfo.Name]
                 $color = $script:colorSequences[$themeData.CurrentColorTheme].Types.Directories[$FileInfo.Name]
                 if (-not $color) {
-                    #$color = $themeData.Themes.Color[$themeData.CurrentColorTheme].Types.Directories['']
                     $color = $script:colorSequences[$themeData.CurrentColorTheme].Types.Directories['']
                 }
             }
@@ -42,13 +39,10 @@ function Resolve-Icon {
 
             # Determine file color
             $themeData.Themes.Color[$themeData.CurrentColorTheme]
-            #$color = $themeData.Themes.Color[$themeData.CurrentColorTheme].Types.Files.WellKnown[$FileInfo.Name]
             $color = $script:colorSequences[$themeData.CurrentColorTheme].Types.Files.WellKnown[$FileInfo.Name]
             if (-not $color) {
-                #$color = $themeData.Themes.Color[$themeData.CurrentColorTheme].Types.Files[$FileInfo.Extension]
                 $color = $script:colorSequences[$themeData.CurrentColorTheme].Types.Files[$FileInfo.Extension]
                 if (-not $color) {
-                    #$color = $themeData.Themes.Color[$themeData.CurrentColorTheme].Types.Files['']
                     $color = $script:colorSequences[$themeData.CurrentColorTheme].Types.Files['']
                 }
             }

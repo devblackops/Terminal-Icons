@@ -1,8 +1,8 @@
 function ConvertFrom-Psd1 {
-    [OutputType([System.Collections.Hashtable])]
-    [cmdletBinding()]
+    [OutputType([hashtable])]
+    [CmdletBinding()]
     param (
-        [parameter(Mandatory, ValueFromPipeline)]
+        [Parameter(Mandatory, ValueFromPipeline)]
         [Microsoft.PowerShell.DesiredStateConfiguration.ArgumentToConfigurationDataTransformation()]
         [hashtable]$Data
     )

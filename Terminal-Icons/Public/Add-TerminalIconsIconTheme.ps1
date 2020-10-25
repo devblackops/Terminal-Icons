@@ -33,9 +33,9 @@ function Add-TerminalIconsIconTheme {
         Add-TerminalIconsColorTheme
     #>
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSShouldProcess', '', Justification='Implemented in private function')]
-    [cmdletbinding(DefaultParameterSetName = 'Path', SupportsShouldProcess)]
+    [CmdletBinding(DefaultParameterSetName = 'Path', SupportsShouldProcess)]
     param(
-        [parameter(
+        [Parameter(
             Mandatory,
             ParameterSetName  = 'Path',
             Position = 0,
@@ -46,7 +46,7 @@ function Add-TerminalIconsIconTheme {
         [SupportsWildcards()]
         [string[]]$Path,
 
-        [parameter(
+        [Parameter(
             Mandatory,
             ParameterSetName = 'LiteralPath',
             Position = 0,

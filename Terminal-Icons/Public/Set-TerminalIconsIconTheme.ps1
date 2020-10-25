@@ -24,9 +24,9 @@ function Set-TerminalIconsIconTheme {
         Get-TerminalIconsIconTheme
     #>
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseShouldProcessForStateChangingFunctions', '')]
-    [cmdletbinding()]
+    [CmdletBinding()]
     param(
-        [parameter(Mandatory, ValueFromPipeline, ValueFromPipelineByPropertyName)]
+        [Parameter(Mandatory, ValueFromPipeline, ValueFromPipelineByPropertyName)]
         [string]$Name
     )
 

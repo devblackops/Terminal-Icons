@@ -1,7 +1,7 @@
 function Add-Theme {
     [cmdletbinding(DefaultParameterSetName = 'Path', SupportsShouldProcess)]
     param(
-        [parameter(
+        [Parameter(
             Mandatory,
             ParameterSetName  = 'Path',
             Position = 0,
@@ -12,7 +12,7 @@ function Add-Theme {
         [SupportsWildcards()]
         [string[]]$Path,
 
-        [parameter(
+        [Parameter(
             Mandatory,
             ParameterSetName = 'LiteralPath',
             Position = 0,
@@ -25,7 +25,7 @@ function Add-Theme {
         [switch]$Force,
 
         [ValidateSet('Color', 'Icon')]
-        [parameter(mandatory)]
+        [Parameter(Mandatory)]
         [string]$Type
     )
 

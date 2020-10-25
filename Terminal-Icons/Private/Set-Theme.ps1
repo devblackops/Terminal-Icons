@@ -1,12 +1,12 @@
 function Set-Theme {
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseShouldProcessForStateChangingFunctions', '')]
-    [cmdletbinding()]
+    [CmdletBinding()]
     param(
-        [parameter(mandatory)]
+        [Parameter(Mandatory)]
         [string]$Name,
 
         [ValidateSet('Color', 'Icon')]
-        [parameter(Mandatory)]
+        [Parameter(Mandatory)]
         [string]$Type
     )
 

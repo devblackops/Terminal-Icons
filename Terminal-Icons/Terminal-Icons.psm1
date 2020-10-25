@@ -51,27 +51,6 @@ $script:colorSequences = @{}
         $script:colorSequences[$colorData.Name].Types.Files[$_.Name] = ConvertFrom-RGBColor -RGB $_.Value
     })
 
-    # # Directories
-    # $script:colorData.Types.Directories.WellKnown.GetEnumerator().ForEach({
-    #     $directoryName = $_.Name
-    #     $colorSequence = ConvertFrom-RGBColor -RGB $_.Value
-    #     $colorTheme.Types.Directories[$directoryName] = $colorSequence
-    # })
-
-    # # Wellknown files
-    # $script:colorData.Types.Files.WellKnown.GetEnumerator().ForEach({
-    #     $fileName      = $_.Name
-    #     $colorSequence = ConvertFrom-RGBColor -RGB $_.Value
-    #     $colorTheme.Types.Files.WellKnown[$fileName] = $colorSequence
-    # })
-
-    # # File extensions
-    # $script:colorData.Types.Files.GetEnumerator().Where({$_.Name -ne 'WellKnown'}).ForEach({
-    #     $extension     = $_.Name
-    #     $colorSequence = ConvertFrom-RGBColor -RGB $_.Value
-    #     $colorTheme.Types.Files[$extension] = $colorSequence
-    # })
-
     $colorThemes.Add($colorData.Name, $colorData)
     $colorThemes[$colorData.Name].Types.Directories[''] = $colorReset
     $colorThemes[$colorData.Name].Types.Files['']       = $colorReset
@@ -124,23 +103,7 @@ if (-not $themeData) {
     })
 }
 
-# $currentTheme = @{
-#     Color = $themeData.Themes.Color[$themeData.CurrentColorTheme]
-#     Icon  = $themeData.Themes.Icon[$themeData.CurrentIconTheme]
-# }
-
 $themeData | Export-Clixml -Path $themePath -Force
-
-# # Import current themes
-# $currentTheme = Import-Configuration
-# if ($currentTheme.Keys.Count -eq 0) {
-#     Write-Warning 'No Terminal-Icons theme set. Using default [Jaykul]...'
-#     $currentTheme = @{
-#         Color = $colorThemes.Jaykul
-#         Icon  = $iconThemes.Jaykul
-#     }
-# }
-# $currentTheme | Export-Configuration
 
 Export-ModuleMember -Function $public.Basename
 

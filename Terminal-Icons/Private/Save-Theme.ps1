@@ -1,7 +1,7 @@
 function Save-Theme {
-    [cmdletbinding()]
+    [CmdletBinding()]
     param(
-        [parameter(mandatory, ValueFromPipeline)]
+        [Parameter(Mandatory, ValueFromPipeline)]
         [hashtable]$Theme
     )
 

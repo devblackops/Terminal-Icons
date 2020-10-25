@@ -1,8 +1,8 @@
 function ConvertFrom-RGBColor {
-    [OutputType([System.String])]
-    [cmdletbinding()]
+    [OutputType([string])]
+    [CmdletBinding()]
     param(
-        [parameter(Mandatory, ValueFromPipeline)]
+        [Parameter(Mandatory, ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
         [string]$RGB
     )

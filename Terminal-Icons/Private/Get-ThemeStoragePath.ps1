@@ -1,5 +1,5 @@
 function Get-ThemeStoragePath {
-    [cmdletbinding()]
+    [CmdletBinding()]
     param()
 
     if ($IsLinux -or $IsMacOs) {

@@ -24,11 +24,11 @@ function Format-TerminalIcons {
 
         Outputs a colorized string with an icon prepended.
     #>
-    [OutputType([System.String])]
-    [cmdletbinding()]
+    [OutputType([string])]
+    [CmdletBinding()]
     param(
-        [parameter(Mandatory, ValueFromPipeline)]
-        [System.IO.FileSystemInfo]$FileInfo
+        [Parameter(Mandatory, ValueFromPipeline)]
+        [IO.FileSystemInfo]$FileInfo
     )
 
     process {

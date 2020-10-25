@@ -24,7 +24,7 @@ function Show-TerminalIconsTheme {
     .LINK
         Get-TerminalIconsTheme
     #>
-    [cmdletbinding()]
+    [CmdletBinding()]
     param()
 
     $directories = @(
