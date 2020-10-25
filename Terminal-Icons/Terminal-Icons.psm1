@@ -64,6 +64,11 @@ $defaultTheme = 'devblackops'
 
 # Import local theme data
 $themePath = Get-ThemeStoragePath
+$themeBasePath = Split-Path $themePath
+if (-not (Test-Path $themeBasePath)) {
+    New-Item -Path $themeBasePath -ItemType Directory -Force
+}
+
 if (Test-Path $themePath) {
     $themeData = Import-CliXml -Path $themePath
 }
