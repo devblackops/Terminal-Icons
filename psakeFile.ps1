@@ -22,6 +22,6 @@ task InstallAct {
     }
 }
 
-task TestGHAction -depends InstallAct {
+task TestGHAction -depends Build, InstallAct  {
     act -j test -P ubuntu-latest=nektos/act-environments-ubuntu:18.04
 }
