@@ -1,12 +1,13 @@
 properties {
-    $PSBPreference.Build.CompileModule = $false
-    $PSBPreference.Test.OutputFile     = "$($PSBPreference.Build.OutDir)/testResults.xml"
-    $PSBPreference.Help.DefaultLocale  = 'en-US'
+    $PSBPreference.Build.CompileModule   = $false
+    $PSBPreference.Build.CopyDirectories = @('Data')
+    $PSBPreference.Test.ImportModule     = $true
+    $PSBPreference.Test.OutputFile       = "$($PSBPreference.Build.OutDir)/testResults.xml"
 }
 
 task default -depends Test
 
-task Pester -FromModule PowerShellBuild -Version '0.4.0' -preaction {$script:modPath = $PSBPreference.General.ModuleManifestPath; Import-Module $script:modPath}
+task Pester -FromModule PowerShellBuild -Version '0.5.0' -preaction {Remove-Module Terminal-Icons -ErrorAction SilentlyContinue}
 
 task InstallAct {
     if (-not (Get-Command -Name act -CommandType Application -ErrorAction SilentlyContinue)) {
