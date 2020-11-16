@@ -1,21 +1,14 @@
 InModuleScope 'Terminal-Icons' {
-    describe 'Add-TerminalIconsIconTheme' {
+    Describe 'Add-TerminalIconsIconTheme' {
 
-        context 'Themes' {
+        Context 'Themes' {
 
             BeforeAll {
                 $tmpDir    = [IO.Path]::GetTempPath()
                 $themePath = [IO.Path]::Combine($tmpDir, 'MyAwesomeTheme.psd1')
                 $script:goodTheme = New-Item -Path $themePath -Force
-            }
 
-            AfterAll {
-                $goodTheme | Remove-Item
-            }
-
-            Mock Export-CliXml {}
-
-            $themeContent = @'
+                $themeContent = @'
 @{
     Name  = 'MyAwesomeTheme'
     Types = @{
@@ -32,6 +25,15 @@ InModuleScope 'Terminal-Icons' {
 '@
             $themeContent  | Out-File $goodTheme -Encoding utf8
             $goodThemeName = $goodTheme.BaseName
+            }
+
+            AfterAll {
+                $goodTheme | Remove-Item
+            }
+
+            Mock Export-CliXml {}
+
+
 
             it 'Good theme should be added' {
                 Add-TerminalIconsIconTheme -Path $goodTheme.FullName -Force

@@ -1,16 +1,18 @@
-Set-StrictMode -Version latest
-
-# Make sure MetaFixers.psm1 is loaded - it contains Get-TextFilesList
-Import-Module -Name (Join-Path -Path $PSScriptRoot -ChildPath 'MetaFixers.psm1') -Verbose:$false -Force
-
-$projectRoot = $ENV:BHProjectPath
-if(-not $projectRoot) {
-    $projectRoot = $PSScriptRoot
-}
-
 Describe 'Text files formatting' {
 
-    $allTextFiles = Get-TextFilesList $projectRoot
+    BeforeAll {
+        Set-StrictMode -Version latest
+
+        # Make sure MetaFixers.psm1 is loaded - it contains Get-TextFilesList
+        Import-Module -Name ([IO.Path]::Combine($PSScriptRoot, 'MetaFixers.psm1')) -Verbose:$false -Force
+
+        $projectRoot = $ENV:BHProjectPath
+        if(-not $projectRoot) {
+            $projectRoot = $PSScriptRoot
+        }
+
+        $allTextFiles = Get-TextFilesList $projectRoot
+    }
 
     Context 'Files encoding' {
         It "Doesn't use Unicode encoding" {

@@ -1,8 +1,8 @@
 InModuleScope 'Terminal-Icons' {
 
-    describe 'Add-TerminalIconsColorTheme' {
+    Describe 'Add-TerminalIconsColorTheme' {
 
-        context 'Themes' {
+        Context 'Themes' {
 
             Mock Export-CliXml {}
 
@@ -10,13 +10,8 @@ InModuleScope 'Terminal-Icons' {
                 $tmpDir    = [IO.Path]::GetTempPath()
                 $themePath = [IO.Path]::Combine($tmpDir, 'MyAwesomeTheme.psd1')
                 $script:goodTheme = New-Item -Path $themePath -Force
-            }
 
-            AfterAll {
-                $goodTheme | Remove-Item
-            }
-
-            $themeContent = @'
+                $themeContent = @'
 @{
     Name  = 'MyAwesomeTheme'
     Types = @{
@@ -33,6 +28,11 @@ InModuleScope 'Terminal-Icons' {
 '@
             $themeContent  | Out-File $goodTheme -Encoding utf8
             $goodThemeName = $goodTheme.BaseName
+            }
+
+            AfterAll {
+                $goodTheme | Remove-Item
+            }
 
             it 'Good theme should be added' {
                 Add-TerminalIconsColorTheme -Path $goodTheme.FullName -Force
