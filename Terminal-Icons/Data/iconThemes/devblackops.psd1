@@ -165,6 +165,12 @@
             '.esx'                  = 'nf-dev-javascript'
             '.mjs'                  = 'nf-dev-javascript'
 
+            # Java
+            '.java'                 = 'nf-dev-java'
+
+            # Python
+            '.py'                   = 'nf-dev-python'
+
             # React
             '.jsx'                  = 'nf-dev-react'
             '.tsx'                  = 'nf-dev-react'

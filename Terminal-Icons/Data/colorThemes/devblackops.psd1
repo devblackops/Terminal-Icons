@@ -162,6 +162,12 @@
             '.esx'                  = 'F0E68C'
             '.mjs'                  = 'F0E68C'
 
+            # Java
+            '.java'                 = 'F89820'
+
+            # Python
+            '.py'                   = '4B8BBE'
+
             # React
             '.jsx'                  = '20B2AA'
             '.tsx'                  = '20B2AA'
