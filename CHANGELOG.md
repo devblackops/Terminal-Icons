@@ -5,7 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [0.2.1] Unreleased
+## [0.2.2] 2020-01-10
+
+### Added
+
+- New icons and colors for Terraform files (via [@TravisTX](https://github.com/TravisTX))
+
+## [0.2.1] 2020-11-30
 
 ### Added
 
