@@ -478,6 +478,14 @@
             '.sublime-workspace'    = 'nf-dev-sublime'
 
             '.lock'                 = 'nf-fa-lock'
+
+            # Terraform
+            '.tf'                   = 'nf-dev-code_badge'
+            '.tfvars'               = 'nf-dev-code_badge'
+            '.tf.json'              = 'nf-dev-code_badge'
+            '.tfvars.json'          = 'nf-dev-code_badge'
+            '.auto.tfvars'          = 'nf-dev-code_badge'
+            '.auto.tfvars.json'     = 'nf-dev-code_badge'
         }
     }
 }

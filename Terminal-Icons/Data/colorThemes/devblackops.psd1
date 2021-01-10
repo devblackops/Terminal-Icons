@@ -479,6 +479,8 @@
 
             # Terraform
             '.tf'                   = '948EEC'
+            '.tfvars'               = '948EEC'
+            '.auto.tfvars'          = '948EEC'
         }
     }
 }
