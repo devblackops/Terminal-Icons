@@ -3,7 +3,7 @@
 A PowerShell module to show file and folder icons in the terminal.
 
 | GitHub Actions | PSGallery | License |
-|-----------------|----------------|-----------|---------|
+|----------------|-----------|---------|
 [![GitHub Actions Status][github-actions-badge]][github-actions-build] | [![PowerShell Gallery][psgallery-badge]][psgallery] | [![License][license-badge]][license]
 
 <p align="center">
