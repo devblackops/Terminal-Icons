@@ -128,6 +128,9 @@
                 'authors'                       = 'nf-oct-person'
                 'authors.md'                    = 'nf-oct-person'
                 'authors.txt'                   = 'nf-oct-person'
+
+                # Terraform
+                '.terraform.lock.hcl'           = 'nf-fa-lock'
             }
 
             # Archive files

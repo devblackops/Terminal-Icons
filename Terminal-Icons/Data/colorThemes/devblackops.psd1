@@ -34,6 +34,7 @@
                 '.github'      = 'C0C0C0'
                 'github'       = 'C0C0C0'
                 'node_modules' = '6B8E23'
+                '.terraform'   = '948EEC'
             }
         }
         Files       = @{
@@ -126,6 +127,9 @@
                 'authors'                       = 'FF6347'
                 'authors.md'                    = 'FF6347'
                 'authors.txt'                   = 'FF6347'
+
+                # Terraform
+                '.terraform.lock.hcl'           = '948EEC'
             }
             # Archive files
             '.7z'                   = 'DAA520'
@@ -472,6 +476,9 @@
             '.sublime-workspace'    = 'F4A460'
 
             '.lock'                 = 'DAA520'
+
+            # Terraform
+            '.tf'                   = '948EEC'
         }
     }
 }
