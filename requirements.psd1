@@ -6,8 +6,8 @@
         Version = '2.0.15'
     }
     Pester = @{
-        Version = '5.0.4'
         Parameters = @{
+            MinimumVersion = '5.0.0'
             SkipPublisherCheck = $true
         }
     }
