@@ -6,51 +6,65 @@ function Resolve-Icon {
         [IO.FileSystemInfo]$FileInfo
     )
 
+    begin {
+        $icons  = $script:themeData.Themes.Icon[$themeData.CurrentIconTheme]
+        $colors = $script:colorSequences[$themeData.CurrentColorTheme]
+    }
+
     process {
+        $displayInfo = @{
+            Icon     = $null
+            Color    = $null
+            Target   = ''
+        }
+
         if ($FileInfo.PSIsContainer) {
-            # Determine directory icon
-            $iconName  = $themeData.Themes.Icon[$themeData.CurrentIconTheme].Types.Directories.WellKnown[$FileInfo.Name]
-            if (-not $iconName) {
-                $iconName =  $themeData.Themes.Icon[$themeData.CurrentIconTheme].Types.Directories[$FileInfo.Name]
-                if (-not $iconName) {
-                    $iconName =  $themeData.Themes.Icon[$themeData.CurrentIconTheme].Types.Directories['']
-                }
-            }
-            $icon = $glyphs[$iconName]
-
-            # Determine directory color
-            $color = $script:colorSequences[$themeData.CurrentColorTheme].Types.Directories.WellKnown[$FileInfo.Name]
-            if (-not $color) {
-                $color = $script:colorSequences[$themeData.CurrentColorTheme].Types.Directories[$FileInfo.Name]
-                if (-not $color) {
-                    $color = $script:colorSequences[$themeData.CurrentColorTheme].Types.Directories['']
-                }
-            }
+            $type = 'Directories'
         } else {
-            # Determine file icon
-            $iconName = $themeData.Themes.Icon[$themeData.CurrentIconTheme].Types.Files.WellKnown[$FileInfo.Name]
-            if (-not $iconName) {
-                $iconName = $themeData.Themes.Icon[$themeData.CurrentIconTheme].Types.Files[$FileInfo.Extension]
+            $type = 'Files'
+        }
+
+        switch ($FileInfo.LinkType) {
+            # Determine symlink or junction icon and color
+            'Junction' {
+                $iconName = $icons.Types.($type)['junction']
+                $colorSeq = $colors.Types.($type)['junction']
+                $displayInfo['Target'] = ' -> ' + $FileInfo.Target
+                break
+            }
+            'SymbolicLink' {
+                $iconName = $icons.Types.($type)['symlink']
+                $colorSeq = $colors.Types.($type)['symlink']
+                $displayInfo['Target'] = ' -> ' + $FileInfo.Target
+                break
+            } default {
+                # Determine normal directory icon and color
+                $iconName = $icons.Types.$type.WellKnown[$FileInfo.Name]
                 if (-not $iconName) {
-                    $iconName = $themeData.Themes.Icon[$themeData.CurrentIconTheme].Types.Files['']
+                    if ($FileInfo.PSIsContainer) {
+                        $iconName = $icons.Types.$type[$FileInfo.Name]
+                    } else {
+                        $iconName = $icons.Types.$type[$FileInfo.Extension]
+                    }
+                    if (-not $iconName) {
+                        $iconName = $icons.Types.$type['']
+                    }
                 }
-            }
-            $icon = $glyphs[$iconName]
-
-            # Determine file color
-            $themeData.Themes.Color[$themeData.CurrentColorTheme]
-            $color = $script:colorSequences[$themeData.CurrentColorTheme].Types.Files.WellKnown[$FileInfo.Name]
-            if (-not $color) {
-                $color = $script:colorSequences[$themeData.CurrentColorTheme].Types.Files[$FileInfo.Extension]
-                if (-not $color) {
-                    $color = $script:colorSequences[$themeData.CurrentColorTheme].Types.Files['']
+                $colorSeq = $colors.Types.$type.WellKnown[$FileInfo.Name]
+                if (-not $colorSeq) {
+                    if ($FileInfo.PSIsContainer) {
+                        $colorSeq = $colors.Types.$type[$FileInfo.Name]
+                    } else {
+                        $colorSeq = $colors.Types.$type[$FileInfo.Extension]
+                    }
+                    if (-not $colorSeq) {
+                        $colorSeq = $colors.Types.$type['']
+                    }
                 }
             }
         }
-
-        @{
-            Icon  = $icon
-            Color = $color
-        }
+        $displayInfo['Icon']  = $glyphs[$iconName]
+        $displayInfo['Color'] = $colorSeq
+        $displayInfo
     }
 }

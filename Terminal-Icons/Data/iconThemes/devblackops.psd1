@@ -4,6 +4,8 @@
         Directories = @{
             # Default directory icon
             ''        = 'nf-oct-file_directory'
+            symlink   = 'nf-oct-file_symlink_directory'
+            junction  = 'nf-fa-external_link'
             WellKnown = @{
                 docs           = 'nf-oct-repo'
                 documents      = 'nf-oct-repo'
@@ -41,7 +43,9 @@
 
         Files       = @{
             # Default file icon
-            ''                      = 'nf-fa-file'
+            ''        = 'nf-fa-file'
+            symlink   = 'nf-oct-file_symlink_file'
+            junction  = 'nf-fa-external_link'
             WellKnown               = @{
                 '.gitattributes'                = 'nf-dev-git'
                 '.gitignore'                    = 'nf-dev-git'

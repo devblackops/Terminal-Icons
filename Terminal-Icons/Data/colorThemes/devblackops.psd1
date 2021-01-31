@@ -2,6 +2,8 @@
     Name  = 'devblackops'
     Types = @{
         Directories = @{
+            symlink  = '7373ff'
+            junction = '7373ff'
             WellKnown = @{
                 docs           = '00BFFF'
                 documents      = '00BFFF'
@@ -37,7 +39,9 @@
                 '.terraform'   = '948EEC'
             }
         }
-        Files       = @{
+        Files = @{
+            symlink  = '7373ff'
+            junction = '7373ff'
             WellKnown = @{
                 '.gitattributes'                = 'FF4500'
                 '.gitignore'                    = 'FF4500'
