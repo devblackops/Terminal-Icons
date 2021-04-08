@@ -38,6 +38,10 @@
                 '.github'      = 'nf-custom-folder_github'
                 'github'       = 'nf-fa-github_alt'
                 'node_modules' = 'nf-custom-folder_npm'
+                '.azure'       = 'nf-mdi-azure'
+                '.aws'         = 'nf-dev-aws'
+                '.kube'        = 'nf-mdi-ship_wheel'
+                '.docker'      = 'nf-dev-docker'
             }
         }
 
