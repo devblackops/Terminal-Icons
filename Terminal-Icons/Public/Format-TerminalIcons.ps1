@@ -32,9 +32,7 @@ function Format-TerminalIcons {
     )
 
     process {
-        $escape      = [char]27
-        $colorReset  = "${escape}[0m"
         $displayInfo = Resolve-Icon $FileInfo
-        "$($displayInfo.Color)$($displayInfo.Icon)  $($FileInfo.Name)$colorReset"
+        "$($displayInfo.Color)$($displayInfo.Icon)  $($FileInfo.Name)$($displayInfo.Target)$($script:colorReset)"
     }
 }

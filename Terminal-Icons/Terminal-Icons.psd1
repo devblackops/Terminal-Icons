@@ -1,6 +1,6 @@
 @{
     RootModule        = 'Terminal-Icons.psm1'
-    ModuleVersion     = '0.2.2'
+    ModuleVersion     = '0.3.0'
     GUID              = '4419ddb6-3528-47cd-baf3-7fb9d8566620'
     Author            = 'Brandon Olin'
     CompanyName       = 'Community'

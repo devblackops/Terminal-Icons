@@ -25,24 +25,32 @@ $script:colorSequences = @{}
 
     # Import the color theme and convert to escape sequences
     $colorData = ConvertFrom-Psd1 $_.FullName
-    $script:colorSequences[$_.Basename] = @{
+    $colorSequences[$_.Basename] = @{
         Name = $colorData.Name
         Types = @{
             Directories = @{
                 #''        = "`e[0m"
+                symlink  = ''
+                junction = ''
                 WellKnown = @{}
             }
             Files = @{
                 #''        = "`e[0m"
+                symlink  = ''
+                junction = ''
                 WellKnown = @{}
             }
         }
     }
     # Directories
+    $script:colorSequences[$colorData.Name].Types.Directories['symlink']  = ConvertFrom-RGBColor -RGB $colorData.Types.Directories['symlink']
+    $script:colorSequences[$colorData.Name].Types.Directories['junction'] = ConvertFrom-RGBColor -RGB $colorData.Types.Directories['junction']
     $colorData.Types.Directories.WellKnown.GetEnumerator().ForEach({
         $script:colorSequences[$colorData.Name].Types.Directories[$_.Name] = ConvertFrom-RGBColor -RGB $_.Value
     })
     # Wellknown files
+    $script:colorSequences[$colorData.Name].Types.Files['symlink']  = ConvertFrom-RGBColor -RGB $colorData.Types.Files['symlink']
+    $script:colorSequences[$colorData.Name].Types.Files['junction'] = ConvertFrom-RGBColor -RGB $colorData.Types.Files['junction']
     $colorData.Types.Files.WellKnown.GetEnumerator().ForEach({
         $script:colorSequences[$colorData.Name].Types.Files.WellKnown[$_.Name] = ConvertFrom-RGBColor -RGB $_.Value
     })
