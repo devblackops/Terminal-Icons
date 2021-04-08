@@ -35,10 +35,14 @@
                 'github'       = 'C0C0C0'
                 'node_modules' = '6B8E23'
                 '.terraform'   = '948EEC'
+                '.azure'       = '00BFFF'
+                '.aws'         = 'EC912D'
+                '.kube'        = '326DE6'
+                '.docker'      = '2391E6'
             }
         }
         Files       = @{
-            WellKnown = @{
+            WellKnown               = @{
                 '.gitattributes'                = 'FF4500'
                 '.gitignore'                    = 'FF4500'
                 '.gitmodules'                   = 'FF4500'
