@@ -7,7 +7,7 @@
     }
     Pester = @{
         Parameters = @{
-            MinimumVersion = '5.0.0'
+            MinimumVersion = '5.1.1'
             SkipPublisherCheck = $true
         }
     }
