@@ -3,7 +3,7 @@
         Target = 'CurrentUser'
     }
     BuildHelpers = @{
-        Version = '2.0.15'
+        Version = '2.0.16'
     }
     Pester = @{
         Parameters = @{
@@ -11,12 +11,9 @@
             SkipPublisherCheck = $true
         }
     }
-    platyPS = '0.14.0'
+    platyPS = '0.14.1'
     PowerShellBuild = @{
-        RequiredVersion = '0.5.0-beta1'
-        Parameters = @{
-            AllowPrerelease = $true
-        }
+        RequiredVersion = '0.6.1'
     }
     psake = '4.9.0'
     PSScriptAnalyzer = '1.19.1'
