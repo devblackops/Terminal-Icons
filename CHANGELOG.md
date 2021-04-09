@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.3.1] Unreleased
+
+### Fixed
+
+- [**#PR26**](https://github.com/devblackops/Terminal-Icons/pull/26) Display file when no extension is present (via [@zanseb](https://github.com/zanseb))
+
 ## [0.3.0] 2021-04-08
 
 ### Added
