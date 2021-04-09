@@ -42,6 +42,7 @@
                 '.aws'         = 'nf-dev-aws'
                 '.kube'        = 'nf-mdi-ship_wheel'
                 '.docker'      = 'nf-dev-docker'
+                'umbraco'      = 'nf-mdi-umbraco'
             }
         }
 
