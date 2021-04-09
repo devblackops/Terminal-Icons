@@ -49,7 +49,7 @@ function Resolve-Icon {
                         # File probably has multiple extensions
                         # Fallback to computing the full extension
                         $firstDot = $FileInfo.Name.IndexOf('.')
-                        if ($firstDot) {
+                        if ($firstDot -ne -1) {
                             $fullExtension = $FileInfo.Name.Substring($firstDot)
                             $iconName = $icons.Types.$type[$fullExtension]
                         }
@@ -68,7 +68,7 @@ function Resolve-Icon {
                         # File probably has multiple extensions
                         # Fallback to computing the full extension
                         $firstDot = $FileInfo.Name.IndexOf('.')
-                        if ($firstDot) {
+                        if ($firstDot -ne -1) {
                             $fullExtension = $FileInfo.Name.Substring($firstDot)
                             $colorSeq = $colors.Types.$type[$fullExtension]
                         }
