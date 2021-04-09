@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Icon and color for symlinks and junctions are now shown, along with the target path.
 - [**#PR23**](https://github.com/devblackops/Terminal-Icons/pull/23) Add icons/colors for common folders `.aws`, `.Azure`, `.kube`, and `.docker` (via [@cdhunt](https://github.com/cdhunt))
 
+### Fixed
+
+- Colors/icons for files with more than one extension now have the theme applied.
+
 ## [0.2.2] 2020-01-10
 
 ### Added

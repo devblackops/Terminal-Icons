@@ -43,8 +43,16 @@ function Resolve-Icon {
                 if (-not $iconName) {
                     if ($FileInfo.PSIsContainer) {
                         $iconName = $icons.Types.$type[$FileInfo.Name]
-                    } else {
+                    } elseif ($icons.Types.$type.ContainsKey($FileInfo.Extension)) {
                         $iconName = $icons.Types.$type[$FileInfo.Extension]
+                    } else {
+                        # File probably has multiple extensions
+                        # Fallback to computing the full extension
+                        $firstDot = $FileInfo.Name.IndexOf('.')
+                        if ($firstDot) {
+                            $fullExtension = $FileInfo.Name.Substring($firstDot)
+                            $iconName = $icons.Types.$type[$fullExtension]
+                        }
                     }
                     if (-not $iconName) {
                         $iconName = $icons.Types.$type['']
@@ -54,8 +62,16 @@ function Resolve-Icon {
                 if (-not $colorSeq) {
                     if ($FileInfo.PSIsContainer) {
                         $colorSeq = $colors.Types.$type[$FileInfo.Name]
-                    } else {
+                    } elseif ($colors.Types.$type.ContainsKey($FileInfo.Extension)) {
                         $colorSeq = $colors.Types.$type[$FileInfo.Extension]
+                    } else {
+                        # File probably has multiple extensions
+                        # Fallback to computing the full extension
+                        $firstDot = $FileInfo.Name.IndexOf('.')
+                        if ($firstDot) {
+                            $fullExtension = $FileInfo.Name.Substring($firstDot)
+                            $colorSeq = $colors.Types.$type[$fullExtension]
+                        }
                     }
                     if (-not $colorSeq) {
                         $colorSeq = $colors.Types.$type['']
