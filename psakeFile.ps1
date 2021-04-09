@@ -1,5 +1,5 @@
 properties {
-    $PSBPreference.Build.CompileModule   = $false
+    $PSBPreference.Build.CompileModule   = $true
     $PSBPreference.Build.CopyDirectories = @('Data')
     $PSBPreference.Test.ImportModule     = $true
     $PSBPreference.Test.OutputFile       = "$($PSBPreference.Build.OutDir)/testResults.xml"
@@ -7,7 +7,7 @@ properties {
 
 task default -depends Test
 
-task Pester -FromModule PowerShellBuild -Version '0.5.0' -preaction {Remove-Module Terminal-Icons -ErrorAction SilentlyContinue}
+task Pester -FromModule PowerShellBuild -Version '0.6.1' -preaction {Remove-Module Terminal-Icons -ErrorAction SilentlyContinue}
 
 task InstallAct {
     if (-not (Get-Command -Name act -CommandType Application -ErrorAction SilentlyContinue)) {

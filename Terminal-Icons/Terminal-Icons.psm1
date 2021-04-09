@@ -1,15 +1,15 @@
 
-# Dot source public/private functions
-$public  = @(Get-ChildItem -Path ([IO.Path]::Combine($PSScriptRoot, 'Public/*.ps1'))  -Recurse -ErrorAction Stop)
-$private = @(Get-ChildItem -Path ([IO.Path]::Combine($PSScriptRoot, 'Private/*.ps1')) -Recurse -ErrorAction Stop)
-@($public + $private).ForEach({
-    try {
-        . $_.FullName
-    } catch {
-        throw $_
-        $PSCmdlet.ThrowTerminatingError("Unable to dot source [$($import.FullName)]")
-    }
-})
+# # Dot source public/private functions
+# $public  = @(Get-ChildItem -Path ([IO.Path]::Combine($PSScriptRoot, 'Public/*.ps1'))  -Recurse -ErrorAction Stop)
+# $private = @(Get-ChildItem -Path ([IO.Path]::Combine($PSScriptRoot, 'Private/*.ps1')) -Recurse -ErrorAction Stop)
+# @($public + $private).ForEach({
+#     try {
+#         . $_.FullName
+#     } catch {
+#         throw $_
+#         $PSCmdlet.ThrowTerminatingError("Unable to dot source [$($import.FullName)]")
+#     }
+# })
 
 $glyphs     = . $PSScriptRoot/Data/glyphs.ps1
 $escape     = [char]27
@@ -118,6 +118,6 @@ if (-not $themeData) {
 
 $themeData | Export-Clixml -Path $themePath -Force
 
-Export-ModuleMember -Function $public.Basename
+# Export-ModuleMember -Function $public.Basename
 
 Update-FormatData -Prepend ([IO.Path]::Combine($PSScriptRoot, 'Terminal-Icons.format.ps1xml'))
