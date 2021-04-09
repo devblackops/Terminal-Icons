@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.4.0] Unreleased
+
+### Added
+
+- [**#PR27**](https://github.com/devblackops/Terminal-Icons/pull/27) Add icon for Umbraco .NET CMS common folder (via [@warrenbuckley](https://github.com/warrenbuckley))
+
 ## [0.3.1] 2021-04-09
 
 ### Fixed
