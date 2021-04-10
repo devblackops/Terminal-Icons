@@ -45,11 +45,17 @@ function Add-Theme {
                 $confirmMsg = "Are you sure you want to add file [$resolvedPath]?"
                 $operation  = "Add $($Type.ToLower())"
                 if ($PSCmdlet.ShouldProcess($statusMsg, $confirmMsg, $operation) -or $Force.IsPresent) {
-                    if (-not $themeData.Themes.$Type.ContainsKey($item.BaseName) -or $Force.IsPresent) {
+                    if (-not $script:userThemeData.Themes.$Type.ContainsKey($item.BaseName) -or $Force.IsPresent) {
 
                         # Convert color theme into escape sequences for lookup later
                         if ($Type -eq 'Color') {
                             $colorData = ConvertFrom-Psd1 $item.FullName
+
+                            # Add empty color theme
+                            if (-not $script:colorSequences.ContainsKey($item.BaseName)) {
+                                $script:colorSequences[$item.BaseName] = New-EmptyColorTheme
+                            }
+
                             # Directories
                             $colorData.Types.Directories.WellKnown.GetEnumerator().ForEach({
                                 $script:colorSequences[$item.BaseName].Types.Directories[$_.Name] = ConvertFrom-RGBColor -RGB $_.Value
@@ -65,7 +71,7 @@ function Add-Theme {
                         }
 
                         $colorData = ConvertFrom-Psd1 $item.FullName
-                        $themeData.Themes.$Type[$item.Basename] = $colorData
+                        $script:userThemeData.Themes.$Type[$item.Basename] = $colorData
                         Save-Theme -Theme $themeData
                     } else {
                         Write-Error "$Type theme [$($item.BaseName)] already exists. Use the -Force switch to overwrite."
