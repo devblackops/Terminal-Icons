@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 - [**#PR27**](https://github.com/devblackops/Terminal-Icons/pull/27) Add icon for Umbraco .NET CMS common folder (via [@warrenbuckley](https://github.com/warrenbuckley))
+- [**#PR30**](https://github.com/devblackops/Terminal-Icons/pull/30) Add `.gitconfig` and `.vscode-insiders` icons/colors (via [@MJECloud](https://github.com/MJECloud))
 
 ## [0.3.1] 2021-04-09
 
