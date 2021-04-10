@@ -1,4 +1,5 @@
 function New-EmptyColorTheme {
+    [OutputType([hashtable])]
     [cmdletbinding()]
     param()
 
