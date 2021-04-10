@@ -24,7 +24,7 @@ function Get-TerminalIconsTheme {
 
     [pscustomobject]@{
         PSTypeName = 'TerminalIconsTheme'
-        Color      = [pscustomobject]$themeData.Themes.Color[$themeData.CurrentColorTheme]
-        Icon       = [pscustomobject]$themeData.Themes.Icon[$themeData.CurrentIconTheme]
+        Color      = [pscustomobject]$script:userThemeData.Themes.Color[$script:userThemeData.CurrentColorTheme]
+        Icon       = [pscustomobject]$script:userThemeData.Themes.Icon[$script:userThemeData.CurrentIconTheme]
     }
 }

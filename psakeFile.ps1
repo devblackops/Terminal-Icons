@@ -1,5 +1,5 @@
 properties {
-    $PSBPreference.Build.CompileModule   = $true
+    $PSBPreference.Build.CompileModule   = $false
     $PSBPreference.Build.CopyDirectories = @('Data')
     $PSBPreference.Test.ImportModule     = $true
     $PSBPreference.Test.OutputFile       = "$($PSBPreference.Build.OutDir)/testResults.xml"

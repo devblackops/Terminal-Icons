@@ -19,5 +19,5 @@ function Get-TerminalIconsIconTheme {
     .LINK
         Get-TerminalIconsTheme
     #>
-    $themeData.Themes.Icon
+    $script:userThemeData.Themes.Icon
 }

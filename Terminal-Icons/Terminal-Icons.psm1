@@ -1,57 +1,43 @@
 
-# # Dot source public/private functions
-# $public  = @(Get-ChildItem -Path ([IO.Path]::Combine($PSScriptRoot, 'Public/*.ps1'))  -Recurse -ErrorAction Stop)
-# $private = @(Get-ChildItem -Path ([IO.Path]::Combine($PSScriptRoot, 'Private/*.ps1')) -Recurse -ErrorAction Stop)
-# @($public + $private).ForEach({
-#     try {
-#         . $_.FullName
-#     } catch {
-#         throw $_
-#         $PSCmdlet.ThrowTerminatingError("Unable to dot source [$($import.FullName)]")
-#     }
-# })
+# Dot source public/private functions
+$public  = @(Get-ChildItem -Path ([IO.Path]::Combine($PSScriptRoot, 'Public/*.ps1'))  -Recurse -ErrorAction Stop)
+$private = @(Get-ChildItem -Path ([IO.Path]::Combine($PSScriptRoot, 'Private/*.ps1')) -Recurse -ErrorAction Stop)
+@($public + $private).ForEach({
+    try {
+        . $_.FullName
+    } catch {
+        throw $_
+        $PSCmdlet.ThrowTerminatingError("Unable to dot source [$($import.FullName)]")
+    }
+})
 
-$glyphs     = . $PSScriptRoot/Data/glyphs.ps1
-$escape     = [char]27
-$colorReset = "${escape}[0m"
+$glyphs                = . $PSScriptRoot/Data/glyphs.ps1
+$escape                = [char]27
+$colorReset            = "${escape}[0m"
+$defaultTheme          = 'devblackops'
 
-# Import module theme files
-$colorThemes = @{}
-
-# Converted color themes
+# Import builtin icon/color themes and convert colors to escape sequences
+$iconThemes            = @{}
+$script:colorThemes    = @{}
 $script:colorSequences = @{}
+Get-ChildItem -Path $PSScriptRoot/Data/iconThemes |
+    Import-IconTheme -IconThemes $script:iconThemes
+Get-ChildItem -Path $PSScriptRoot/Data/colorThemes -Filter '*.psd1' |
+    Import-ColorTheme -ColorThemes $colorThemes -ColorSequences $script:colorSequences
 
-(Get-ChildItem -Path $PSScriptRoot/Data/colorThemes -Filter '*.psd1').Foreach({
-
-    # Import the color theme and convert to escape sequences
-    $colorData = ConvertFrom-Psd1 $_.FullName
-    $script:colorSequences[$colorData.Name] = Convert-ColorSequence -ColorData $colorData
-
-    $colorThemes.Add($colorData.Name, $colorData)
-    $colorThemes[$colorData.Name].Types.Directories[''] = $colorReset
-    $colorThemes[$colorData.Name].Types.Files['']       = $colorReset
-})
-$iconThemes = @{}
-(Get-ChildItem -Path $PSScriptRoot/Data/iconThemes).Foreach({
-    $iconThemes.Add($_.Basename, (Import-PowerShellDataFile -Path $_.FullName))
-})
-
-$defaultTheme = 'devblackops'
-
-# Import local theme data
-$themePath = Get-ThemeStoragePath
-$themeBasePath = Split-Path $themePath
-if (-not (Test-Path $themeBasePath)) {
-    New-Item -Path $themeBasePath -ItemType Directory -Force
+# Import user theme data
+$userThemePath = Get-ThemeStoragePath
+$userThemeBasePath = Split-Path $userThemePath
+if (-not (Test-Path $userThemeBasePath)) {
+    New-Item -Path $userThemeBasePath -ItemType Directory -Force
 }
-
-if (Test-Path $themePath) {
-    $themeData = Import-CliXml -Path $themePath
+if (Test-Path $userThemePath) {
+    $script:userThemeData = Import-CliXml -Path $userThemePath
 }
-if (-not $themeData) {
+if (-not $script:userThemeData) {
     # We have no theme data saved (first time use?)
     # Create one and save it
-    $themeData = @{
+    $script:userThemeData = @{
         CurrentIconTheme  = $defaultTheme
         CurrentColorTheme = $defaultTheme
         Themes = @{
@@ -61,15 +47,15 @@ if (-not $themeData) {
     }
 } else {
     # Load or set default theme (if missing)
-    if ([string]::IsNullOrEmpty($themeData.CurrentColorTheme)) {
-        $themeData.CurrentColorTheme = $defaultTheme
+    if ([string]::IsNullOrEmpty($script:userThemeData.CurrentColorTheme)) {
+        $script:userThemeData.CurrentColorTheme = $defaultTheme
     }
-    if ([string]::IsNullOrEmpty($themeData.CurrentIconTheme)) {
-        $themeData.CurrentIconTheme = $defaultTheme
+    if ([string]::IsNullOrEmpty($script:userThemeData.CurrentIconTheme)) {
+        $script:userThemeData.CurrentIconTheme = $defaultTheme
     }
 
-    if ($null -eq $themeData.Themes -or $themeData.Themes.Count -eq 0) {
-        $themeData.Themes = @{
+    if ($null -eq $script:userThemeData.Themes -or $script:userThemeData.Themes.Count -eq 0) {
+        $script:userThemeData.Themes = @{
             Color = @{}
             Icon  = @{}
         }
@@ -77,15 +63,15 @@ if (-not $themeData) {
 
     # Update the builtin themes
     $colorThemes.GetEnumerator().ForEach({
-        $themeData.Themes.Color[$_.Name] = $_.Value
+        $script:userThemeData.Themes.Color[$_.Name] = $_.Value
     })
     $iconThemes.GetEnumerator().ForEach({
-        $themeData.Themes.Icon[$_.Name] = $_.Value
+        $script:userThemeData.Themes.Icon[$_.Name] = $_.Value
     })
 }
 
-$themeData | Export-Clixml -Path $themePath -Force
+$script:userThemeData | Export-Clixml -Path $userThemePath -Force
 
-# Export-ModuleMember -Function $public.Basename
+Export-ModuleMember -Function $public.Basename
 
 Update-FormatData -Prepend ([IO.Path]::Combine($PSScriptRoot, 'Terminal-Icons.format.ps1xml'))

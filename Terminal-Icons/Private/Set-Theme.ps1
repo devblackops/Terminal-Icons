@@ -10,7 +10,7 @@ function Set-Theme {
         [string]$Type
     )
 
-    if (-not $themeData.Themes.$Type.ContainsKey($Name)) {
+    if (-not $script:userThemeData.Themes.$Type.ContainsKey($Name)) {
         Write-Error "$Type theme [$Name] not found."
     } else {
         $themeData."Current$($Type)Theme" = $Name

@@ -2,13 +2,17 @@ function Resolve-Icon {
     [OutputType([hashtable])]
     [CmdletBinding()]
     param(
-        [Parameter(ValueFromPipeline)]
-        [IO.FileSystemInfo]$FileInfo
+        [Parameter(Mandatory, ValueFromPipeline)]
+        [IO.FileSystemInfo]$FileInfo,
+
+        [string]$IconTheme = $script:userThemeData.CurrentIconTheme,
+
+        [string]$ColorTheme = $script:userThemeData.CurrentColorTheme
     )
 
     begin {
-        $icons  = $script:themeData.Themes.Icon[$themeData.CurrentIconTheme]
-        $colors = $script:colorSequences[$themeData.CurrentColorTheme]
+        $icons  = $script:userThemeData.Themes.Icon[$IconTheme]
+        $colors = $script:colorSequences[$ColorTheme]
     }
 
     process {

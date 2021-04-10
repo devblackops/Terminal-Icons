@@ -37,8 +37,8 @@ InModuleScope 'Terminal-Icons' {
 
             it 'Good theme should be added' {
                 Add-TerminalIconsIconTheme -Path $goodTheme.FullName -Force
-                $script:themeData.Themes.Icon[$goodThemeName]      | Should -BeOfType System.Collections.Hashtable
-                $script:themeData.Themes.Icon[$goodThemeName].Name | Should -Be 'MyAwesomeTheme'
+                $script:userThemeData.Themes.Icon[$goodThemeName]      | Should -BeOfType System.Collections.Hashtable
+                $script:userThemeData.Themes.Icon[$goodThemeName].Name | Should -Be 'MyAwesomeTheme'
             }
 
             it 'Bad theme path should throw' {
