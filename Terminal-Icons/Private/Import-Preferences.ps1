@@ -1,4 +1,6 @@
 function Import-Preferences {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseShouldProcessForStateChangingFunctions', '')]
+    [OutputType([hashtable])]
     [cmdletbinding()]
     param(
         [parameter(ValueFromPipeline)]
@@ -7,12 +9,14 @@ function Import-Preferences {
         [string]$DefaultThemeName = $script:defaultTheme
     )
 
-    if (Test-Path $Path) {
-        Import-Clixml -Path $Path
-    } else {
-        @{
-            CurrentColorTheme = $DefaultThemeName
-            CurrentIconTheme  = $DefaultThemeName
+    process {
+        if (Test-Path $Path) {
+            Import-Clixml -Path $Path
+        } else {
+            @{
+                CurrentColorTheme = $DefaultThemeName
+                CurrentIconTheme  = $DefaultThemeName
+            }
         }
     }
 }

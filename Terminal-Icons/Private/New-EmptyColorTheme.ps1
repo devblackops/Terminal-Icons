@@ -1,4 +1,5 @@
 function New-EmptyColorTheme {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseShouldProcessForStateChangingFunctions', '')]
     [OutputType([hashtable])]
     [cmdletbinding()]
     param()

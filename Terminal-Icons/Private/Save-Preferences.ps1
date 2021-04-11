@@ -7,6 +7,8 @@ function Save-Preferences {
         [string]$Path = (Join-Path (Get-ThemeStoragePath) 'prefs.xml')
     )
 
-    Write-Debug ('Saving preferendces to [{0}]' -f $Path)
-    $Preferences | Export-CliXml -Path $Path -Force
+    process {
+        Write-Debug ('Saving preferendces to [{0}]' -f $Path)
+        $Preferences | Export-CliXml -Path $Path -Force
+    }
 }

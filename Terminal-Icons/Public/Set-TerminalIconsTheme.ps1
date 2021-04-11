@@ -8,6 +8,8 @@ function Set-TerminalIconsTheme {
         The name of a registered color theme to use.
     .PARAMETER IconTheme
         The name of a registered icon theme to use.
+    .PARAMETER Force
+        Bypass confirmation messages.
     .EXAMPLE
         PS> Set-TerminalIconsTheme -ColorTheme devblackops
 
@@ -31,7 +33,7 @@ function Set-TerminalIconsTheme {
     .NOTES
         This function supercedes Set-TerminalIconsColorTheme and Set-TerminalIconsIconTheme. They have been deprecated.
     #>
-    [cmdletbinding()]
+    [cmdletbinding(SupportsShouldProcess)]
     param(
         [ArgumentCompleter({
             (Get-TerminalIconsIconTheme).Keys | Sort-Object
@@ -41,15 +43,21 @@ function Set-TerminalIconsTheme {
         [ArgumentCompleter({
             (Get-TerminalIconsColorTheme).Keys | Sort-Object
         })]
-        [string]$ColorTheme
+        [string]$ColorTheme,
+
+        [switch]$Force
     )
 
     if ($ColorTheme) {
-        Set-Theme -Name $ColorTheme -Type Color
+        if ($Force -or $PSCmdlet.ShouldProcess($ColorTheme, 'Set color theme')) {
+            Set-Theme -Name $ColorTheme -Type Color
+        }
     }
 
     if ($IconTheme) {
-        Set-Theme -Name $IconTheme -Type Icon
+        if ($Force -or $PSCmdlet.ShouldProcess($IconTheme, 'Set icon theme')) {
+            Set-Theme -Name $IconTheme -Type Icon
+        }
     }
 }
 

@@ -1,13 +1,16 @@
 function Get-ThemeStoragePath {
+    [OutputType([string])]
     [CmdletBinding()]
     param()
 
     if ($IsLinux -or $IsMacOs) {
-        if (-not ($path = @($env:XDG_CONFIG_DIRS -split ([IO.Path]::PathSeparator))[0])) {
+        $path = @($env:XDG_CONFIG_DIRS -split ([IO.Path]::PathSeparator))[0]
+        if (-not $path) {
             $path = [IO.Path]::Combine($HOME, '.local', 'share')
         }
     } else {
-        if (-not ($path = $env:APPDATA)) {
+        $path = $env:APPDATA
+        if (-not $path) {
             $path = [Environment]::GetFolderPath('ApplicationData')
         }
     }

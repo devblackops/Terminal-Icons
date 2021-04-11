@@ -1,4 +1,5 @@
 function Import-IconTheme {
+    [OutputType([hashtable])]
     [cmdletbinding()]
     param()
 

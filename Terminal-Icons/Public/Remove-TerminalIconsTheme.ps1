@@ -8,6 +8,8 @@ function Remove-TerminalIconsTheme {
         The icon theme to remove.
     .PARAMETER ColorTheme
         The color theme to remove.
+    .PARAMETER Force
+        Bypass confirmation messages.
     .EXAMPLE
         PS> Remove-TerminalIconsTheme -IconTheme MyAwesomeTheme
 
@@ -33,19 +35,19 @@ function Remove-TerminalIconsTheme {
     .NOTES
         A theme must not be active in order to be removed.
     #>
-    [cmdletbinding()]
+    [cmdletbinding(SupportsShouldProcess)]
     param(
         [ArgumentCompleter({
-            param($Command, $Parameter, $WordToComplete, $CommandAst, $FakeBoundParams)
             (Get-TerminalIconsIconTheme).Keys | Sort-Object
         })]
         [string]$IconTheme,
 
         [ArgumentCompleter({
-            param($Command, $Parameter, $WordToComplete, $CommandAst, $FakeBoundParams)
             (Get-TerminalIconsColorTheme).Keys | Sort-Object
         })]
-        [string]$ColorTheme
+        [string]$ColorTheme,
+
+        [switch]$Force
     )
 
     $currentTheme     = Get-TerminalIconsTheme
@@ -57,13 +59,15 @@ function Remove-TerminalIconsTheme {
             if (-not (Test-Path $themePath)) {
                 Write-Error "Could not find theme file [$themePath]"
             } else {
-                if ($userThemeData.Themes.Color.ContainsKey($ColorTheme)) {
-                    $userThemeData.Themes.Color.Remove($ColorTheme)
-                } else {
-                    # We shouldn't be here
-                    Write-Error "Color theme [$ColorTheme] is not registered."
+                if ($Force -or $PSCmdlet.ShouldProcess($ColorTheme, 'Remove color theme')) {
+                    if ($userThemeData.Themes.Color.ContainsKey($ColorTheme)) {
+                        $userThemeData.Themes.Color.Remove($ColorTheme)
+                    } else {
+                        # We shouldn't be here
+                        Write-Error "Color theme [$ColorTheme] is not registered."
+                    }
+                    Remove-Item $themePath -Force
                 }
-                Remove-Item $themePath -Force
             }
         } else {
             Write-Error ("Color theme [{0}] is active. Please select another theme before removing this it." -f $ColorTheme)
@@ -76,13 +80,15 @@ function Remove-TerminalIconsTheme {
             if (-not (Test-Path $themePath)) {
                 Write-Error "Could not find theme file [$themePath]"
             } else {
-                if ($userThemeData.Themes.Icon.ContainsKey($IconTheme)) {
-                    $userThemeData.Themes.Icon.Remove($IconTheme)
-                } else {
-                    # We shouldn't be here
-                    Write-Error "Icon theme [$IconTheme] is not registered."
+                if ($Force -or $PSCmdlet.ShouldProcess($ColorTheme, 'Remove icon theme')) {
+                    if ($userThemeData.Themes.Icon.ContainsKey($IconTheme)) {
+                        $userThemeData.Themes.Icon.Remove($IconTheme)
+                    } else {
+                        # We shouldn't be here
+                        Write-Error "Icon theme [$IconTheme] is not registered."
+                    }
+                    Remove-Item $themePath -Force
                 }
-                Remove-Item $themePath -Force
             }
         } else {
             Write-Error ("Icon theme [{0}] is active. Please select another theme before removing this it." -f $IconTheme)

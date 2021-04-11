@@ -24,6 +24,7 @@ function Format-TerminalIcons {
 
         Outputs a colorized string with an icon prepended.
     #>
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseShouldProcessForStateChangingFunctions', '')]
     [OutputType([string])]
     [CmdletBinding()]
     param(

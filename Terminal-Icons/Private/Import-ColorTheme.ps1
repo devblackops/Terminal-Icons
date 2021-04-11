@@ -1,4 +1,5 @@
 function Import-ColorTheme {
+    [OutputType([hashtable])]
     [cmdletbinding()]
     param()
 

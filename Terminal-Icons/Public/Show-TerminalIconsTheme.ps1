@@ -29,26 +29,24 @@ function Show-TerminalIconsTheme {
         Get-TerminalIconsTheme
     #>
     [CmdletBinding()]
-    param(
-        [string]$ColorTheme = $script:userThemeData.CurrentColorTheme,
+    param()
 
-        [string]$IconTheme = $script:userThemeData.CurrentIconTheme
-    )
+    $theme = Get-TerminalIconsTheme
 
     $directories = @(
         [IO.DirectoryInfo]::new('ExampleFolder')
-        $script:userThemeData.Themes.Icon[$IconTheme].Types.Directories.WellKnown.Keys.ForEach({
+        $script:userThemeData.Themes.Icon[$theme.Icon.Name].Types.Directories.WellKnown.Keys.ForEach({
             [IO.DirectoryInfo]::new($_)
         })
     )
     $wellKnownFiles = @(
         [IO.FileInfo]::new('ExampleFile')
-        $script:userThemeData.Themes.Icon[$IconTheme].Types.Files.WellKnown.Keys.ForEach({
+        $script:userThemeData.Themes.Icon[$theme.Icon.Name].Types.Files.WellKnown.Keys.ForEach({
             [IO.FileInfo]::new($_)
         })
     )
 
-    $extensions = $script:userThemeData.Themes.Icon[$IconTheme].Types.Files.Keys.Where({$_ -ne 'WellKnown'}).ForEach({
+    $extensions = $script:userThemeData.Themes.Icon[$theme.Icon.Name].Types.Files.Keys.Where({$_ -ne 'WellKnown'}).ForEach({
         [IO.FileInfo]::new("example$_")
     })
 

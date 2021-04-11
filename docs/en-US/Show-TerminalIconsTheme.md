@@ -13,7 +13,7 @@ List example directories and files to show the currently applied color and icon 
 ## SYNTAX
 
 ```
-Show-TerminalIconsTheme [[-ColorTheme] <String>] [[-IconTheme] <String>] [<CommonParameters>]
+Show-TerminalIconsTheme [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -30,36 +30,6 @@ Show-TerminalIconsTheme
 List example directories and files to show the currently applied color and icon themes.
 
 ## PARAMETERS
-
-### -ColorTheme
-{{ Fill ColorTheme Description }}
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 1
-Default value: $script:themeData.CurrentColorTheme
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IconTheme
-{{ Fill IconTheme Description }}
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 2
-Default value: $script:themeData.CurrentIconTheme
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).

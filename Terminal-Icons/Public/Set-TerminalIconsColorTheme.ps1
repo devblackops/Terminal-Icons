@@ -28,7 +28,6 @@ function Set-TerminalIconsColorTheme {
     param(
         [Parameter(Mandatory, ValueFromPipeline, ValueFromPipelineByPropertyName)]
         [ArgumentCompleter({
-            param($Command, $Parameter, $WordToComplete, $CommandAst, $FakeBoundParams)
             (Get-TerminalIconsColorTheme).Keys | Sort-Object
         })]
         [string]$Name
