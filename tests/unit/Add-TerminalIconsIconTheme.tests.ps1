@@ -14,10 +14,12 @@ InModuleScope 'Terminal-Icons' {
     Types = @{
         Directories = @{
             WellKnown = @{
+                tests = 'nf-fa-gear'
             }
         }
         Files       = @{
             WellKnown = @{
+                '.ps1' = 'nf-fa-gear'
             }
         }
     }
