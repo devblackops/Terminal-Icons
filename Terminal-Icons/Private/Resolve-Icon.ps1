@@ -33,13 +33,13 @@ function Resolve-Icon {
             'Junction' {
                 $iconName = $icons.Types.($type)['junction']
                 $colorSeq = $colors.Types.($type)['junction']
-                $displayInfo['Target'] = ' -> ' + $FileInfo.Target
+                $displayInfo['Target'] = '  ' + $FileInfo.Target
                 break
             }
             'SymbolicLink' {
                 $iconName = $icons.Types.($type)['symlink']
                 $colorSeq = $colors.Types.($type)['symlink']
-                $displayInfo['Target'] = ' -> ' + $FileInfo.Target
+                $displayInfo['Target'] = '  ' + $FileInfo.Target
                 break
             } default {
                 # Determine normal directory icon and color
