@@ -1,6 +1,10 @@
 properties {
-    $PSBPreference.Build.CompileModule   = $false
+    $PSBPreference.Build.CompileModule   = $true
     $PSBPreference.Build.CopyDirectories = @('Data')
+    $PSBPreference.Build.CompileHeader   = @'
+using namespace System.Management.Automation
+using namespace System.Collections.ObjectModel
+'@
     $PSBPreference.Test.ImportModule     = $true
     $PSBPreference.Test.OutputFile       = "$($PSBPreference.Build.OutDir)/testResults.xml"
 }
