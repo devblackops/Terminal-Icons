@@ -6,7 +6,7 @@
     CompanyName       = 'Community'
     Copyright         = '(c) Brandon Olin. All rights reserved.'
     Description       = 'PowerShell module to add file icons to terminal based on file extension'
-    PowerShellVersion = '4.0'
+    PowerShellVersion = '5.1'
     # PowerShellHostName = ''
     # PowerShellHostVersion = ''
     RequiredModules = @()

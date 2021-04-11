@@ -4,7 +4,7 @@ function Import-IconTheme {
 
     $hash = @{}
     (Get-ChildItem -Path $moduleRoot/Data/iconThemes).ForEach({
-        $hash.Add($_.Basename, (ConvertFrom-Psd1 $_.FullName))
+        $hash.Add($_.Basename, (Import-PowerShellDataFile $_.FullName))
     })
     $hash
 }

@@ -47,12 +47,10 @@ function Add-Theme {
                 if ($PSCmdlet.ShouldProcess($statusMsg, $confirmMsg, $operation) -or $Force.IsPresent) {
                     if (-not $script:userThemeData.Themes.$Type.ContainsKey($item.BaseName) -or $Force.IsPresent) {
 
-                        $theme = ConvertFrom-Psd1 $item.FullName
+                        $theme = Import-PowerShellDataFile $item.FullName
 
                         # Convert color theme into escape sequences for lookup later
                         if ($Type -eq 'Color') {
-                            $theme = ConvertFrom-Psd1 $item.FullName
-
                             # Add empty color theme
                             if (-not $script:colorSequences.ContainsKey($theme.Name)) {
                                 $script:colorSequences[$theme.Name] = New-EmptyColorTheme

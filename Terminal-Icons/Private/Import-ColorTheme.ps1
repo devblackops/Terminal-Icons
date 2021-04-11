@@ -4,7 +4,7 @@ function Import-ColorTheme {
 
     $hash = @{}
     (Get-ChildItem -Path $moduleRoot/Data/colorThemes).ForEach({
-        $colorData = ConvertFrom-Psd1 $_.FullName
+        $colorData = Import-PowerShellDataFile $_.FullName
         $hash[$colorData.Name] = $colorData
         $hash[$colorData.Name].Types.Directories[''] = $colorReset
         $hash[$colorData.Name].Types.Files['']       = $colorReset
