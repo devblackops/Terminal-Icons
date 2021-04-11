@@ -65,7 +65,7 @@ Show-TerminalIconsTheme     | List example directories and files to show the cur
 Get-ChildItem -Path . -Force
 ```
 
-![Screenshot 1](./media/screenshot1.PNG)
+![Screenshot 1](./media/screenshot.png)
 
 ## Tips
 
