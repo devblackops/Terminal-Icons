@@ -1,46 +1,18 @@
 InModuleScope 'Terminal-Icons' {
     Describe 'Add-TerminalIconsIconTheme' {
-
         Context 'Themes' {
-
-            BeforeAll {
-                $tmpDir    = [IO.Path]::GetTempPath()
-                $themePath = [IO.Path]::Combine($tmpDir, 'MyAwesomeTheme.psd1')
-                $script:goodTheme = New-Item -Path $themePath -Force
-
-                $themeContent = @'
-@{
-    Name  = 'MyAwesomeTheme'
-    Types = @{
-        Directories = @{
-            WellKnown = @{
-                tests = 'nf-fa-gear'
-            }
-        }
-        Files       = @{
-            WellKnown = @{
-                '.ps1' = 'nf-fa-gear'
-            }
-        }
-    }
-}
-'@
-            $themeContent  | Out-File $goodTheme -Encoding utf8
-            $goodThemeName = $goodTheme.BaseName
-            }
-
             AfterAll {
-                $goodTheme | Remove-Item
+                $themeStorage = Get-ThemeStoragePath
+                Set-TerminalIconsTheme -ColorTheme devblackops -IconTheme devblackops
+                Remove-Item (Join-Path $themeStorage 'MyAwesomeTheme_icon.xml') -Force -ErrorAction SilentlyContinue
             }
 
             Mock Export-CliXml {}
 
-
-
             it 'Good theme should be added' {
-                Add-TerminalIconsIconTheme -Path $goodTheme.FullName -Force
-                $script:userThemeData.Themes.Icon[$goodThemeName]      | Should -BeOfType System.Collections.Hashtable
-                $script:userThemeData.Themes.Icon[$goodThemeName].Name | Should -Be 'MyAwesomeTheme'
+                Add-TerminalIconsIconTheme -Path $PSScriptRoot/../MyAwesomeIconTheme.psd1 -Force
+                $script:userThemeData.Themes.Icon['MyAwesomeTheme']      | Should -BeOfType System.Collections.Hashtable
+                $script:userThemeData.Themes.Icon['MyAwesomeTheme'].Name | Should -Be 'MyAwesomeTheme'
             }
 
             it 'Bad theme path should throw' {
