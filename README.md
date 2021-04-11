@@ -47,7 +47,7 @@ Get-ChildItem | Format-Wide
 
 ## Commands
 
-| Command | Description |
+| Command | Description
 |---------|-------------|
 Add-TerminalIconsColorTheme | Add a Terminal-Icons color theme for the current user.
 Add-TerminalIconsIconTheme  | Add a Terminal-Icons icon theme for the current user.
@@ -55,8 +55,10 @@ Format-TerminalIcons        | Prepend a custom icon (with color) to the provided
 Get-TerminalIconsColorTheme | List the available color themes.
 Get-TerminalIconsIconTheme  | List the available icon themes.
 Get-TerminalIconsTheme      | Get the currently applied color and icon theme.
-Set-TerminalIconsColorTheme | Set the Terminal-Icons color theme.
-Set-TerminalIconsIconTheme  | Set the Terminal-Icons icon theme.
+Remove-TerminalIconsTheme   | Removes a given icon or color theme.
+Set-TerminalIconsColorTheme | **DEPRECATED** Set the Terminal-Icons color theme.
+Set-TerminalIconsIconTheme  | **DEPRECATED** Set the Terminal-Icons icon theme.
+Set-TerminalIconsTheme      | Set the Terminal-Icons icon and/or color theme.
 Show-TerminalIconsTheme     | List example directories and files to show the currently applied color and icon themes.
 
 ## Screenshots
