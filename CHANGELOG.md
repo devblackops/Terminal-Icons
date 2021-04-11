@@ -11,6 +11,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - [**#PR27**](https://github.com/devblackops/Terminal-Icons/pull/27) Add icon for Umbraco .NET CMS common folder (via [@warrenbuckley](https://github.com/warrenbuckley))
 - [**#PR30**](https://github.com/devblackops/Terminal-Icons/pull/30) Add `.gitconfig` and `.vscode-insiders` icons/colors (via [@MJECloud](https://github.com/MJECloud))
+- Added function `Set-TerminalIconsTheme` to set icon/color theme. Existing functions `Set-TerminalIconsColorTheme` and `Set-TerminalIconsIconTheme` have been deprecated and will be removed in a later version
+- Added function `Remove-TerminalIconsTheme` to remove an icon or color theme
+
+### Changed
+
+- Minimum PowerShell verison is now `5.1`
+
+### Fixed
+
+- Adding a new icon or color theme no longer raises errors
 
 ## [0.3.1] 2021-04-09
 
