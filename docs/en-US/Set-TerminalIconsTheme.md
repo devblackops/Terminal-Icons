@@ -13,7 +13,7 @@ schema: 2.0.0
 ## SYNTAX
 
 ```
-Set-TerminalIconsTheme [-IconTheme] <String> [-ColorTheme] <String> [<CommonParameters>]
+Set-TerminalIconsTheme [[-IconTheme] <String>] [[-ColorTheme] <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -38,10 +38,10 @@ Type: String
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: 1
 Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -53,10 +53,10 @@ Type: String
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: 2
 Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

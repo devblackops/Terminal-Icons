@@ -33,16 +33,12 @@ function Set-TerminalIconsTheme {
     #>
     [cmdletbinding()]
     param(
-        [Parameter(Mandatory, ValueFromPipeline, ValueFromPipelineByPropertyName)]
         [ArgumentCompleter({
-            param($Command, $Parameter, $WordToComplete, $CommandAst, $FakeBoundParams)
             (Get-TerminalIconsIconTheme).Keys | Sort-Object
         })]
         [string]$IconTheme,
 
-        [Parameter(Mandatory, ValueFromPipeline, ValueFromPipelineByPropertyName)]
         [ArgumentCompleter({
-            param($Command, $Parameter, $WordToComplete, $CommandAst, $FakeBoundParams)
             (Get-TerminalIconsColorTheme).Keys | Sort-Object
         })]
         [string]$ColorTheme
