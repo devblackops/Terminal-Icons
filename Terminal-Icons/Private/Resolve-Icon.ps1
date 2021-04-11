@@ -61,6 +61,15 @@ function Resolve-Icon {
                     if (-not $iconName) {
                         $iconName = $icons.Types.$type['']
                     }
+
+                    # Fallback if everything has gone horribly wrong
+                    if (-not $iconName) {
+                        if ($FileInfo.PSIsContainer) {
+                            $iconName = 'nf-oct-file_directory'
+                        } else {
+                            $iconName = 'nf-fa-file'
+                        }
+                    }
                 }
                 $colorSeq = $colors.Types.$type.WellKnown[$FileInfo.Name]
                 if (-not $colorSeq) {
@@ -79,6 +88,11 @@ function Resolve-Icon {
                     }
                     if (-not $colorSeq) {
                         $colorSeq = $colors.Types.$type['']
+                    }
+
+                    # Fallback if everything has gone horribly wrong
+                    if (-not $colorSeq) {
+                        $colorSeq = $script:colorReset
                     }
                 }
             }
