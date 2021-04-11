@@ -27,10 +27,15 @@ function Set-TerminalIconsIconTheme {
     [CmdletBinding()]
     param(
         [Parameter(Mandatory, ValueFromPipeline, ValueFromPipelineByPropertyName)]
+        [ArgumentCompleter({
+            param($Command, $Parameter, $WordToComplete, $CommandAst, $FakeBoundParams)
+            (Get-TerminalIconsIconTheme).Keys | Sort-Object
+        })]
         [string]$Name
     )
 
     process {
+        Write-Warning "$($MyInvocation.MyCommand.Name) has been deprecated and will be removed in a later version. Please use [Set-TerminalIconsTheme] to set the theme"
         Set-Theme -Name $Name -Type Icon
     }
 }
