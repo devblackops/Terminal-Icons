@@ -13,7 +13,9 @@ function Set-Theme {
     if (-not $script:userThemeData.Themes.$Type.ContainsKey($Name)) {
         Write-Error "$Type theme [$Name] not found."
     } else {
-        $themeData."Current$($Type)Theme" = $Name
-        Save-Theme -Theme $themeData
+        $script:userThemeData."Current$($Type)Theme" = $Name
+        $script:prefs."Current$($Type)Theme" = $Name
+        Save-Theme -Theme $userThemeData.Themes.$Type[$Name] -Type $type
+        Save-Preferences $script:prefs
     }
 }

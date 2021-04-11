@@ -10,67 +10,68 @@
 #     }
 # })
 
-$glyphs                = . $PSScriptRoot/Data/glyphs.ps1
-$escape                = [char]27
-$colorReset            = "${escape}[0m"
-$defaultTheme          = 'devblackops'
+$moduleRoot    = $PSScriptRoot
+$glyphs        = . $moduleRoot/Data/glyphs.ps1
+$escape        = [char]27
+$colorReset    = "${escape}[0m"
+$defaultTheme  = 'devblackops'
+$userThemePath = Get-ThemeStoragePath
+$userThemeData = @{
+    CurrentIconTheme  = $null
+    CurrentColorTheme = $null
+    Themes = @{
+        Color = @{}
+        Icon  = @{}
+    }
+}
 
 # Import builtin icon/color themes and convert colors to escape sequences
-$iconThemes            = @{}
-$script:colorThemes    = @{}
-$script:colorSequences = @{}
-Get-ChildItem -Path $PSScriptRoot/Data/iconThemes |
-    Import-IconTheme -IconThemes $script:iconThemes
-Get-ChildItem -Path $PSScriptRoot/Data/colorThemes -Filter '*.psd1' |
-    Import-ColorTheme -ColorThemes $colorThemes -ColorSequences $script:colorSequences
+$colorSequences = @{}
+$iconThemes     = Import-IconTheme
+$colorThemes    = Import-ColorTheme
+$colorThemes.GetEnumerator().ForEach({
+    $colorSequences[$_.Name] = ConvertTo-ColorSequence -ColorData $_.Value
+})
 
-# Import user theme data
-$userThemePath = Get-ThemeStoragePath
-$userThemeBasePath = Split-Path $userThemePath
-if (-not (Test-Path $userThemeBasePath)) {
-    New-Item -Path $userThemeBasePath -ItemType Directory -Force
-}
-if (Test-Path $userThemePath) {
-    $script:userThemeData = Import-CliXml -Path $userThemePath
-}
-if (-not $script:userThemeData) {
-    # We have no theme data saved (first time use?)
-    # Create one and save it
-    $script:userThemeData = @{
-        CurrentIconTheme  = $defaultTheme
-        CurrentColorTheme = $defaultTheme
-        Themes = @{
-            Color = $colorThemes
-            Icon  = $iconThemes
-        }
-    }
-} else {
-    # Load or set default theme (if missing)
-    if ([string]::IsNullOrEmpty($script:userThemeData.CurrentColorTheme)) {
-        $script:userThemeData.CurrentColorTheme = $defaultTheme
-    }
-    if ([string]::IsNullOrEmpty($script:userThemeData.CurrentIconTheme)) {
-        $script:userThemeData.CurrentIconTheme = $defaultTheme
-    }
+# Load or create default prefs
+$prefs = Import-Preferences
 
-    if ($null -eq $script:userThemeData.Themes -or $script:userThemeData.Themes.Count -eq 0) {
-        $script:userThemeData.Themes = @{
-            Color = @{}
-            Icon  = @{}
-        }
-    }
+# Set current theme
+$userThemeData.CurrentIconTheme  = $prefs.CurrentIconTheme
+$userThemeData.CurrentColorTheme = $prefs.CurrentColorTheme
 
-    # Update the builtin themes
-    $colorThemes.GetEnumerator().ForEach({
-        $script:userThemeData.Themes.Color[$_.Name] = $_.Value
-    })
-    $iconThemes.GetEnumerator().ForEach({
-        $script:userThemeData.Themes.Icon[$_.Name] = $_.Value
-    })
-}
+# Load user icon and color themes
+# We're ignoring the old 'theme.xml' from Terimal-Icons v0.3.1 and earlier
+(Get-ChildItem $userThemePath -Filter '*_icon.xml').ForEach({
+    $userIconTheme = Import-CliXml -Path $_.FullName
+    $userThemeData.Themes.Icon[$userIconTheme.Name] = $userIconTheme
+})
+(Get-ChildItem $userThemePath -Filter '*_color.xml').ForEach({
+    $userColorTheme = Import-CliXml -Path $_.FullName
+    $userThemeData.Themes.Color[$userColorTheme.Name] = $userColorTheme
+    $colorSequences[$userColorTheme.Name] = ConvertTo-ColorSequence -ColorData $userThemeData.Themes.Color[$userColorTheme.Name]
+})
 
-$script:userThemeData | Export-Clixml -Path $userThemePath -Force
+# Update the builtin themes
+$colorThemes.GetEnumerator().ForEach({
+    $userThemeData.Themes.Color[$_.Name] = $_.Value
+})
+$iconThemes.GetEnumerator().ForEach({
+    $userThemeData.Themes.Icon[$_.Name] = $_.Value
+})
+
+# Save all themes to theme path
+$userThemeData.Themes.Color.GetEnumerator().ForEach({
+    $colorThemePath = Join-Path $userThemePath "$($_.Name)_color.xml"
+    $_.Value | Export-Clixml -Path $colorThemePath -Force
+})
+$userThemeData.Themes.Icon.GetEnumerator().ForEach({
+    $iconThemePath = Join-Path $userThemePath "$($_.Name)_icon.xml"
+    $_.Value | Export-Clixml -Path $iconThemePath -Force
+})
+
+Save-Preferences -Preferences $prefs
 
 # Export-ModuleMember -Function $public.Basename
 
-Update-FormatData -Prepend ([IO.Path]::Combine($PSScriptRoot, 'Terminal-Icons.format.ps1xml'))
+Update-FormatData -Prepend ([IO.Path]::Combine($moduleRoot, 'Terminal-Icons.format.ps1xml'))

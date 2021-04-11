@@ -1,15 +1,10 @@
 function Import-IconTheme {
     [cmdletbinding()]
-    param(
-        [parameter(Mandatory, ValueFromPipeline)]
-        [IO.FileInfo[]]$Path,
+    param()
 
-        [hashtable]$IconThemes = $script:iconThemes
-    )
-
-    process {
-        foreach ($p in $Path) {
-            $IconThemes.Add($p.Basename, (Import-PowerShellDataFile -Path $p.FullName))
-        }
-    }
+    $hash = @{}
+    (Get-ChildItem -Path $moduleRoot/Data/iconThemes).ForEach({
+        $hash.Add($_.Basename, (ConvertFrom-Psd1 $_.FullName))
+    })
+    $hash
 }

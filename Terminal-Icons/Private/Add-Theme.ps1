@@ -47,34 +47,35 @@ function Add-Theme {
                 if ($PSCmdlet.ShouldProcess($statusMsg, $confirmMsg, $operation) -or $Force.IsPresent) {
                     if (-not $script:userThemeData.Themes.$Type.ContainsKey($item.BaseName) -or $Force.IsPresent) {
 
+                        $theme = ConvertFrom-Psd1 $item.FullName
+
                         # Convert color theme into escape sequences for lookup later
                         if ($Type -eq 'Color') {
-                            $colorData = ConvertFrom-Psd1 $item.FullName
+                            $theme = ConvertFrom-Psd1 $item.FullName
 
                             # Add empty color theme
-                            if (-not $script:colorSequences.ContainsKey($item.BaseName)) {
-                                $script:colorSequences[$item.BaseName] = New-EmptyColorTheme
+                            if (-not $script:colorSequences.ContainsKey($theme.Name)) {
+                                $script:colorSequences[$theme.Name] = New-EmptyColorTheme
                             }
 
                             # Directories
-                            $colorData.Types.Directories.WellKnown.GetEnumerator().ForEach({
-                                $script:colorSequences[$item.BaseName].Types.Directories[$_.Name] = ConvertFrom-RGBColor -RGB $_.Value
+                            $theme.Types.Directories.WellKnown.GetEnumerator().ForEach({
+                                $script:colorSequences[$theme.Name].Types.Directories[$_.Name] = ConvertFrom-RGBColor -RGB $_.Value
                             })
                             # Wellknown files
-                            $colorData.Types.Files.WellKnown.GetEnumerator().ForEach({
-                                $script:colorSequences[$item.BaseName].Types.Files.WellKnown[$_.Name] = ConvertFrom-RGBColor -RGB $_.Value
+                            $theme.Types.Files.WellKnown.GetEnumerator().ForEach({
+                                $script:colorSequences[$theme.Name].Types.Files.WellKnown[$_.Name] = ConvertFrom-RGBColor -RGB $_.Value
                             })
                             # File extensions
-                            $colorData.Types.Files.GetEnumerator().Where({$_.Name -ne 'WellKnown'}).ForEach({
-                                $script:colorSequences[$item.BaseName].Types.Files[$_.Name] = ConvertFrom-RGBColor -RGB $_.Value
+                            $theme.Types.Files.GetEnumerator().Where({$_.Name -ne 'WellKnown'}).ForEach({
+                                $script:colorSequences[$theme.Name].Types.Files[$_.Name] = ConvertFrom-RGBColor -RGB $_.Value
                             })
                         }
 
-                        $colorData = ConvertFrom-Psd1 $item.FullName
-                        $script:userThemeData.Themes.$Type[$item.Basename] = $colorData
-                        Save-Theme -Theme $script:userThemeData
+                        $script:userThemeData.Themes.$Type[$theme.Name] = $theme
+                        Save-Theme -Theme $theme -Type $Type
                     } else {
-                        Write-Error "$Type theme [$($item.BaseName)] already exists. Use the -Force switch to overwrite."
+                        Write-Error "$Type theme [$($theme.Name)] already exists. Use the -Force switch to overwrite."
                     }
                 }
             } else {
