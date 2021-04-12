@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     'nf-custom-c'                                    = ''
     'nf-custom-cpp'                                  = ''
     'nf-custom-electron'                             = ''

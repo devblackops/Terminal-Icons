@@ -12,6 +12,7 @@
         }
     }
     platyPS = '0.14.1'
+    PowerHtml = 'latest'
     PowerShellBuild = @{
         RequiredVersion = '0.6.1'
     }
