@@ -5,8 +5,11 @@ properties {
 using namespace System.Management.Automation
 using namespace System.Collections.ObjectModel
 '@
-    $PSBPreference.Test.ImportModule     = $true
-    $PSBPreference.Test.OutputFile       = "$($PSBPreference.Build.OutDir)/testResults.xml"
+    $PSBPreference.Test.ImportModule = $true
+    $PSBPreference.Test.OutputFile   = "$($PSBPreference.Build.OutDir)/testResults.xml"
+    if ($galleryApiKey) {
+        $PSBPreference.Publish.PSRepositoryApiKey = $galleryApiKey.GetNetworkCredential().password
+    }
 }
 
 task default -depends Test
