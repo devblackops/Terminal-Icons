@@ -18,8 +18,8 @@ function Get-ThemeStoragePath {
     if ($path) {
         $storagePath = [IO.Path]::Combine($path, 'powershell', 'Community', 'Terminal-Icons')
         if (-not (Test-Path $storagePath)) {
-            New-Item -Path $storagePath -ItemType Directory -Force
+            New-Item -Path $storagePath -ItemType Directory -Force > $null
         }
+        $storagePath
     }
-    $storagePath
 }

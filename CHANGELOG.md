@@ -9,7 +9,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
-- Replace glyphs that are causing alignment issues.
+- Replace glyphs that are causing alignment issues
+- Fixed module import error when user directory containing saved themes did not exist
 
 ## [0.4.0] 2021-04-18
 
