@@ -5,7 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [0.4.0] Unreleased
+## [0.4.1] 2021-04-20
+
+### Fixed
+
+- Replace glyphs that are causing alignment issues.
+
+## [0.4.0] 2021-04-18
 
 ### Added
 

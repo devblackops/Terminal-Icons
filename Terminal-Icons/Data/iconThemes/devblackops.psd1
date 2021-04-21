@@ -76,7 +76,7 @@
                 '.jsbeautifyrc'                 = 'nf-seti-json'
                 '.esformatter'                  = 'nf-seti-json'
                 'cdp.pid'                       = 'nf-seti-json'
-                '.htaccess'                     = 'nf-mdi-xml'
+                '.htaccess'                     = 'nf-mdi-file_xml'
                 '.jshintignore'                 = 'nf-fa-gear'
                 '.buildignore'                  = 'nf-fa-gear'
                 '.mrconfig'                     = 'nf-fa-gear'
@@ -268,7 +268,7 @@
             '.code-workspace'       = 'nf-mdi-visualstudio'
 
             # Text data files
-            '.log'                  = 'nf-mdi-view_list'
+            '.log'                  = 'nf-fa-list'
             '.txt'                  = 'nf-mdi-file_document'
 
             # HTML/css
@@ -327,18 +327,18 @@
             '.applescript'          = 'nf-dev-apple'
 
             # XML
-            '.xml'                  = 'nf-mdi-xml'
-            '.plist'                = 'nf-mdi-xml'
-            '.xsd'                  = 'nf-mdi-xml'
-            '.dtd'                  = 'nf-mdi-xml'
-            '.xsl'                  = 'nf-mdi-xml'
-            '.xslt'                 = 'nf-mdi-xml'
-            '.resx'                 = 'nf-mdi-xml'
-            '.iml'                  = 'nf-mdi-xml'
-            '.xquery'               = 'nf-mdi-xml'
-            '.tmLanguage'           = 'nf-mdi-xml'
-            '.manifest'             = 'nf-mdi-xml'
-            '.project'              = 'nf-mdi-xml'
+            '.xml'                  = 'nf-mdi-file_xml'
+            '.plist'                = 'nf-mdi-file_xml'
+            '.xsd'                  = 'nf-mdi-file_xml'
+            '.dtd'                  = 'nf-mdi-file_xml'
+            '.xsl'                  = 'nf-mdi-file_xml'
+            '.xslt'                 = 'nf-mdi-file_xml'
+            '.resx'                 = 'nf-mdi-file_xml'
+            '.iml'                  = 'nf-mdi-file_xml'
+            '.xquery'               = 'nf-mdi-file_xml'
+            '.tmLanguage'           = 'nf-mdi-file_xml'
+            '.manifest'             = 'nf-mdi-file_xml'
+            '.project'              = 'nf-mdi-file_xml'
 
             # Documents
             '.chm'                  = 'nf-mdi-help_box'
