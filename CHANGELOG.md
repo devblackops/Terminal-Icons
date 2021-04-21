@@ -5,7 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [0.4.1] 2021-04-20
+## [0.5.0] 2021-04-20
+
+### Added
+
+- [**#PR35**](https://github.com/devblackops/Terminal-Icons/pull/35) Add `Get-TerminalIconsGlyphs` and `Set-TerminalIconsIcon` functions (via [@tillig](https://github.com/tillig))
+  - `Get-TerminalIconsGlyphs` returns the list of glyphs available
+  - `Set-TerminalIconsIcon` set a specific icon in the current icon theme or allows for swapping one glyph for another. Changes are not persisted between PowerShell sessions.
 
 ### Fixed
 
