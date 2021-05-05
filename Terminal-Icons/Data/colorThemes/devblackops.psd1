@@ -169,7 +169,7 @@
             '.psd1'                 = '00BFFF'
             '.ps1xml'               = '00BFFF'
             '.psc1'                 = '00BFFF'
-            'pssc'                  = '00BFFF'
+            '.pssc'                 = '00BFFF'
 
             # Javascript
             '.js'                   = 'F0E68C'

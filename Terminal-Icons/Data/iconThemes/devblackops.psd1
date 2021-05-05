@@ -167,12 +167,12 @@
             '.sh'                   = 'nf-oct-terminal'
 
             # PowerShell
-            '.ps1'                  = 'nf-dev-terminal_badge'
-            '.psm1'                 = 'nf-dev-terminal_badge'
-            '.psd1'                 = 'nf-dev-terminal_badge'
-            '.ps1xml'               = 'nf-dev-terminal_badge'
-            '.psc1'                 = 'nf-dev-terminal_badge'
-            'pssc'                  = 'nf-dev-terminal_badge'
+            '.ps1'                  = 'nf-mdi-console_line'
+            '.psm1'                 = 'nf-mdi-console_line'
+            '.psd1'                 = 'nf-mdi-console_line'
+            '.ps1xml'               = 'nf-mdi-console_line'
+            '.psc1'                 = 'nf-mdi-console_line'
+            '.pssc'                 = 'nf-mdi-console_line'
 
             # Javascript
             '.js'                   = 'nf-dev-javascript'
