@@ -4,19 +4,17 @@ function Get-ThemeStoragePath {
     param()
 
     if ($IsLinux -or $IsMacOs) {
-        $path = @($env:XDG_CONFIG_DIRS -split ([IO.Path]::PathSeparator))[0]
-        if (-not $path) {
-            $path = [IO.Path]::Combine($HOME, '.local', 'share')
+        if (-not ($basePath = $env:XDG_CONFIG_HOME)) {
+            $basePath = [IO.Path]::Combine($HOME, '.local', 'share')
         }
     } else {
-        $path = $env:APPDATA
-        if (-not $path) {
-            $path = [Environment]::GetFolderPath('ApplicationData')
+        if (-not ($basePath = $env:APPDATA)) {
+            $basePath = [Environment]::GetFolderPath('ApplicationData')
         }
     }
 
-    if ($path) {
-        $storagePath = [IO.Path]::Combine($path, 'powershell', 'Community', 'Terminal-Icons')
+    if ($basePath) {
+        $storagePath = [IO.Path]::Combine($basePath, 'powershell', 'Community', 'Terminal-Icons')
         if (-not (Test-Path $storagePath)) {
             New-Item -Path $storagePath -ItemType Directory -Force > $null
         }
