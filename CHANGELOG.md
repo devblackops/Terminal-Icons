@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [0.5.1] Unreleased
 
+### Changed
+
+- `Get-TerminalIconsGlyphs` now returns glyphs sorted by name
+
 ## [0.5.0] 2021-04-20
 
 ### Added
