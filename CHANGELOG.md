@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [0.5.1] 2021-05-21
 
+### Added
+
+- Add icon for `gruntfile.js`
+
 ### Changed
 
 - Theme files and preferences are now stored in the directory defined by `$env:XDG_CONFIG_HOME` (if it exists) on Linux and macOS. If not defined, the default of `$HOME/local/share/powershell/Community/Terminal-Icons` is still used.

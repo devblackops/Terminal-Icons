@@ -91,6 +91,7 @@
                 'bitbucket-pipelines.yml'       = 'nf-dev-bitbucket'
                 'bitbucket-pipelines.yaml'      = 'nf-dev-bitbucket'
                 '.azure-pipelines.yml'          = 'nf-mdi-azure'
+
                 # Firebase
                 'firebase.json'                 = 'nf-dev-firebase'
                 '.firebaserc'                   = 'nf-dev-firebase'
@@ -124,6 +125,9 @@
                 'gulpfile.js'                   = 'nf-dev-gulp'
                 'gulpfile.ts'                   = 'nf-dev-gulp'
                 'gulpfile.babel.js'             = 'nf-dev-gulp'
+
+                # Javascript
+                'gruntfile.js'                  = 'nf-seti-grunt'
 
                 # NodeJS
                 'package.json'                  = 'nf-dev-nodejs_small'
@@ -466,6 +470,7 @@
             '.rb'                   = 'nf-oct-ruby'
             '.erb'                  = 'nf-oct-ruby'
             '.gemfile'              = 'nf-oct-ruby'
+            'rakefile'              = 'nf-oct-ruby'
 
             # FSharp
             '.fs'                   = 'nf-dev-fsharp'

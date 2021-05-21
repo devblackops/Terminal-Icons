@@ -123,6 +123,8 @@
                 'gulpfile.ts'                   = 'CD5C5C'
                 'gulpfile.babel.js'             = 'CD5C5C'
 
+                'gruntfile.js'                  = 'CD5C5C'
+
                 # NodeJS
                 'package.json'                  = '6B8E23'
                 'package-lock.json'             = '6B8E23'
@@ -463,6 +465,7 @@
             '.rb'                   = 'FF0000'
             '.erb'                  = 'FF0000'
             '.gemfile'              = 'FF0000'
+            'Rakefile'              = 'FF0000'
 
             # FSharp
             '.fs'                   = '00BFFF'
