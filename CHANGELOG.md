@@ -16,6 +16,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - [**#44**](https://github.com/devblackops/Terminal-Icons/pull/44) Changed .img icon to match other disk image formats (via [@KaranKad](https://github.com/KaranKad))
 
+### Removed
+
+- Removed deprecated commands `Set-TerminalIconsColorTheme` and `Set-TerminalIconsIconTheme`. Use `Set-TerminalIconsTheme` instead.
+
 ## [0.5.2] 2021-06-18
 
 ### Added
