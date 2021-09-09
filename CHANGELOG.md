@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.6.0] Unreleased
+
+### Added
+
+- [**#44**](https://github.com/devblackops/Terminal-Icons/pull/44) Added icons for .msi, .msix, .msixbundle, .appx, .appxbundle, .deb, .rpm, .jar, .srt, .lrc, .ass, .wav, .acc, .opus, .vmdk, .vhdx, .iso. (via [@KaranKad](https://github.com/KaranKad))
+
+### Changed
+
+- [**#44**](https://github.com/devblackops/Terminal-Icons/pull/44) Changed .img icon to match other disk image formats (via [@KaranKad](https://github.com/KaranKad))
+
 ## [0.5.2] 2021-06-18
 
 ### Added
