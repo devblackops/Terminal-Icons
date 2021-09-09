@@ -22,9 +22,21 @@ function Get-TerminalIconsTheme {
     [CmdletBinding()]
     param()
 
+    $iconTheme = if ($script:userThemeData.CurrentIconTheme) {
+        [pscustomobject]$script:userThemeData.Themes.Icon[$script:userThemeData.CurrentIconTheme]
+    } else {
+        $null
+    }
+
+    $colorTheme = if ($script:userThemeData.CurrentColorTheme) {
+        [pscustomobject]$script:userThemeData.Themes.Color[$script:userThemeData.CurrentColorTheme]
+    } else {
+        $null
+    }
+
     [pscustomobject]@{
         PSTypeName = 'TerminalIconsTheme'
-        Color      = [pscustomobject]$script:userThemeData.Themes.Color[$script:userThemeData.CurrentColorTheme]
-        Icon       = [pscustomobject]$script:userThemeData.Themes.Icon[$script:userThemeData.CurrentIconTheme]
+        Color      = $colorTheme
+        Icon       = $iconTheme
     }
 }

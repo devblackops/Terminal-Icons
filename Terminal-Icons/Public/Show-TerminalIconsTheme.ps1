@@ -33,20 +33,27 @@ function Show-TerminalIconsTheme {
 
     $theme = Get-TerminalIconsTheme
 
+    # Use the default theme if the icon theme has been disabled
+    if ($theme.Icon) {
+        $themeName = $theme.Icon.Name
+    } else {
+        $themeName = $script:defaultTheme
+    }
+
     $directories = @(
         [IO.DirectoryInfo]::new('ExampleFolder')
-        $script:userThemeData.Themes.Icon[$theme.Icon.Name].Types.Directories.WellKnown.Keys.ForEach({
+        $script:userThemeData.Themes.Icon[$themeName].Types.Directories.WellKnown.Keys.ForEach({
             [IO.DirectoryInfo]::new($_)
         })
     )
     $wellKnownFiles = @(
         [IO.FileInfo]::new('ExampleFile')
-        $script:userThemeData.Themes.Icon[$theme.Icon.Name].Types.Files.WellKnown.Keys.ForEach({
+        $script:userThemeData.Themes.Icon[$themeName].Types.Files.WellKnown.Keys.ForEach({
             [IO.FileInfo]::new($_)
         })
     )
 
-    $extensions = $script:userThemeData.Themes.Icon[$theme.Icon.Name].Types.Files.Keys.Where({$_ -ne 'WellKnown'}).ForEach({
+    $extensions = $script:userThemeData.Themes.Icon[$themeName].Types.Files.Keys.Where({$_ -ne 'WellKnown'}).ForEach({
         [IO.FileInfo]::new("example$_")
     })
 

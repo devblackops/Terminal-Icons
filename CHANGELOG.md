@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 - [**#44**](https://github.com/devblackops/Terminal-Icons/pull/44) Added icons for .msi, .msix, .msixbundle, .appx, .appxbundle, .deb, .rpm, .jar, .srt, .lrc, .ass, .wav, .acc, .opus, .vmdk, .vhdx, .iso. (via [@KaranKad](https://github.com/KaranKad))
+- Added option to turn off displaying custom icons or colors with `-DisableIconTheme` and `-DisableColorTheme` switches on the `Set-TerminalIconsTheme` command.
 
 ### Changed
 

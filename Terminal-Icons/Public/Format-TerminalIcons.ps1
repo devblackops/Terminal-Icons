@@ -1,4 +1,3 @@
-
 function Format-TerminalIcons {
     <#
     .SYNOPSIS
@@ -34,6 +33,10 @@ function Format-TerminalIcons {
 
     process {
         $displayInfo = Resolve-Icon $FileInfo
-        "$($displayInfo.Color)$($displayInfo.Icon)  $($FileInfo.Name)$($displayInfo.Target)$($script:colorReset)"
+        if ($displayInfo.Icon) {
+            "$($displayInfo.Color)$($displayInfo.Icon)  $($FileInfo.Name)$($displayInfo.Target)$($script:colorReset)"
+        } else {
+            "$($displayInfo.Color)$($FileInfo.Name)$($displayInfo.Target)$($script:colorReset)"
+        }
     }
 }

@@ -3,6 +3,8 @@ function Set-Theme {
     [CmdletBinding()]
     param(
         [Parameter(Mandatory)]
+        [AllowNull()]
+        [AllowEmptyString()]
         [string]$Name,
 
         [ValidateSet('Color', 'Icon')]
@@ -10,12 +12,18 @@ function Set-Theme {
         [string]$Type
     )
 
-    if (-not $script:userThemeData.Themes.$Type.ContainsKey($Name)) {
-        Write-Error "$Type theme [$Name] not found."
-    } else {
-        $script:userThemeData."Current$($Type)Theme" = $Name
-        $script:prefs."Current$($Type)Theme" = $Name
-        Save-Theme -Theme $userThemeData.Themes.$Type[$Name] -Type $type
+    if ([string]::IsNullOrEmpty($Name)) {
+        $script:userThemeData."Current$($Type)Theme" = $null
+        $script:prefs."Current$($Type)Theme" = ''
         Save-Preferences $script:prefs
+    } else {
+        if (-not $script:userThemeData.Themes.$Type.ContainsKey($Name)) {
+            Write-Error "$Type theme [$Name] not found."
+        } else {
+            $script:userThemeData."Current$($Type)Theme" = $Name
+            $script:prefs."Current$($Type)Theme" = $Name
+            Save-Theme -Theme $userThemeData.Themes.$Type[$Name] -Type $type
+            Save-Preferences $script:prefs
+        }
     }
 }
