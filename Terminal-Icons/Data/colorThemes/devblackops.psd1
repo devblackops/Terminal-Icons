@@ -29,9 +29,9 @@
                 projects                = '00FF7F'
                 bin                     = '00FFF7'
                 tests                   = '87CEEB'
-                windows                 = '00A8E8'  
-                users                   = 'F4F4F4'  
-                favorites               = 'F7D72C'  
+                windows                 = '00A8E8'
+                users                   = 'F4F4F4'
+                favorites               = 'F7D72C'
                 '.config'               = '87CEAF'
                 '.cache'                = '87ECAF'
                 '.vscode'               = '87CEFA'
@@ -167,14 +167,14 @@
             '.pl'                   = '8A2BE2'
 
             '.sh'                   = 'FF4500'
-            
+
             # App Packages
-            '.msi'                  = 'FFC77A'  
-            '.msix'                 = 'FFC77A'  
-            '.msixbundle'           = 'FFC77A'  
-            '.appx'                 = 'FFC77A'  
-            '.AppxBundle'           = 'FFC77A'  
-            '.deb'                  = 'FFC77A'  
+            '.msi'                  = 'FFC77A'
+            '.msix'                 = 'FFC77A'
+            '.msixbundle'           = 'FFC77A'
+            '.appx'                 = 'FFC77A'
+            '.AppxBundle'           = 'FFC77A'
+            '.deb'                  = 'FFC77A'
             '.rpm'                  = 'FFC77A'
 
             # PowerShell
@@ -391,7 +391,7 @@
             '.aiff'                 = 'DB7093'
             '.wav'                  = 'DB7093'
             '.aac'                  = 'DB7093'
-            '.opus'                 = 'DB7093' 
+            '.opus'                 = 'DB7093'
 
             # Images
             '.png'                  = '20B2AA'
