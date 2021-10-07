@@ -309,6 +309,9 @@
             '.markdown'             = 'nf-dev-markdown'
             '.rst'                  = 'nf-dev-markdown'
 
+            # Handlebars
+            '.hbs'                  = 'nf-seti-mustache'
+
             # JSON
             '.json'                 = 'nf-seti-json'
             '.tsbuildinfo'          = 'nf-seti-json'

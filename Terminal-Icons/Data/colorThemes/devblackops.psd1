@@ -304,6 +304,9 @@
             '.markdown'             = '00BFFF'
             '.rst'                  = '00BFFF'
 
+            # Handlebars
+            '.hbs'                  = 'E37933'
+
             # JSON
             '.json'                 = 'FFD700'
             '.tsbuildinfo'          = 'FFD700'
