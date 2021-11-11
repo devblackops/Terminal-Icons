@@ -180,7 +180,7 @@
             '.appx'                 = 'nf-mdi-package_variant'
             '.AppxBundle'           = 'nf-mdi-package_variant'
             '.deb'                  = 'nf-mdi-package_variant'
-            '.rpm'                  = 'nf-mdi-package_variant' 
+            '.rpm'                  = 'nf-mdi-package_variant'
 
             # PowerShell
             '.ps1'                  = 'nf-mdi-console_line'
@@ -308,6 +308,9 @@
             '.md'                   = 'nf-dev-markdown'
             '.markdown'             = 'nf-dev-markdown'
             '.rst'                  = 'nf-dev-markdown'
+
+            # Handlebars
+            '.hbs'                  = 'nf-seti-mustache'
 
             # JSON
             '.json'                 = 'nf-seti-json'
@@ -525,11 +528,11 @@
             '.auto.tfvars.json'     = 'nf-dev-code_badge'
 
             # Disk Image
-            '.vmdk'                 = 'nf-mdi-harddisk' 
-            '.vhd'                  = 'nf-mdi-harddisk' 
-            '.vhdx'                 = 'nf-mdi-harddisk' 
-            '.img'                  = 'nf-fae-disco'    
-            '.iso'                  = 'nf-fae-disco'    
+            '.vmdk'                 = 'nf-mdi-harddisk'
+            '.vhd'                  = 'nf-mdi-harddisk'
+            '.vhdx'                 = 'nf-mdi-harddisk'
+            '.img'                  = 'nf-fae-disco'
+            '.iso'                  = 'nf-fae-disco'
         }
     }
 }
