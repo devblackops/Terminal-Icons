@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.7.0] 2021-11-10
+
+### Added
+
+- [**#53**](https://github.com/devblackops/Terminal-Icons/pull/53) Add color and icon for handlebar (.hbs) files (via [@nikouu](https://github.com/nikouu))
+
 ## [0.6.0] 2021-11-08
 
 ### Added
