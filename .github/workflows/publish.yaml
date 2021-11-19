@@ -1,0 +1,19 @@
+name: Publish module
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+
+jobs:
+  terraform_publish:
+    name: Publish module
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Publish module
+        id: publish
+        shell: pwsh
+        run: |
+          $apiKey = '${{ secrets.PS_GALLERY_API_KEY }}' | ConvertTo-SecureString -AsPlainText -Force
+          $cred = [pscredential]::new('apikey', $apiKey)
+          ./build.ps1 -Task Test -PSGalleryApiKey $cred
