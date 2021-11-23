@@ -9,14 +9,23 @@ function Import-Preferences {
         [string]$DefaultThemeName = $script:defaultTheme
     )
 
+    begin {
+        $defaultPrefs = @{
+            CurrentColorTheme = $DefaultThemeName
+            CurrentIconTheme  = $DefaultThemeName
+        }
+    }
+
     process {
         if (Test-Path $Path) {
-            Import-Clixml -Path $Path
-        } else {
-            @{
-                CurrentColorTheme = $DefaultThemeName
-                CurrentIconTheme  = $DefaultThemeName
+            try {
+                Import-Clixml -Path $Path -ErrorAction Stop
+            } catch {
+                Write-Warning "Unable to parse [$Path]. Setting default preferences."
+                $defaultPrefs
             }
+        } else {
+            $defaultPrefs
         }
     }
 }
