@@ -196,6 +196,8 @@
 
             # Python
             '.py'                   = '4B8BBE'
+            '.ipynb'                = '16c60c'
+
 
             # React
             '.jsx'                  = '20B2AA'
