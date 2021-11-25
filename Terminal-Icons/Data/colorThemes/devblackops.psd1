@@ -196,7 +196,7 @@
 
             # Python
             '.py'                   = '4B8BBE'
-            '.ipynb'                = '16c60c'
+            '.ipynb'                = '4B8BBE'
 
 
             # React
