@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 - [**#60**](https://github.com/devblackops/Terminal-Icons/pull/60) Add support for Gradle (*.gradle and gradlew) files (via [@Hexeption](https://github.com/Hexeption))
+- [**#58**](https://github.com/devblackops/Terminal-Icons/pull/58) Add support for Jupyter notebook (*.ipynb) files (via [@gaardhus](https://github.com/gaardhus))
+
 ## [0.7.1] 2021-11-22
 
 ### Fixed
