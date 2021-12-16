@@ -206,7 +206,8 @@
 
             # Python
             '.py'                   = 'nf-dev-python'
-
+            '.ipynb'                = 'nf-mdi-notebook'
+            
             # React
             '.jsx'                  = 'nf-dev-react'
             '.tsx'                  = 'nf-dev-react'
