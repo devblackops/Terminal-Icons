@@ -145,6 +145,9 @@
 
                 # Terraform
                 '.terraform.lock.hcl'           = '948EEC'
+
+                # Gradle
+                'gradlew'                       = '39D52D'
             }
             # Archive files
             '.7z'                   = 'DAA520'
@@ -193,6 +196,8 @@
             # Java
             '.java'                 = 'F89820'
             '.jar'                  = 'F89820'
+
+            '.gradle'               = '39D52D'
 
             # Python
             '.py'                   = '4B8BBE'

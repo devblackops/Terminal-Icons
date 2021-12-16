@@ -149,6 +149,9 @@
 
                 # Terraform
                 '.terraform.lock.hcl'           = 'nf-fa-lock'
+
+                # Gradle
+                'gradlew'                       = 'nf-mdi-elephant'
             }
 
             # Archive files
@@ -198,6 +201,8 @@
             # Java
             '.java'                 = 'nf-fae-java'
             '.jar'                  = 'nf-fae-java'
+
+            '.gradle'               = 'nf-mdi-elephant'
 
             # Python
             '.py'                   = 'nf-dev-python'
