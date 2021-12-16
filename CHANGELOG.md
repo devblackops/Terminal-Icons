@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.8.0] 2021-12-15
+
+### Added
+
+- [**#60**](https://github.com/devblackops/Terminal-Icons/pull/60) Add support for Gradle (*.gradle and gradlew) files (via [@Hexeption](https://github.com/Hexeption))
 ## [0.7.1] 2021-11-22
 
 ### Fixed
