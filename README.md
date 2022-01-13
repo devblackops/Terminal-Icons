@@ -28,7 +28,7 @@ Any files/folders that are not matched are shown using a generic file or folder 
 To install the module from the [PowerShell Gallery](https://www.powershellgallery.com/):
 
 ```powershell
-PS> Install-Module -Name Terminal-Icons -Repository PSGallery
+Install-Module -Name Terminal-Icons -Repository PSGallery
 ```
 
 ## Usage
