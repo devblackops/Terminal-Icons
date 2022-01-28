@@ -207,7 +207,7 @@
             # Python
             '.py'                   = 'nf-dev-python'
             '.ipynb'                = 'nf-mdi-notebook'
-            
+
             # React
             '.jsx'                  = 'nf-dev-react'
             '.tsx'                  = 'nf-dev-react'
@@ -539,6 +539,11 @@
             '.vhdx'                 = 'nf-mdi-harddisk'
             '.img'                  = 'nf-fae-disco'
             '.iso'                  = 'nf-fae-disco'
+
+            # R language
+            '.R'                    = 'nf-mdi-language_r'
+            '.Rmd'                  = 'nf-mdi-language_r'
+            '.Rproj'                = 'nf-mdi-language_r'
         }
     }
 }

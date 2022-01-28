@@ -532,6 +532,11 @@
             '.vhdx'                 = 'E1E3E6'
             '.img'                  = 'E1E3E6'
             '.iso'                  = 'E1E3E6'
+
+            # R language
+            '.R'                    = '276DC3'
+            '.Rmd'                  = '276DC3'
+            '.Rproj'                = '276DC3'
         }
     }
 }
