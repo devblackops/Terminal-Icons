@@ -31,6 +31,12 @@ To install the module from the [PowerShell Gallery](https://www.powershellgaller
 Install-Module -Name Terminal-Icons -Repository PSGallery
 ```
 
+You can also install it from [Scoop](https://scoop.sh/):
+```powershell
+scoop bucket add extras
+scoop install terminal-icons
+```
+
 ## Usage
 
 ```powershell
