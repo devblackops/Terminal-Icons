@@ -537,6 +537,9 @@
             '.R'                    = '276DC3'
             '.Rmd'                  = '276DC3'
             '.Rproj'                = '276DC3'
+
+            # Julia language
+            '.jl'                   = '9259a3'
         }
     }
 }

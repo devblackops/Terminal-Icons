@@ -544,6 +544,9 @@
             '.R'                    = 'nf-mdi-language_r'
             '.Rmd'                  = 'nf-mdi-language_r'
             '.Rproj'                = 'nf-mdi-language_r'
+
+            # Julia language
+            '.jl'                   = 'nf-seti-julia'
         }
     }
 }
