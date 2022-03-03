@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.9.1] Unreleased
+
+### Fixed
+
+- [**#68**](https://github.com/devblackops/Terminal-Icons/issues/68) Symlink rendering on Windows PowerShell
 ## [0.9.0] 2022-01-27
 
 ### Added
