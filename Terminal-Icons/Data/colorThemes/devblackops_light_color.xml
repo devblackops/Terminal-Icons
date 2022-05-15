@@ -1,0 +1,1614 @@
+<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04">
+  <Obj RefId="0">
+    <TN RefId="0">
+      <T>System.Collections.Hashtable</T>
+      <T>System.Object</T>
+    </TN>
+    <DCT>
+      <En>
+        <S N="Key">Types</S>
+        <Obj N="Value" RefId="1">
+          <TNRef RefId="0" />
+          <DCT>
+            <En>
+              <S N="Key">Directories</S>
+              <Obj N="Value" RefId="2">
+                <TNRef RefId="0" />
+                <DCT>
+                  <En>
+                    <S N="Key">junction</S>
+                    <S N="Value">7373ff</S>
+                  </En>
+                  <En>
+                    <S N="Key"></S>
+                    <S N="Value">_x001B_[0m</S>
+                  </En>
+                  <En>
+                    <S N="Key">symlink</S>
+                    <S N="Value">7373ff</S>
+                  </En>
+                  <En>
+                    <S N="Key">WellKnown</S>
+                    <Obj N="Value" RefId="3">
+                      <TNRef RefId="0" />
+                      <DCT>
+                        <En>
+                          <S N="Key">media</S>
+                          <S N="Value">D3D3D3</S>
+                        </En>
+                        <En>
+                          <S N="Key">projects</S>
+                          <S N="Value">00FF7F</S>
+                        </En>
+                        <En>
+                          <S N="Key">node_modules</S>
+                          <S N="Value">6B8E23</S>
+                        </En>
+                        <En>
+                          <S N="Key">.terraform</S>
+                          <S N="Value">948EEC</S>
+                        </En>
+                        <En>
+                          <S N="Key">desktop</S>
+                          <S N="Value">00FBFF</S>
+                        </En>
+                        <En>
+                          <S N="Key">songs</S>
+                          <S N="Value">DB7093</S>
+                        </En>
+                        <En>
+                          <S N="Key">videos</S>
+                          <S N="Value">FFA500</S>
+                        </En>
+                        <En>
+                          <S N="Key">.config</S>
+                          <S N="Value">87CEAF</S>
+                        </En>
+                        <En>
+                          <S N="Key">photos</S>
+                          <S N="Value">9ACD32</S>
+                        </En>
+                        <En>
+                          <S N="Key">docs</S>
+                          <S N="Value">00BFFF</S>
+                        </En>
+                        <En>
+                          <S N="Key">downloads</S>
+                          <S N="Value">D3D3D3</S>
+                        </En>
+                        <En>
+                          <S N="Key">.azure</S>
+                          <S N="Value">00BFFF</S>
+                        </En>
+                        <En>
+                          <S N="Key">github</S>
+                          <S N="Value">C0C0C0</S>
+                        </En>
+                        <En>
+                          <S N="Key">movies</S>
+                          <S N="Value">FFA500</S>
+                        </En>
+                        <En>
+                          <S N="Key">.cache</S>
+                          <S N="Value">87ECAF</S>
+                        </En>
+                        <En>
+                          <S N="Key">bin</S>
+                          <S N="Value">00FFF7</S>
+                        </En>
+                        <En>
+                          <S N="Key">apps</S>
+                          <S N="Value">FF143C</S>
+                        </En>
+                        <En>
+                          <S N="Key">fonts</S>
+                          <S N="Value">DC143C</S>
+                        </En>
+                        <En>
+                          <S N="Key">users</S>
+                          <S N="Value">F4F4F4</S>
+                        </En>
+                        <En>
+                          <S N="Key">shortcuts</S>
+                          <S N="Value">FF143C</S>
+                        </En>
+                        <En>
+                          <S N="Key">pictures</S>
+                          <S N="Value">9ACD32</S>
+                        </En>
+                        <En>
+                          <S N="Key">onedrive</S>
+                          <S N="Value">D3D3D3</S>
+                        </En>
+                        <En>
+                          <S N="Key">links</S>
+                          <S N="Value">FF143C</S>
+                        </En>
+                        <En>
+                          <S N="Key">development</S>
+                          <S N="Value">00FF7F</S>
+                        </En>
+                        <En>
+                          <S N="Key">images</S>
+                          <S N="Value">9ACD32</S>
+                        </En>
+                        <En>
+                          <S N="Key">contacts</S>
+                          <S N="Value">00FBFF</S>
+                        </En>
+                        <En>
+                          <S N="Key">.docker</S>
+                          <S N="Value">2391E6</S>
+                        </En>
+                        <En>
+                          <S N="Key">.vscode</S>
+                          <S N="Value">87CEFA</S>
+                        </En>
+                        <En>
+                          <S N="Key">.kube</S>
+                          <S N="Value">326DE6</S>
+                        </En>
+                        <En>
+                          <S N="Key">.github</S>
+                          <S N="Value">C0C0C0</S>
+                        </En>
+                        <En>
+                          <S N="Key">applications</S>
+                          <S N="Value">FF143C</S>
+                        </En>
+                        <En>
+                          <S N="Key">src</S>
+                          <S N="Value">00FF7F</S>
+                        </En>
+                        <En>
+                          <S N="Key">windows</S>
+                          <S N="Value">00A8E8</S>
+                        </En>
+                        <En>
+                          <S N="Key">tests</S>
+                          <S N="Value">87CEEB</S>
+                        </En>
+                        <En>
+                          <S N="Key">.vscode-insiders</S>
+                          <S N="Value">24BFA5</S>
+                        </En>
+                        <En>
+                          <S N="Key">.aws</S>
+                          <S N="Value">EC912D</S>
+                        </En>
+                        <En>
+                          <S N="Key">favorites</S>
+                          <S N="Value">F7D72C</S>
+                        </En>
+                        <En>
+                          <S N="Key">documents</S>
+                          <S N="Value">00BFFF</S>
+                        </En>
+                        <En>
+                          <S N="Key">.git</S>
+                          <S N="Value">FF4500</S>
+                        </En>
+                        <En>
+                          <S N="Key">music</S>
+                          <S N="Value">DB7093</S>
+                        </En>
+                      </DCT>
+                    </Obj>
+                  </En>
+                </DCT>
+              </Obj>
+            </En>
+            <En>
+              <S N="Key">Files</S>
+              <Obj N="Value" RefId="4">
+                <TNRef RefId="0" />
+                <DCT>
+                  <En>
+                    <S N="Key">.chm</S>
+                    <S N="Value">87CEEB</S>
+                  </En>
+                  <En>
+                    <S N="Key">.dtd</S>
+                    <S N="Value">98FB98</S>
+                  </En>
+                  <En>
+                    <S N="Key">.key</S>
+                    <S N="Value">66CDAA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.potm</S>
+                    <S N="Value">DC143C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.potx</S>
+                    <S N="Value">DC143C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.sln.dotsettings</S>
+                    <S N="Value">6495ED</S>
+                  </En>
+                  <En>
+                    <S N="Key">.toml</S>
+                    <S N="Value">6495ED</S>
+                  </En>
+                  <En>
+                    <S N="Key">.asp</S>
+                    <S N="Value">CD5C5C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.psd</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.ogg</S>
+                    <S N="Value">FFA500</S>
+                  </En>
+                  <En>
+                    <S N="Key">.prop</S>
+                    <S N="Value">6495ED</S>
+                  </En>
+                  <En>
+                    <S N="Key">.gz</S>
+                    <S N="Value">DAA520</S>
+                  </En>
+                  <En>
+                    <S N="Key">.ruleset</S>
+                    <S N="Value">EE82EE</S>
+                  </En>
+                  <En>
+                    <S N="Key">.ntf</S>
+                    <S N="Value">DC143C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.webp</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.pks</S>
+                    <S N="Value">FFD700</S>
+                  </En>
+                  <En>
+                    <S N="Key">.tar</S>
+                    <S N="Value">DAA520</S>
+                  </En>
+                  <En>
+                    <S N="Key">.cljc</S>
+                    <S N="Value">00FF7F</S>
+                  </En>
+                  <En>
+                    <S N="Key">.gbr</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.tgz</S>
+                    <S N="Value">DAA520</S>
+                  </En>
+                  <En>
+                    <S N="Key">.dockerfile</S>
+                    <S N="Value">4682B4</S>
+                  </En>
+                  <En>
+                    <S N="Key">.pkb</S>
+                    <S N="Value">FFD700</S>
+                  </En>
+                  <En>
+                    <S N="Key">.pptm</S>
+                    <S N="Value">DC143C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.csproj</S>
+                    <S N="Value">EE82EE</S>
+                  </En>
+                  <En>
+                    <S N="Key">.vsix</S>
+                    <S N="Value">6495ED</S>
+                  </En>
+                  <En>
+                    <S N="Key">.rmvb</S>
+                    <S N="Value">FFA500</S>
+                  </En>
+                  <En>
+                    <S N="Key">.rm</S>
+                    <S N="Value">FFA500</S>
+                  </En>
+                  <En>
+                    <S N="Key">.py</S>
+                    <S N="Value">4B8BBE</S>
+                  </En>
+                  <En>
+                    <S N="Key">.iml</S>
+                    <S N="Value">98FB98</S>
+                  </En>
+                  <En>
+                    <S N="Key">.cert</S>
+                    <S N="Value">FF6347</S>
+                  </En>
+                  <En>
+                    <S N="Key">.jb2</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.dng</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.settings</S>
+                    <S N="Value">6495ED</S>
+                  </En>
+                  <En>
+                    <S N="Key">.tmLanguage</S>
+                    <S N="Value">98FB98</S>
+                  </En>
+                  <En>
+                    <S N="Key">.fnt</S>
+                    <S N="Value">DC143C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.xslt</S>
+                    <S N="Value">98FB98</S>
+                  </En>
+                  <En>
+                    <S N="Key">.sublime-project</S>
+                    <S N="Value">F4A460</S>
+                  </En>
+                  <En>
+                    <S N="Key">.pptx</S>
+                    <S N="Value">DC143C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.ttc</S>
+                    <S N="Value">DC143C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.ogv</S>
+                    <S N="Value">FFA500</S>
+                  </En>
+                  <En>
+                    <S N="Key">.vcxitems.filters</S>
+                    <S N="Value">EE82EE</S>
+                  </En>
+                  <En>
+                    <S N="Key">.clixml</S>
+                    <S N="Value">00BFFF</S>
+                  </En>
+                  <En>
+                    <S N="Key">.woff</S>
+                    <S N="Value">DC143C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.ppa</S>
+                    <S N="Value">DC143C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.xsd</S>
+                    <S N="Value">98FB98</S>
+                  </En>
+                  <En>
+                    <S N="Key">.bmap</S>
+                    <S N="Value">DC143C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.exr</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.qt</S>
+                    <S N="Value">FFA500</S>
+                  </En>
+                  <En>
+                    <S N="Key">.option</S>
+                    <S N="Value">6495ED</S>
+                  </En>
+                  <En>
+                    <S N="Key">.tsv</S>
+                    <S N="Value">9ACD32</S>
+                  </En>
+                  <En>
+                    <S N="Key">.yml</S>
+                    <S N="Value">FF6347</S>
+                  </En>
+                  <En>
+                    <S N="Key">.iso</S>
+                    <S N="Value">E1E3E6</S>
+                  </En>
+                  <En>
+                    <S N="Key">.mjs</S>
+                    <S N="Value">F0E68C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.fpx</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.auto.tfvars</S>
+                    <S N="Value">948EEC</S>
+                  </En>
+                  <En>
+                    <S N="Key">.xaml</S>
+                    <S N="Value">87CEFA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.apx</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.woff2</S>
+                    <S N="Value">DC143C</S>
+                  </En>
+                  <En>
+                    <S N="Key"></S>
+                    <S N="Value">_x001B_[0m</S>
+                  </En>
+                  <En>
+                    <S N="Key">.esx</S>
+                    <S N="Value">F0E68C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.m4a</S>
+                    <S N="Value">DB7093</S>
+                  </En>
+                  <En>
+                    <S N="Key">.xz</S>
+                    <S N="Value">DAA520</S>
+                  </En>
+                  <En>
+                    <S N="Key">.md</S>
+                    <S N="Value">00BFFF</S>
+                  </En>
+                  <En>
+                    <S N="Key">.html_vm</S>
+                    <S N="Value">CD5C5C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.vcxitems</S>
+                    <S N="Value">EE82EE</S>
+                  </En>
+                  <En>
+                    <S N="Key">.bz</S>
+                    <S N="Value">DAA520</S>
+                  </En>
+                  <En>
+                    <S N="Key">.gradle</S>
+                    <S N="Value">39D52D</S>
+                  </En>
+                  <En>
+                    <S N="Key">.suo</S>
+                    <S N="Value">EE82EE</S>
+                  </En>
+                  <En>
+                    <S N="Key">.conf</S>
+                    <S N="Value">6495ED</S>
+                  </En>
+                  <En>
+                    <S N="Key">.jxr</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.raw</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">symlink</S>
+                    <S N="Value">7373ff</S>
+                  </En>
+                  <En>
+                    <S N="Key">.vmdk</S>
+                    <S N="Value">E1E3E6</S>
+                  </En>
+                  <En>
+                    <S N="Key">.gpg</S>
+                    <S N="Value">66CDAA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.lua</S>
+                    <S N="Value">87CEFA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.mkv</S>
+                    <S N="Value">FFA500</S>
+                  </En>
+                  <En>
+                    <S N="Key">.br</S>
+                    <S N="Value">DAA520</S>
+                  </En>
+                  <En>
+                    <S N="Key">.ttf</S>
+                    <S N="Value">DC143C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.pssc</S>
+                    <S N="Value">00BFFF</S>
+                  </En>
+                  <En>
+                    <S N="Key">.manifest</S>
+                    <S N="Value">98FB98</S>
+                  </En>
+                  <En>
+                    <S N="Key">.AppxBundle</S>
+                    <S N="Value">FFC77A</S>
+                  </En>
+                  <En>
+                    <S N="Key">.ami</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.msixbundle</S>
+                    <S N="Value">FFC77A</S>
+                  </En>
+                  <En>
+                    <S N="Key">.psc1</S>
+                    <S N="Value">00BFFF</S>
+                  </En>
+                  <En>
+                    <S N="Key">.sql</S>
+                    <S N="Value">FFD700</S>
+                  </En>
+                  <En>
+                    <S N="Key">.wma</S>
+                    <S N="Value">DB7093</S>
+                  </En>
+                  <En>
+                    <S N="Key">.ps1</S>
+                    <S N="Value">00BFFF</S>
+                  </En>
+                  <En>
+                    <S N="Key">.pgsql</S>
+                    <S N="Value">FFD700</S>
+                  </En>
+                  <En>
+                    <S N="Key">.mpg</S>
+                    <S N="Value">FFA500</S>
+                  </En>
+                  <En>
+                    <S N="Key">.fs</S>
+                    <S N="Value">00BFFF</S>
+                  </En>
+                  <En>
+                    <S N="Key">.pbm</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.code-workspace</S>
+                    <S N="Value">00BFFF</S>
+                  </En>
+                  <En>
+                    <S N="Key">.vue</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.reg</S>
+                    <S N="Value">6495ED</S>
+                  </En>
+                  <En>
+                    <S N="Key">.tsbuildinfo</S>
+                    <S N="Value">FFD700</S>
+                  </En>
+                  <En>
+                    <S N="Key">.mpv</S>
+                    <S N="Value">FFA500</S>
+                  </En>
+                  <En>
+                    <S N="Key">.accdb</S>
+                    <S N="Value">FFD700</S>
+                  </En>
+                  <En>
+                    <S N="Key">.vhdx</S>
+                    <S N="Value">E1E3E6</S>
+                  </En>
+                  <En>
+                    <S N="Key">.postgres</S>
+                    <S N="Value">FFD700</S>
+                  </En>
+                  <En>
+                    <S N="Key">.cur</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.rs</S>
+                    <S N="Value">FF4500</S>
+                  </En>
+                  <En>
+                    <S N="Key">.jbig2</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.webm</S>
+                    <S N="Value">FFA500</S>
+                  </En>
+                  <En>
+                    <S N="Key">.flac</S>
+                    <S N="Value">DB7093</S>
+                  </En>
+                  <En>
+                    <S N="Key">.rar</S>
+                    <S N="Value">DAA520</S>
+                  </En>
+                  <En>
+                    <S N="Key">.msi</S>
+                    <S N="Value">FFC77A</S>
+                  </En>
+                  <En>
+                    <S N="Key">.ppam</S>
+                    <S N="Value">DC143C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.vsixmanifest</S>
+                    <S N="Value">6495ED</S>
+                  </En>
+                  <En>
+                    <S N="Key">.sqlite</S>
+                    <S N="Value">FFD700</S>
+                  </En>
+                  <En>
+                    <S N="Key">.log</S>
+                    <S N="Value">F0E68C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.cfg</S>
+                    <S N="Value">6495ED</S>
+                  </En>
+                  <En>
+                    <S N="Key">.ipynb</S>
+                    <S N="Value">4B8BBE</S>
+                  </En>
+                  <En>
+                    <S N="Key">.odttf</S>
+                    <S N="Value">DC143C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.R</S>
+                    <S N="Value">276DC3</S>
+                  </En>
+                  <En>
+                    <S N="Key">.vbs</S>
+                    <S N="Value">EE82EE</S>
+                  </En>
+                  <En>
+                    <S N="Key">.tiff</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.groovy</S>
+                    <S N="Value">87CEFA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.pl</S>
+                    <S N="Value">8A2BE2</S>
+                  </En>
+                  <En>
+                    <S N="Key">.ini</S>
+                    <S N="Value">6495ED</S>
+                  </En>
+                  <En>
+                    <S N="Key">.props</S>
+                    <S N="Value">6495ED</S>
+                  </En>
+                  <En>
+                    <S N="Key">.bat</S>
+                    <S N="Value">008000</S>
+                  </En>
+                  <En>
+                    <S N="Key">.rst</S>
+                    <S N="Value">00BFFF</S>
+                  </En>
+                  <En>
+                    <S N="Key">.png</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.xhtml</S>
+                    <S N="Value">CD5C5C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.wmv</S>
+                    <S N="Value">FFA500</S>
+                  </En>
+                  <En>
+                    <S N="Key">.aac</S>
+                    <S N="Value">DB7093</S>
+                  </En>
+                  <En>
+                    <S N="Key">.cmd</S>
+                    <S N="Value">008000</S>
+                  </En>
+                  <En>
+                    <S N="Key">.prefs</S>
+                    <S N="Value">6495ED</S>
+                  </En>
+                  <En>
+                    <S N="Key">.pfx</S>
+                    <S N="Value">FF6347</S>
+                  </En>
+                  <En>
+                    <S N="Key">.pdb</S>
+                    <S N="Value">FFD700</S>
+                  </En>
+                  <En>
+                    <S N="Key">.aiff</S>
+                    <S N="Value">DB7093</S>
+                  </En>
+                  <En>
+                    <S N="Key">.dlc</S>
+                    <S N="Value">6495ED</S>
+                  </En>
+                  <En>
+                    <S N="Key">.suit</S>
+                    <S N="Value">DC143C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.deb</S>
+                    <S N="Value">FFC77A</S>
+                  </En>
+                  <En>
+                    <S N="Key">.pic</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.Rmd</S>
+                    <S N="Value">276DC3</S>
+                  </En>
+                  <En>
+                    <S N="Key">.psql</S>
+                    <S N="Value">FFD700</S>
+                  </En>
+                  <En>
+                    <S N="Key">.bmp</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.user</S>
+                    <S N="Value">00BFFF</S>
+                  </En>
+                  <En>
+                    <S N="Key">.mp4</S>
+                    <S N="Value">FFA500</S>
+                  </En>
+                  <En>
+                    <S N="Key">.xquery</S>
+                    <S N="Value">98FB98</S>
+                  </En>
+                  <En>
+                    <S N="Key">WellKnown</S>
+                    <Obj N="Value" RefId="5">
+                      <TNRef RefId="0" />
+                      <DCT>
+                        <En>
+                          <S N="Key">docker-compose.override.yml</S>
+                          <S N="Value">4682B4</S>
+                        </En>
+                        <En>
+                          <S N="Key">manifest.mf</S>
+                          <S N="Value">87CEEB</S>
+                        </En>
+                        <En>
+                          <S N="Key">docker-compose.production.yml</S>
+                          <S N="Value">4682B4</S>
+                        </En>
+                        <En>
+                          <S N="Key">.jsbeautifyrc</S>
+                          <S N="Value">F4A460</S>
+                        </En>
+                        <En>
+                          <S N="Key">.azure-pipelines.yml</S>
+                          <S N="Value">00BFFF</S>
+                        </En>
+                        <En>
+                          <S N="Key">.travis.yml</S>
+                          <S N="Value">FFE4B5</S>
+                        </En>
+                        <En>
+                          <S N="Key">.clang-tidy</S>
+                          <S N="Value">87CEEB</S>
+                        </En>
+                        <En>
+                          <S N="Key">docker-compose.ci.yml</S>
+                          <S N="Value">4682B4</S>
+                        </En>
+                        <En>
+                          <S N="Key">docker-compose.dev.yml</S>
+                          <S N="Value">4682B4</S>
+                        </En>
+                        <En>
+                          <S N="Key">docker-compose.yaml</S>
+                          <S N="Value">4682B4</S>
+                        </En>
+                        <En>
+                          <S N="Key">.bowerrc</S>
+                          <S N="Value">CD5C5C</S>
+                        </En>
+                        <En>
+                          <S N="Key">code_of_conduct.txt</S>
+                          <S N="Value">FFFFE0</S>
+                        </En>
+                        <En>
+                          <S N="Key">cdp.pid</S>
+                          <S N="Value">F4A460</S>
+                        </En>
+                        <En>
+                          <S N="Key">LICENSE.md</S>
+                          <S N="Value">CD5C5C</S>
+                        </En>
+                        <En>
+                          <S N="Key">gradlew</S>
+                          <S N="Value">39D52D</S>
+                        </En>
+                        <En>
+                          <S N="Key">.buildignore</S>
+                          <S N="Value">87CEEB</S>
+                        </En>
+                        <En>
+                          <S N="Key">.jshintignore</S>
+                          <S N="Value">87CEEB</S>
+                        </En>
+                        <En>
+                          <S N="Key">.npmrc</S>
+                          <S N="Value">00BFFF</S>
+                        </En>
+                        <En>
+                          <S N="Key">.gitignore</S>
+                          <S N="Value">FF4500</S>
+                        </En>
+                        <En>
+                          <S N="Key">gulpfile.js</S>
+                          <S N="Value">CD5C5C</S>
+                        </En>
+                        <En>
+                          <S N="Key">package.json</S>
+                          <S N="Value">6B8E23</S>
+                        </En>
+                        <En>
+                          <S N="Key">tslint.json</S>
+                          <S N="Value">F4A460</S>
+                        </En>
+                        <En>
+                          <S N="Key">LICENSE.txt</S>
+                          <S N="Value">CD5C5C</S>
+                        </En>
+                        <En>
+                          <S N="Key">.firebaserc</S>
+                          <S N="Value">FFA500</S>
+                        </En>
+                        <En>
+                          <S N="Key">bitbucket-pipelines.yaml</S>
+                          <S N="Value">87CEFA</S>
+                        </En>
+                        <En>
+                          <S N="Key">bitbucket-pipelines.yml</S>
+                          <S N="Value">87CEFA</S>
+                        </En>
+                        <En>
+                          <S N="Key">.mrconfig</S>
+                          <S N="Value">87CEEB</S>
+                        </En>
+                        <En>
+                          <S N="Key">.jshintrc</S>
+                          <S N="Value">F4A460</S>
+                        </En>
+                        <En>
+                          <S N="Key">.clang-format</S>
+                          <S N="Value">87CEEB</S>
+                        </En>
+                        <En>
+                          <S N="Key">README.md</S>
+                          <S N="Value">00FFFF</S>
+                        </En>
+                        <En>
+                          <S N="Key">.gitmodules</S>
+                          <S N="Value">FF4500</S>
+                        </En>
+                        <En>
+                          <S N="Key">composer.lock</S>
+                          <S N="Value">F4A460</S>
+                        </En>
+                        <En>
+                          <S N="Key">.nvmrc</S>
+                          <S N="Value">6B8E23</S>
+                        </En>
+                        <En>
+                          <S N="Key">gruntfile.js</S>
+                          <S N="Value">CD5C5C</S>
+                        </En>
+                        <En>
+                          <S N="Key">docker-compose.test.yml</S>
+                          <S N="Value">4682B4</S>
+                        </En>
+                        <En>
+                          <S N="Key">.DS_Store</S>
+                          <S N="Value">696969</S>
+                        </En>
+                        <En>
+                          <S N="Key">LICENSE</S>
+                          <S N="Value">CD5C5C</S>
+                        </En>
+                        <En>
+                          <S N="Key">docker-compose.local.yml</S>
+                          <S N="Value">4682B4</S>
+                        </En>
+                        <En>
+                          <S N="Key">.gitkeep</S>
+                          <S N="Value">FF4500</S>
+                        </En>
+                        <En>
+                          <S N="Key">authors.txt</S>
+                          <S N="Value">FF6347</S>
+                        </En>
+                        <En>
+                          <S N="Key">README.txt</S>
+                          <S N="Value">00FFFF</S>
+                        </En>
+                        <En>
+                          <S N="Key">.jenkinsfile</S>
+                          <S N="Value">6495ED</S>
+                        </En>
+                        <En>
+                          <S N="Key">.yardopts</S>
+                          <S N="Value">87CEEB</S>
+                        </En>
+                        <En>
+                          <S N="Key">README</S>
+                          <S N="Value">00FFFF</S>
+                        </En>
+                        <En>
+                          <S N="Key">.esmrc</S>
+                          <S N="Value">6B8E23</S>
+                        </En>
+                        <En>
+                          <S N="Key">git-history</S>
+                          <S N="Value">FF4500</S>
+                        </En>
+                        <En>
+                          <S N="Key">.gitconfig</S>
+                          <S N="Value">FF4500</S>
+                        </En>
+                        <En>
+                          <S N="Key">.gitlab-ci.yml</S>
+                          <S N="Value">FF4500</S>
+                        </En>
+                        <En>
+                          <S N="Key">firebase.json</S>
+                          <S N="Value">FFA500</S>
+                        </En>
+                        <En>
+                          <S N="Key">favicon.ico</S>
+                          <S N="Value">FFD700</S>
+                        </En>
+                        <En>
+                          <S N="Key">vue.config.ts</S>
+                          <S N="Value">778899</S>
+                        </En>
+                        <En>
+                          <S N="Key">.tsbuildinfo</S>
+                          <S N="Value">F4A460</S>
+                        </En>
+                        <En>
+                          <S N="Key">.esformatter</S>
+                          <S N="Value">F4A460</S>
+                        </En>
+                        <En>
+                          <S N="Key">CHANGELOG</S>
+                          <S N="Value">98FB98</S>
+                        </En>
+                        <En>
+                          <S N="Key">.nmpignore</S>
+                          <S N="Value">00BFFF</S>
+                        </En>
+                        <En>
+                          <S N="Key">gulpfile.ts</S>
+                          <S N="Value">CD5C5C</S>
+                        </En>
+                        <En>
+                          <S N="Key">Dockerfile</S>
+                          <S N="Value">4682B4</S>
+                        </En>
+                        <En>
+                          <S N="Key">docker-compose.prod.yml</S>
+                          <S N="Value">4682B4</S>
+                        </En>
+                        <En>
+                          <S N="Key">vue.config.js</S>
+                          <S N="Value">778899</S>
+                        </En>
+                        <En>
+                          <S N="Key">CHANGELOG.txt</S>
+                          <S N="Value">98FB98</S>
+                        </En>
+                        <En>
+                          <S N="Key">gulpfile.babel.js</S>
+                          <S N="Value">CD5C5C</S>
+                        </En>
+                        <En>
+                          <S N="Key">docker-compose.staging.yml</S>
+                          <S N="Value">4682B4</S>
+                        </En>
+                        <En>
+                          <S N="Key">tsconfig.json</S>
+                          <S N="Value">F4A460</S>
+                        </En>
+                        <En>
+                          <S N="Key">bower.json</S>
+                          <S N="Value">CD5C5C</S>
+                        </En>
+                        <En>
+                          <S N="Key">.htaccess</S>
+                          <S N="Value">9ACD32</S>
+                        </En>
+                        <En>
+                          <S N="Key">package-lock.json</S>
+                          <S N="Value">6B8E23</S>
+                        </En>
+                        <En>
+                          <S N="Key">code_of_conduct.md</S>
+                          <S N="Value">FFFFE0</S>
+                        </En>
+                        <En>
+                          <S N="Key">authors</S>
+                          <S N="Value">FF6347</S>
+                        </En>
+                        <En>
+                          <S N="Key">CHANGELOG.md</S>
+                          <S N="Value">98FB98</S>
+                        </En>
+                        <En>
+                          <S N="Key">.terraform.lock.hcl</S>
+                          <S N="Value">948EEC</S>
+                        </En>
+                        <En>
+                          <S N="Key">.gitattributes</S>
+                          <S N="Value">FF4500</S>
+                        </En>
+                        <En>
+                          <S N="Key">docker-compose.yml</S>
+                          <S N="Value">4682B4</S>
+                        </En>
+                        <En>
+                          <S N="Key">authors.md</S>
+                          <S N="Value">FF6347</S>
+                        </En>
+                        <En>
+                          <S N="Key">.jscsrc</S>
+                          <S N="Value">F4A460</S>
+                        </En>
+                      </DCT>
+                    </Obj>
+                  </En>
+                  <En>
+                    <S N="Key">.php</S>
+                    <S N="Value">6A5ACD</S>
+                  </En>
+                  <En>
+                    <S N="Key">.mrg</S>
+                    <S N="Value">DC143C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.ppsm</S>
+                    <S N="Value">DC143C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.pgf</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.fsx</S>
+                    <S N="Value">00BFFF</S>
+                  </En>
+                  <En>
+                    <S N="Key">.tf</S>
+                    <S N="Value">948EEC</S>
+                  </En>
+                  <En>
+                    <S N="Key">.clj</S>
+                    <S N="Value">00FF7F</S>
+                  </En>
+                  <En>
+                    <S N="Key">.config</S>
+                    <S N="Value">6495ED</S>
+                  </En>
+                  <En>
+                    <S N="Key">.mdb</S>
+                    <S N="Value">FFD700</S>
+                  </En>
+                  <En>
+                    <S N="Key">.mpe</S>
+                    <S N="Value">FFA500</S>
+                  </En>
+                  <En>
+                    <S N="Key">.json</S>
+                    <S N="Value">FFD700</S>
+                  </En>
+                  <En>
+                    <S N="Key">.wav</S>
+                    <S N="Value">DB7093</S>
+                  </En>
+                  <En>
+                    <S N="Key">.avi</S>
+                    <S N="Value">FFA500</S>
+                  </En>
+                  <En>
+                    <S N="Key">.ts</S>
+                    <S N="Value">F0E68C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.dockerignore</S>
+                    <S N="Value">4682B4</S>
+                  </En>
+                  <En>
+                    <S N="Key">.vb</S>
+                    <S N="Value">EE82EE</S>
+                  </En>
+                  <En>
+                    <S N="Key">.applescript</S>
+                    <S N="Value">4682B4</S>
+                  </En>
+                  <En>
+                    <S N="Key">.srt</S>
+                    <S N="Value">00CED1</S>
+                  </En>
+                  <En>
+                    <S N="Key">.yaml</S>
+                    <S N="Value">FF6347</S>
+                  </En>
+                  <En>
+                    <S N="Key">.jsx</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.jpeg</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.properties</S>
+                    <S N="Value">6495ED</S>
+                  </En>
+                  <En>
+                    <S N="Key">.slnf</S>
+                    <S N="Value">EE82EE</S>
+                  </En>
+                  <En>
+                    <S N="Key">Rakefile</S>
+                    <S N="Value">FF0000</S>
+                  </En>
+                  <En>
+                    <S N="Key">.hbs</S>
+                    <S N="Value">E37933</S>
+                  </En>
+                  <En>
+                    <S N="Key">.vsxproj.filters</S>
+                    <S N="Value">EE82EE</S>
+                  </En>
+                  <En>
+                    <S N="Key">.ass</S>
+                    <S N="Value">C50000</S>
+                  </En>
+                  <En>
+                    <S N="Key">.js</S>
+                    <S N="Value">F0E68C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.otf</S>
+                    <S N="Value">DC143C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.psb</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.asc</S>
+                    <S N="Value">66CDAA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.cer</S>
+                    <S N="Value">FF6347</S>
+                  </En>
+                  <En>
+                    <S N="Key">.plist</S>
+                    <S N="Value">98FB98</S>
+                  </En>
+                  <En>
+                    <S N="Key">.elm</S>
+                    <S N="Value">9932CC</S>
+                  </En>
+                  <En>
+                    <S N="Key">.mov</S>
+                    <S N="Value">FFA500</S>
+                  </En>
+                  <En>
+                    <S N="Key">.lrc</S>
+                    <S N="Value">00CED1</S>
+                  </En>
+                  <En>
+                    <S N="Key">.tsx</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.sass</S>
+                    <S N="Value">FF00FF</S>
+                  </En>
+                  <En>
+                    <S N="Key">.svg</S>
+                    <S N="Value">F4A460</S>
+                  </En>
+                  <En>
+                    <S N="Key">.exs</S>
+                    <S N="Value">8B4513</S>
+                  </En>
+                  <En>
+                    <S N="Key">.dart</S>
+                    <S N="Value">4682B4</S>
+                  </En>
+                  <En>
+                    <S N="Key">.eex</S>
+                    <S N="Value">8B4513</S>
+                  </En>
+                  <En>
+                    <S N="Key">.html</S>
+                    <S N="Value">CD5C5C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.erb</S>
+                    <S N="Value">FF0000</S>
+                  </En>
+                  <En>
+                    <S N="Key">.opus</S>
+                    <S N="Value">DB7093</S>
+                  </En>
+                  <En>
+                    <S N="Key">.xml</S>
+                    <S N="Value">98FB98</S>
+                  </En>
+                  <En>
+                    <S N="Key">.exe</S>
+                    <S N="Value">00FA9A</S>
+                  </En>
+                  <En>
+                    <S N="Key">.sln</S>
+                    <S N="Value">EE82EE</S>
+                  </En>
+                  <En>
+                    <S N="Key">.ppsx</S>
+                    <S N="Value">DC143C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.psd1</S>
+                    <S N="Value">00BFFF</S>
+                  </En>
+                  <En>
+                    <S N="Key">.vscodeignore</S>
+                    <S N="Value">6495ED</S>
+                  </En>
+                  <En>
+                    <S N="Key">.ico</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.rb</S>
+                    <S N="Value">FF0000</S>
+                  </En>
+                  <En>
+                    <S N="Key">.mpeg</S>
+                    <S N="Value">FFA500</S>
+                  </En>
+                  <En>
+                    <S N="Key">.go</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.xlsx</S>
+                    <S N="Value">9ACD32</S>
+                  </En>
+                  <En>
+                    <S N="Key">.fsi</S>
+                    <S N="Value">00BFFF</S>
+                  </En>
+                  <En>
+                    <S N="Key">.java</S>
+                    <S N="Value">F89820</S>
+                  </En>
+                  <En>
+                    <S N="Key">.eps</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.7z</S>
+                    <S N="Value">DAA520</S>
+                  </En>
+                  <En>
+                    <S N="Key">.rtf</S>
+                    <S N="Value">00BFFF</S>
+                  </En>
+                  <En>
+                    <S N="Key">.htm</S>
+                    <S N="Value">CD5C5C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.less</S>
+                    <S N="Value">6B8E23</S>
+                  </En>
+                  <En>
+                    <S N="Key">.brk</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.cs</S>
+                    <S N="Value">7B68EE</S>
+                  </En>
+                  <En>
+                    <S N="Key">.vhd</S>
+                    <S N="Value">E1E3E6</S>
+                  </En>
+                  <En>
+                    <S N="Key">.pps</S>
+                    <S N="Value">DC143C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.img</S>
+                    <S N="Value">E1E3E6</S>
+                  </En>
+                  <En>
+                    <S N="Key">.mp3</S>
+                    <S N="Value">DB7093</S>
+                  </En>
+                  <En>
+                    <S N="Key">.bpg</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.sh</S>
+                    <S N="Value">FF4500</S>
+                  </En>
+                  <En>
+                    <S N="Key">.eot</S>
+                    <S N="Value">DC143C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.project</S>
+                    <S N="Value">98FB98</S>
+                  </En>
+                  <En>
+                    <S N="Key">.dds</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.jar</S>
+                    <S N="Value">F89820</S>
+                  </En>
+                  <En>
+                    <S N="Key">.resx</S>
+                    <S N="Value">98FB98</S>
+                  </En>
+                  <En>
+                    <S N="Key">.patch</S>
+                    <S N="Value">FF4500</S>
+                  </En>
+                  <En>
+                    <S N="Key">.leex</S>
+                    <S N="Value">8B4513</S>
+                  </En>
+                  <En>
+                    <S N="Key">.ps1xml</S>
+                    <S N="Value">00BFFF</S>
+                  </En>
+                  <En>
+                    <S N="Key">.ppt</S>
+                    <S N="Value">DC143C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.zip</S>
+                    <S N="Value">DAA520</S>
+                  </En>
+                  <En>
+                    <S N="Key">.bzip2</S>
+                    <S N="Value">DAA520</S>
+                  </En>
+                  <En>
+                    <S N="Key">.flv</S>
+                    <S N="Value">FFA500</S>
+                  </En>
+                  <En>
+                    <S N="Key">.gifv</S>
+                    <S N="Value">FFA500</S>
+                  </En>
+                  <En>
+                    <S N="Key">.csx</S>
+                    <S N="Value">7B68EE</S>
+                  </En>
+                  <En>
+                    <S N="Key">.xsl</S>
+                    <S N="Value">98FB98</S>
+                  </En>
+                  <En>
+                    <S N="Key">.c</S>
+                    <S N="Value">A9A9A9</S>
+                  </En>
+                  <En>
+                    <S N="Key">junction</S>
+                    <S N="Value">7373ff</S>
+                  </En>
+                  <En>
+                    <S N="Key">.vcxproj</S>
+                    <S N="Value">EE82EE</S>
+                  </En>
+                  <En>
+                    <S N="Key">.jpg</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.sln.dotsettings.user</S>
+                    <S N="Value">6495ED</S>
+                  </En>
+                  <En>
+                    <S N="Key">.rpm</S>
+                    <S N="Value">FFC77A</S>
+                  </En>
+                  <En>
+                    <S N="Key">.fsproj</S>
+                    <S N="Value">00BFFF</S>
+                  </En>
+                  <En>
+                    <S N="Key">.psm1</S>
+                    <S N="Value">00BFFF</S>
+                  </En>
+                  <En>
+                    <S N="Key">.jng</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.appx</S>
+                    <S N="Value">FFC77A</S>
+                  </En>
+                  <En>
+                    <S N="Key">.tfvars</S>
+                    <S N="Value">948EEC</S>
+                  </En>
+                  <En>
+                    <S N="Key">.code-workplace</S>
+                    <S N="Value">6495ED</S>
+                  </En>
+                  <En>
+                    <S N="Key">.gif</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.css</S>
+                    <S N="Value">87CEFA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.pem</S>
+                    <S N="Value">66CDAA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.sublime-workspace</S>
+                    <S N="Value">F4A460</S>
+                  </En>
+                  <En>
+                    <S N="Key">.sui</S>
+                    <S N="Value">DC143C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.vob</S>
+                    <S N="Value">FFA500</S>
+                  </En>
+                  <En>
+                    <S N="Key">.font</S>
+                    <S N="Value">DC143C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.ex</S>
+                    <S N="Value">8B4513</S>
+                  </En>
+                  <En>
+                    <S N="Key">.erl</S>
+                    <S N="Value">FF6347</S>
+                  </En>
+                  <En>
+                    <S N="Key">.doc</S>
+                    <S N="Value">00BFFF</S>
+                  </En>
+                  <En>
+                    <S N="Key">.xls</S>
+                    <S N="Value">9ACD32</S>
+                  </En>
+                  <En>
+                    <S N="Key">.mp2</S>
+                    <S N="Value">FFA500</S>
+                  </En>
+                  <En>
+                    <S N="Key">.Rproj</S>
+                    <S N="Value">276DC3</S>
+                  </En>
+                  <En>
+                    <S N="Key">.pub</S>
+                    <S N="Value">66CDAA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.yuv</S>
+                    <S N="Value">FFA500</S>
+                  </En>
+                  <En>
+                    <S N="Key">.lock</S>
+                    <S N="Value">DAA520</S>
+                  </En>
+                  <En>
+                    <S N="Key">.pdf</S>
+                    <S N="Value">CD5C5C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.dll</S>
+                    <S N="Value">87CEEB</S>
+                  </En>
+                  <En>
+                    <S N="Key">.gemfile</S>
+                    <S N="Value">FF0000</S>
+                  </En>
+                  <En>
+                    <S N="Key">.cljs</S>
+                    <S N="Value">00FF7F</S>
+                  </En>
+                  <En>
+                    <S N="Key">.markdown</S>
+                    <S N="Value">00BFFF</S>
+                  </En>
+                  <En>
+                    <S N="Key">.brotli</S>
+                    <S N="Value">DAA520</S>
+                  </En>
+                  <En>
+                    <S N="Key">.gzip</S>
+                    <S N="Value">DAA520</S>
+                  </En>
+                  <En>
+                    <S N="Key">.crt</S>
+                    <S N="Value">FF6347</S>
+                  </En>
+                  <En>
+                    <S N="Key">.tif</S>
+                    <S N="Value">20B2AA</S>
+                  </En>
+                  <En>
+                    <S N="Key">.m2v</S>
+                    <S N="Value">FFA500</S>
+                  </En>
+                  <En>
+                    <S N="Key">.hs</S>
+                    <S N="Value">9932CC</S>
+                  </En>
+                  <En>
+                    <S N="Key">.msix</S>
+                    <S N="Value">FFC77A</S>
+                  </En>
+                  <En>
+                    <S N="Key">.csv</S>
+                    <S N="Value">9ACD32</S>
+                  </En>
+                  <En>
+                    <S N="Key">.cpp</S>
+                    <S N="Value">A9A9A9</S>
+                  </En>
+                  <En>
+                    <S N="Key">.txt</S>
+                    <S N="Value">00CED1</S>
+                  </En>
+                  <En>
+                    <S N="Key">.fonts</S>
+                    <S N="Value">DC143C</S>
+                  </En>
+                  <En>
+                    <S N="Key">.docx</S>
+                    <S N="Value">00BFFF</S>
+                  </En>
+                  <En>
+                    <S N="Key">.ics</S>
+                    <S N="Value">00CED1</S>
+                  </En>
+                </DCT>
+              </Obj>
+            </En>
+          </DCT>
+        </Obj>
+      </En>
+      <En>
+        <S N="Key">Name</S>
+        <S N="Value">devblackops</S>
+      </En>
+    </DCT>
+  </Obj>
+</Objs>
