@@ -24,9 +24,9 @@
         songs                   = 'DB7093'
         onedrive                = 'b0b0b0'
         downloads               = 'b0b0b0'
-        src                     = '00e672'
-        development             = '00e672'
-        projects                = '00e672'
+        src                     = '00cd65'
+        development             = '00cd65'
+        projects                = '00cd65'
         bin                     = '00FFF7'
         tests                   = '87CEEB'
         windows                 = '00A8E8'
@@ -326,9 +326,9 @@
       '.lua'                  = '87CEFA'
 
       # Clojure
-      '.clj'                  = '00e672'
-      '.cljs'                 = '00e672'
-      '.cljc'                 = '00e672'
+      '.clj'                  = '00cd65'
+      '.cljs'                 = '00cd65'
+      '.cljc'                 = '00cd65'
 
       # Groovy
       '.groovy'               = '87CEFA'
