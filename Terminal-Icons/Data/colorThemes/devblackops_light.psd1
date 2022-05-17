@@ -7,8 +7,8 @@
       WellKnown = @{
         docs                    = '00BFFF'
         documents               = '00BFFF'
-        desktop                 = '00FBFF'
-        contacts                = '00FBFF'
+        desktop                 = '00c9cd'
+        contacts                = '00c9cd'
         apps                    = 'FF143C'
         applications            = 'FF143C'
         shortcuts               = 'FF143C'
@@ -19,11 +19,11 @@
         pictures                = '9ACD32'
         videos                  = 'FFA500'
         movies                  = 'FFA500'
-        media                   = 'D3D3D3'
+        media                   = 'b0b0b0'
         music                   = 'DB7093'
         songs                   = 'DB7093'
-        onedrive                = 'D3D3D3'
-        downloads               = 'D3D3D3'
+        onedrive                = 'b0b0b0'
+        downloads               = 'b0b0b0'
         src                     = '00e672'
         development             = '00e672'
         projects                = '00e672'
@@ -37,8 +37,8 @@
         '.vscode'               = '87CEFA'
         '.vscode-insiders'      = '24BFA5'
         '.git'                  = 'FF4500'
-        '.github'               = 'C0C0C0'
-        'github'                = 'C0C0C0'
+        '.github'               = 'b0b0b0'
+        'github'                = 'b0b0b0'
         'node_modules'          = '6B8E23'
         '.terraform'            = '948EEC'
         '.azure'                = '00BFFF'
@@ -101,8 +101,8 @@
         'bower.json'                    = 'CD5C5C'
 
         # Conduct
-        'code_of_conduct.md'            = 'C0C0C0'
-        'code_of_conduct.txt'           = 'C0C0C0'
+        'code_of_conduct.md'            = 'b0b0b0'
+        'code_of_conduct.txt'           = 'b0b0b0'
 
         # Docker
         'Dockerfile'                    = '4682B4'
