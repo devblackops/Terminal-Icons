@@ -304,6 +304,7 @@
             '.asp'                  = 'CD5C5C'
             '.css'                  = '87CEFA'
             '.sass'                 = 'FF00FF'
+            '.scss'                 = 'FF00FF'
             '.less'                 = '6B8E23'
 
             # Markdown

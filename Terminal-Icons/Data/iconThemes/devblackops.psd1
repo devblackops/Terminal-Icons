@@ -308,6 +308,7 @@
             '.asp'                  = 'nf-seti-html'
             '.css'                  = 'nf-dev-css3'
             '.sass'                 = 'nf-dev-sass'
+            '.scss'                 = 'nf-dev-sass'
             '.less'                 = 'nf-dev-less'
 
             # Markdown
