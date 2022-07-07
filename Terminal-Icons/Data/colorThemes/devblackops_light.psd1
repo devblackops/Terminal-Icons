@@ -203,7 +203,6 @@
       '.py'                   = '4B8BBE'
       '.ipynb'                = '4B8BBE'
 
-
       # React
       '.jsx'                  = '20B2AA'
       '.tsx'                  = '20B2AA'
@@ -540,6 +539,9 @@
 
       # Julia language
       '.jl'                   = '9259a3'
+
+      # Vim
+      '.vim'                  = '019833'
     }
   }
 }

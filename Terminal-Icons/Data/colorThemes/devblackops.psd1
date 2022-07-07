@@ -540,6 +540,9 @@
 
             # Julia language
             '.jl'                   = '9259a3'
+
+            # Vim
+            '.vim'                  = '019833'
         }
     }
 }

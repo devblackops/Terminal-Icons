@@ -466,7 +466,7 @@
             # Email
             '.ics'                  = 'nf-fa-calendar'
 
-            # Certifactes
+            # Certificates
             '.cer'                  = 'nf-fa-certificate'
             '.cert'                 = 'nf-fa-certificate'
             '.crt'                  = 'nf-fa-certificate'
@@ -512,7 +512,6 @@
             '.dockerignore'         = 'nf-dev-docker'
             '.dockerfile'           = 'nf-dev-docker'
 
-
             # VSCode
             '.vscodeignore'         = 'nf-fa-gear'
             '.vsixmanifest'         = 'nf-fa-gear'
@@ -547,6 +546,9 @@
 
             # Julia language
             '.jl'                   = 'nf-seti-julia'
+
+            # Vim
+            '.vim'                  = 'nf-custom-vim'
         }
     }
 }
