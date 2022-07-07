@@ -1,5 +1,5 @@
 @{
-  Name  = 'devblackops'
+  Name  = 'devblackops_light'
   Types = @{
     Directories = @{
       symlink  = '7373ff'
@@ -537,6 +537,9 @@
       '.R'                    = '276DC3'
       '.Rmd'                  = '276DC3'
       '.Rproj'                = '276DC3'
+
+      # Julia language
+      '.jl'                   = '9259a3'
     }
   }
 }
