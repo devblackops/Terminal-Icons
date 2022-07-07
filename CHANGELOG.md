@@ -10,12 +10,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - [**#80**](https://github.com/devblackops/Terminal-Icons/pull/80) - Added light color theme `devblackops_light` (via [@TamKengHong](https://github.com/TamKengHong))
 - Add icon and color for Julia language file (.jl)
-- Add icon and color for and Vim (.vim)
+- Add icon and color for Vim (.vim)
 - Add icon and color for Sass (.scss)
 
 ### Fixed
 
 - [**#68**](https://github.com/devblackops/Terminal-Icons/issues/68) Symlink rendering on Windows PowerShell
+
 ## [0.9.0] 2022-01-27
 
 ### Added
