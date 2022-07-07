@@ -4,11 +4,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
-
 ## [0.10.0] Unreleased
 
 ### Added
 
+- [**#80**](https://github.com/devblackops/Terminal-Icons/pull/80) - Added light color theme `devblackops_light` (via [@TamKengHong](https://github.com/TamKengHong))
 - Add icon and color for Julia language file (.jl)
 ### Fixed
 
