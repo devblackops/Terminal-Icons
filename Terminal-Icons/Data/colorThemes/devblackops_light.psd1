@@ -8,6 +8,7 @@
         docs                    = '00BFFF'
         documents               = '00BFFF'
         desktop                 = '00c9cd'
+        benchmark               = 'F08519'
         contacts                = '00c9cd'
         apps                    = 'FF143C'
         applications            = 'FF143C'
