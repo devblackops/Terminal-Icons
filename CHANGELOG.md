@@ -4,18 +4,28 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
+
+## [0.11.0] Unreleased
+
+### Added
+
+- [**#90**](https://github.com/devblackops/Terminal-Icons/pull/90) - Add icon and color for `benchmark` wellknown folder (via [@wangkanai](https://github.com/wangkanai))
+- Add glyphs from Nerd Font v2.2.0 (must have a Nerd Font >= 2.2.0 installed to see these)
+- Add icon and color for Puppet (.pp and .epp)
+
 ## [0.10.0] 2022-07-06
 
 ### Added
 
 - [**#80**](https://github.com/devblackops/Terminal-Icons/pull/80) - Added light color theme `devblackops_light` (via [@TamKengHong](https://github.com/TamKengHong))
 - Add icon and color for Julia language file (.jl)
-- Add icon and color for and Vim (.vim)
+- Add icon and color for Vim (.vim)
 - Add icon and color for Sass (.scss)
 
 ### Fixed
 
 - [**#68**](https://github.com/devblackops/Terminal-Icons/issues/68) Symlink rendering on Windows PowerShell
+
 ## [0.9.0] 2022-01-27
 
 ### Added
