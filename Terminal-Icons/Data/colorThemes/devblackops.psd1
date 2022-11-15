@@ -545,6 +545,10 @@
 
             # Vim
             '.vim'                  = '019833'
+
+            # Puppet
+            '.pp'                   = 'FFA61A'
+            '.epp'                  = 'FFA61A'
         }
     }
 }

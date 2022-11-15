@@ -551,6 +551,10 @@
 
             # Vim
             '.vim'                  = 'nf-custom-vim'
+
+            # Puppet
+            '.pp'                   = 'nf-custom-puppet'
+            '.epp'                  = 'nf-custom-puppet'
         }
     }
 }
