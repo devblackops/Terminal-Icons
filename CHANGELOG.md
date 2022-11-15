@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
+
+## [0.11.0] Unreleased
+
+### Added
+
+- [**#90**](https://github.com/devblackops/Terminal-Icons/pull/90) - Add icon and color for `benchmark` wellknown folder (via [@wangkanai](https://github.com/wangkanai))
+
 ## [0.10.0] 2022-07-06
 
 ### Added
