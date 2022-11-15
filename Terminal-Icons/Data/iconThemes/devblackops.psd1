@@ -10,6 +10,7 @@
                 docs                    = 'nf-oct-repo'
                 documents               = 'nf-oct-repo'
                 desktop                 = 'nf-mdi-desktop_classic'
+                benchmark               = 'nf-mdi-timer'
                 contacts                = 'nf-mdi-contacts'
                 apps                    = 'nf-mdi-apps'
                 applications            = 'nf-mdi-apps'
