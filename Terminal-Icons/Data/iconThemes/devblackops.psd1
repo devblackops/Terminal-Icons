@@ -14,6 +14,7 @@
                 contacts                = 'nf-mdi-contacts'
                 apps                    = 'nf-mdi-apps'
                 applications            = 'nf-mdi-apps'
+                artifacts               = 'nf-cod-package'
                 shortcuts               = 'nf-oct-file_symlink_directory'
                 links                   = 'nf-oct-file_symlink_directory'
                 fonts                   = 'nf-fa-font'

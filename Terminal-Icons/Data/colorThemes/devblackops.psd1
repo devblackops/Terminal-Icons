@@ -12,6 +12,7 @@
                 contacts                = '00FBFF'
                 apps                    = 'FF143C'
                 applications            = 'FF143C'
+                artifacts               = 'D49653'
                 shortcuts               = 'FF143C'
                 links                   = 'FF143C'
                 fonts                   = 'DC143C'
