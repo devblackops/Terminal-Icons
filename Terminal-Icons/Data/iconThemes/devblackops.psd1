@@ -11,6 +11,8 @@
                 documents               = 'nf-oct-repo'
                 desktop                 = 'nf-mdi-desktop_classic'
                 benchmark               = 'nf-mdi-timer'
+                demo                    = 'nf-cod-preview'
+                samples                 = 'nf-cod-preview'
                 contacts                = 'nf-mdi-contacts'
                 apps                    = 'nf-mdi-apps'
                 applications            = 'nf-mdi-apps'

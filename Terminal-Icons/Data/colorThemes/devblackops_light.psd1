@@ -9,6 +9,8 @@
         documents               = '00BFFF'
         desktop                 = '00c9cd'
         benchmark               = 'F08519'
+        demo                    = '5F3EC3'
+        samples                 = '5F3EC3'
         contacts                = '00c9cd'
         apps                    = 'FF143C'
         applications            = 'FF143C'
