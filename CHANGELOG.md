@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
+- [**#92**](https://github.com/devblackops/Terminal-Icons/pull/92) - Add icon and color for  `artifacts` wellknown folder (via [@wangkanai](https://github.com/wangkanai))
+- [**#91**](https://github.com/devblackops/Terminal-Icons/pull/91) - Add icons and colors for  `demo` and `sample` wellknown folders (via [@wangkanai](https://github.com/wangkanai))
 - [**#90**](https://github.com/devblackops/Terminal-Icons/pull/90) - Add icon and color for `benchmark` wellknown folder (via [@wangkanai](https://github.com/wangkanai))
 - Add glyphs from Nerd Font v2.2.0 (must have a Nerd Font >= 2.2.0 installed to see these)
 - Add icon and color for Puppet (.pp and .epp)
