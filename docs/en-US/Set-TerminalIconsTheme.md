@@ -12,8 +12,15 @@ schema: 2.0.0
 
 ## SYNTAX
 
+### theme (Default)
 ```
-Set-TerminalIconsTheme [[-IconTheme] <String>] [[-ColorTheme] <String>] [-Force] [-WhatIf] [-Confirm]
+Set-TerminalIconsTheme [-IconTheme <String>] [-ColorTheme <String>] [-Force] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### notheme
+```
+Set-TerminalIconsTheme [-DisableColorTheme] [-DisableIconTheme] [-Force] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -36,11 +43,11 @@ PS C:\> {{ Add example code here }}
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: theme
 Aliases:
 
 Required: False
-Position: 1
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -51,12 +58,42 @@ Accept wildcard characters: False
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: theme
 Aliases:
 
 Required: False
-Position: 2
+Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DisableColorTheme
+Disables custom colors and uses default terminal color.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: notheme
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DisableIconTheme
+Disables custom icons and shows only shows the directory or file name.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: notheme
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

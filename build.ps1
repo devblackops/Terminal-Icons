@@ -1,3 +1,5 @@
+#Requires -Modules BuildHelpers,psake,PowerShellBuild
+
 [cmdletbinding(DefaultParameterSetName = 'Task')]
 param(
     # Build task(s) to execute
