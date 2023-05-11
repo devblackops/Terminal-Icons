@@ -939,6 +939,7 @@ function Invoke-TerminalIconsThemeMigration {
         'nf-mdi-ghost'                                   = 'nf-md-ghost'
         'nf-mdi-gift'                                    = 'nf-md-gift'
         'nf-mdi-git'                                     = 'nf-md-git'
+        'nf-mdi-github_face'                             = 'nf-dev-github_alt'
         'nf-mdi-glass_flute'                             = 'nf-md-glass_flute'
         'nf-mdi-glass_mug'                               = 'nf-md-glass_mug'
         'nf-mdi-glass_stange'                            = 'nf-md-glass_stange'
@@ -2154,7 +2155,6 @@ function Invoke-TerminalIconsThemeMigration {
         'nf-mdi-laptop_chromebook',
         'nf-mdi-verified',
         'nf-mdi-itunes',
-        'nf-mdi-github_face',
         'nf-mdi-xamarin_outline',
         'nf-mdi-android_head',
         'nf-oct-paintcan',
@@ -2209,10 +2209,10 @@ function Invoke-TerminalIconsThemeMigration {
         if (Test-Path $resolvedPath) {
             $item = Get-Item -LiteralPath $resolvedPath
 
-            $Theme = Get-Content $item
+            $Theme = Get-Content $item -Raw
 
             foreach ($OldGlyph in $MigrationMap.Keys) {
-                $Theme = $Theme -replace "'$OldGlyph'", "'$($MigrationMap[$OldGlyph])'"
+                $Theme = $Theme -replace "('|`")$OldGlyph('|`")", "`$1$($MigrationMap[$OldGlyph])`$2"
             }
 
             $GlyphsWithNoAutoMigration = @()
