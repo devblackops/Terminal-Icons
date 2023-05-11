@@ -4,6 +4,10 @@ function Invoke-TerminalIconsThemeMigration {
         Used to migrate your terminal icon themes to Nerd Fonts v3.
     .DESCRIPTION
         Used to migrate your terminal icon themes to Nerd Fonts v3.
+    .PARAMETER Path
+        The path to the Terminal-Icons icon theme file.
+    .PARAMETER LiteralPath
+        The literal path to the Terminal-Icons icon theme file.
     .EXAMPLE
         PS> Invoke-TerminalIconsThemeMigration -Path ./my_icon_theme.psd1 | Out-File ./migrated_icon_theme.psd1
 
