@@ -436,6 +436,7 @@
             '.exr'                  = '20B2AA'
             '.fpx'                  = '20B2AA'
             '.gbr'                  = '20B2AA'
+            '.heic'                 = '20B2AA'
             '.jbig2'                = '20B2AA'
             '.jb2'                  = '20B2AA'
             '.jng'                  = '20B2AA'

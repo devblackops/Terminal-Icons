@@ -440,6 +440,7 @@
             '.exr'                  = 'nf-fa-file_image_o'
             '.fpx'                  = 'nf-fa-file_image_o'
             '.gbr'                  = 'nf-fa-file_image_o'
+            '.heic'                 = 'nf-fa-file_image_o'
             '.jbig2'                = 'nf-fa-file_image_o'
             '.jb2'                  = 'nf-fa-file_image_o'
             '.jng'                  = 'nf-fa-file_image_o'
