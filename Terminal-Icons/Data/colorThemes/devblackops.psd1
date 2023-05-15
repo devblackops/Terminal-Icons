@@ -469,6 +469,8 @@
             '.mpe'                  = 'FFA500'
             '.mpv'                  = 'FFA500'
             '.m2v'                  = 'FFA500'
+            '.3gp'                  = 'FFA500'
+            '.3g2'                  = 'FFA500'
 
             # Email
             '.ics'                  = '00CED1'

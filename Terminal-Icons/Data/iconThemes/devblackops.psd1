@@ -473,6 +473,8 @@
             '.mpe'                  = 'nf-fa-file_video_o'
             '.mpv'                  = 'nf-fa-file_video_o'
             '.m2v'                  = 'nf-fa-file_video_o'
+            '.3gp'                  = 'nf-fa-file_video_o'
+            '.3g2'                  = 'nf-fa-file_video_o'
 
             # Email
             '.ics'                  = 'nf-fa-calendar'
