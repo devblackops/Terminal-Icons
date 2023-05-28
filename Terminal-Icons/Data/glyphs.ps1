@@ -408,6 +408,7 @@
     'nf-custom-purescript'                             = ''
     'nf-custom-vim'                                    = ''
     'nf-custom-windows'                                = ''
+    'nf-custom-folder_oct'                             = ''
     'nf-dev-android'                                   = ''
     'nf-dev-angular'                                   = ''
     'nf-dev-appcelerator'                              = ''

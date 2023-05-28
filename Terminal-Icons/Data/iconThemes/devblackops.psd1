@@ -3,13 +3,13 @@
     Types = @{
         Directories = @{
             # Default directory icon
-            ''        = 'nf-oct-file_directory'
+            ''        = 'nf-custom-folder_oct'
             symlink   = 'nf-oct-file_symlink_directory'
             junction  = 'nf-fa-external_link'
             WellKnown = @{
                 docs                    = 'nf-oct-repo'
                 documents               = 'nf-oct-repo'
-                desktop                 = 'nf-md-desktop_classic'
+                desktop                 = 'nf-fa-desktop'
                 benchmark               = 'nf-md-timer'
                 demo                    = 'nf-cod-preview'
                 samples                 = 'nf-cod-preview'
@@ -30,7 +30,7 @@
                 songs                   = 'nf-md-folder_music'
                 onedrive                = 'nf-dev-onedrive'
                 downloads               = 'nf-md-folder_download'
-                src                     = 'nf-oct-terminal'
+                src                     = 'nf-md-folder_pound'
                 development             = 'nf-oct-terminal'
                 projects                = 'nf-seti-project'
                 bin                     = 'nf-oct-file_binary'
@@ -40,8 +40,8 @@
                 favorites               = 'nf-md-folder_star'
                 '.config'               = 'nf-seti-config'
                 '.cache'                = 'nf-md-cached'
-                '.vscode'               = 'nf-custom-folder_config'
-                '.vscode-insiders'      = 'nf-custom-folder_config'
+                '.vscode'               = 'nf-md-microsoft_visual_studio_code'
+                '.vscode-insiders'      = 'nf-md-microsoft_visual_studio_code'
                 '.git'                  = 'nf-custom-folder_git'
                 '.github'               = 'nf-custom-folder_github'
                 'github'                = 'nf-fa-github_alt'
@@ -49,14 +49,14 @@
                 '.azure'                = 'nf-cod-azure'
                 '.aws'                  = 'nf-dev-aws'
                 '.kube'                 = 'nf-md-ship_wheel'
-                '.docker'               = 'nf-dev-docker'
+                '.docker'               = 'nf-md-docker'
                 'umbraco'               = 'nf-md-umbraco'
             }
         }
 
         Files       = @{
             # Default file icon
-            ''        = 'nf-fa-file'
+            ''        = 'nf-fa-file_text'
             symlink   = 'nf-oct-file_symlink_file'
             junction  = 'nf-fa-external_link'
             WellKnown               = @{
@@ -99,6 +99,10 @@
                 'bitbucket-pipelines.yaml'      = 'nf-dev-bitbucket'
                 '.azure-pipelines.yml'          = 'nf-cod-azure'
 
+                # Angular
+                'angular.json'                  = 'nf-md-angular'
+                '.angular-config.json'          = 'nf-md-angular'
+
                 # Firebase
                 'firebase.json'                 = 'nf-dev-firebase'
                 '.firebaserc'                   = 'nf-dev-firebase'
@@ -112,17 +116,17 @@
                 'code_of_conduct.txt'           = 'nf-fa-handshake_o'
 
                 # Docker
-                'Dockerfile'                    = 'nf-dev-docker'
-                'docker-compose.yml'            = 'nf-dev-docker'
-                'docker-compose.yaml'           = 'nf-dev-docker'
-                'docker-compose.dev.yml'        = 'nf-dev-docker'
-                'docker-compose.local.yml'      = 'nf-dev-docker'
-                'docker-compose.ci.yml'         = 'nf-dev-docker'
-                'docker-compose.override.yml'   = 'nf-dev-docker'
-                'docker-compose.staging.yml'    = 'nf-dev-docker'
-                'docker-compose.prod.yml'       = 'nf-dev-docker'
-                'docker-compose.production.yml' = 'nf-dev-docker'
-                'docker-compose.test.yml'       = 'nf-dev-docker'
+                'Dockerfile'                    = 'nf-md-docker'
+                'docker-compose.yml'            = 'nf-md-docker'
+                'docker-compose.yaml'           = 'nf-md-docker'
+                'docker-compose.dev.yml'        = 'nf-md-docker'
+                'docker-compose.local.yml'      = 'nf-md-docker'
+                'docker-compose.ci.yml'         = 'nf-md-docker'
+                'docker-compose.override.yml'   = 'nf-md-docker'
+                'docker-compose.staging.yml'    = 'nf-md-docker'
+                'docker-compose.prod.yml'       = 'nf-md-docker'
+                'docker-compose.production.yml' = 'nf-md-docker'
+                'docker-compose.test.yml'       = 'nf-md-docker'
 
                 # Vue
                 'vue.config.js'                 = 'nf-md-vuejs'
@@ -132,6 +136,9 @@
                 'gulpfile.js'                   = 'nf-dev-gulp'
                 'gulpfile.ts'                   = 'nf-dev-gulp'
                 'gulpfile.babel.js'             = 'nf-dev-gulp'
+
+                #Karma
+                'karma.conf.js'                 = 'nf-seti-karma'
 
                 # Javascript
                 'gruntfile.js'                  = 'nf-seti-grunt'
@@ -156,6 +163,9 @@
 
                 # Gradle
                 'gradlew'                       = 'nf-md-elephant'
+
+                # EditorConfig
+                '.editorconfig'                 = 'nf-seti-editorconfig'
             }
 
             # Archive files
@@ -328,8 +338,8 @@
             '.tsbuildinfo'          = 'nf-seti-json'
 
             # YAML
-            '.yml'                  = 'nf-md-format_align_left'
-            '.yaml'                 = 'nf-md-format_align_left'
+            '.yml'                  = 'nf-fa-align_left'
+            '.yaml'                 = 'nf-fa-align_left'
 
             # LUA
             '.lua'                  = 'nf-seti-lua'
@@ -514,8 +524,8 @@
             '.fsproj'               = 'nf-dev-fsharp'
 
             # Docker
-            '.dockerignore'         = 'nf-dev-docker'
-            '.dockerfile'           = 'nf-dev-docker'
+            '.dockerignore'         = 'nf-md-docker'
+            '.dockerfile'           = 'nf-md-docker'
 
             # VSCode
             '.vscodeignore'         = 'nf-fa-gear'

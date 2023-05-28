@@ -38,7 +38,7 @@
                 favorites               = 'F7D72C'
                 '.config'               = '87CEAF'
                 '.cache'                = '87ECAF'
-                '.vscode'               = '87CEFA'
+                '.vscode'               = '007ACC'
                 '.vscode-insiders'      = '24BFA5'
                 '.git'                  = 'FF4500'
                 '.github'               = 'C0C0C0'
@@ -96,6 +96,10 @@
                 'bitbucket-pipelines.yaml'      = '87CEFA'
                 '.azure-pipelines.yml'          = '00BFFF'
 
+                # Angular
+                'angular.json'                  = 'DD0031'
+                '.angular-config.json'          = 'DD0031'
+
                 # Firebase
                 'firebase.json'                 = 'FFA500'
                 '.firebaserc'                   = 'FFA500'
@@ -129,6 +133,9 @@
                 'gulpfile.js'                   = 'CD5C5C'
                 'gulpfile.ts'                   = 'CD5C5C'
                 'gulpfile.babel.js'             = 'CD5C5C'
+
+                #Karma
+                'karma.conf.js'                 = '42BEAE'
 
                 'gruntfile.js'                  = 'CD5C5C'
 
