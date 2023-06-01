@@ -1,4 +1,4 @@
-﻿function Set-TerminalIconsIcon {
+function Set-TerminalIconsIcon {
     <#
     .SYNOPSIS
         Set a specific icon in the current Terminal-Icons icon theme or allows
@@ -27,17 +27,17 @@
 
         Set README.md files to display a text file icon.
     .EXAMPLE
-        PS> Set-TerminalIconsIcon -FileExtension ".xml" -Glyph "nf-mdi-file_xml"
+        PS> Set-TerminalIconsIcon -FileExtension ".xml" -Glyph "nf-md-xml"
 
         Set XML files to display an XML file icon.
     .EXAMPLE
-        PS> Set-TerminalIconsIcon -Directory ".github" -Glyph "nf-mdi-github_face"
+        PS> Set-TerminalIconsIcon -Directory ".github" -Glyph "nf-dev-github_alt"
 
         Set directories named ".github" to display an Octocat face icon.
     .EXAMPLE
-        PS> Set-TerminalIconsIcon -Glyph "nf-mdi-xml" -NewGlyph "nf-mdi-file_xml"
+        PS> Set-TerminalIconsIcon -Glyph "nf-md-xml" -NewGlyph "nf-md-xml"
 
-        Changes all uses of the "nf-mdi-xml" double-wide glyph to be the "nf-mdi-file_xml"
+        Changes all uses of the "nf-md-xml" double-wide glyph to be the "nf-md-xml"
         single-width XML file glyph.
     .INPUTS
         None.

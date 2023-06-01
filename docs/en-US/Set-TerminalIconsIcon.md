@@ -52,24 +52,24 @@ Set README.md files to display a text file icon.
 
 ### EXAMPLE 2
 ```
-Set-TerminalIconsIcon -FileExtension ".xml" -Glyph "nf-mdi-file_xml"
+Set-TerminalIconsIcon -FileExtension ".xml" -Glyph "nf-md-xml"
 ```
 
 Set XML files to display an XML file icon.
 
 ### EXAMPLE 3
 ```
-Set-TerminalIconsIcon -Directory ".github" -Glyph "nf-mdi-github_face"
+Set-TerminalIconsIcon -Directory ".github" -Glyph "nf-dev-github_alt"
 ```
 
 Set directories named ".github" to display an Octocat face icon.
 
 ### EXAMPLE 4
 ```
-Set-TerminalIconsIcon -Glyph "nf-mdi-xml" -NewGlyph "nf-mdi-file_xml"
+Set-TerminalIconsIcon -Glyph "nf-md-xml" -NewGlyph "nf-md-xml"
 ```
 
-Changes all uses of the "nf-mdi-xml" double-wide glyph to be the "nf-mdi-file_xml"
+Changes all uses of the "nf-md-xml" double-wide glyph to be the "nf-md-xml"
 single-width XML file glyph.
 
 ## PARAMETERS
