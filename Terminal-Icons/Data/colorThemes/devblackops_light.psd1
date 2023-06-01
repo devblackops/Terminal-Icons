@@ -531,6 +531,9 @@
       '.tfvars'               = '948EEC'
       '.auto.tfvars'          = '948EEC'
 
+      # Bicep
+      '.bicep'                = '00BFFF'
+
       # Disk Image
       '.vmdk'                 = 'a9afb8'
       '.vhd'                  = 'a9afb8'

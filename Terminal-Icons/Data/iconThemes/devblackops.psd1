@@ -538,6 +538,9 @@
             '.auto.tfvars'          = 'nf-dev-code_badge'
             '.auto.tfvars.json'     = 'nf-dev-code_badge'
 
+            # Bicep
+            '.bicep'                = 'nf-seti-bicep'
+
             # Disk Image
             '.vmdk'                 = 'nf-md-harddisk'
             '.vhd'                  = 'nf-md-harddisk'
