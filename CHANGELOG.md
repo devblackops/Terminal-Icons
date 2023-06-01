@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
+- [**#104**](https://github.com/devblackops/Terminal-Icons/pull/104) Migrate to Nerd Font v3 (via [@Tiberriver256](https://github.com/Tiberriver256)
 - [**#92**](https://github.com/devblackops/Terminal-Icons/pull/92) - Add icon and color for  `artifacts` wellknown folder (via [@wangkanai](https://github.com/wangkanai))
 - [**#91**](https://github.com/devblackops/Terminal-Icons/pull/91) - Add icons and colors for  `demo` and `sample` wellknown folders (via [@wangkanai](https://github.com/wangkanai))
 - [**#90**](https://github.com/devblackops/Terminal-Icons/pull/90) - Add icon and color for `benchmark` wellknown folder (via [@wangkanai](https://github.com/wangkanai))
