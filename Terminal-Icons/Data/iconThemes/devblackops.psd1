@@ -562,6 +562,10 @@
             # Puppet
             '.pp'                   = 'nf-custom-puppet'
             '.epp'                  = 'nf-custom-puppet'
+
+            # Scala
+            '.scala'                = 'nf-dev-scala'
+            '.sc'                   = 'nf-dev-scala'
         }
     }
 }

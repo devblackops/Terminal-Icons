@@ -556,6 +556,10 @@
             # Puppet
             '.pp'                   = 'FFA61A'
             '.epp'                  = 'FFA61A'
+
+            # Scala
+            '.scala'                = 'DE3423'
+            '.sc'                   = 'DE3423'
         }
     }
 }
