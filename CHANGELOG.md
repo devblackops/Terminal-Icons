@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Add icon and color for bicep (.bicep)
 - Add icon and color for `output` wellknown folder
 - Add icon and color for Scala (.scala, .sc)
+- Add icon and color for Autodesk Inventor (.iLogicVb)
 
 ## [0.10.0] 2022-07-06
 

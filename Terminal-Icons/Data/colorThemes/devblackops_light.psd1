@@ -559,6 +559,9 @@
       # Scala
       '.scala'                = 'DE3423'
       '.sc'                   = 'DE3423'
+
+      # Autodesk Inventor
+      '.iLogicVb'             = 'A63B22'
     }
   }
 }
