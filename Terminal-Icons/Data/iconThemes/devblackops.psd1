@@ -38,6 +38,7 @@
                 windows                 = 'nf-fa-windows'
                 users                   = 'nf-fa-users'
                 favorites               = 'nf-md-folder_star'
+                output                  = 'nf-cod-output'
                 '.config'               = 'nf-seti-config'
                 '.cache'                = 'nf-md-cached'
                 '.vscode'               = 'nf-custom-folder_config'

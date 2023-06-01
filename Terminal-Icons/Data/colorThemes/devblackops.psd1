@@ -36,6 +36,7 @@
                 windows                 = '00A8E8'
                 users                   = 'F4F4F4'
                 favorites               = 'F7D72C'
+                output                  = '00FF7F'
                 '.config'               = '87CEAF'
                 '.cache'                = '87ECAF'
                 '.vscode'               = '87CEFA'
