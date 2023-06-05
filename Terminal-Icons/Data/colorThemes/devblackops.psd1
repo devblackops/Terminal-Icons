@@ -97,6 +97,10 @@
                 'bitbucket-pipelines.yaml'      = '87CEFA'
                 '.azure-pipelines.yml'          = '00BFFF'
 
+                # Angular
+                'angular.json'                  = 'DD0031'
+                '.angular-config.json'          = 'DD0031'
+
                 # Firebase
                 'firebase.json'                 = 'FFA500'
                 '.firebaserc'                   = 'FFA500'
@@ -130,6 +134,9 @@
                 'gulpfile.js'                   = 'CD5C5C'
                 'gulpfile.ts'                   = 'CD5C5C'
                 'gulpfile.babel.js'             = 'CD5C5C'
+
+                #Karma
+                'karma.conf.js'                 = '42BEAE'
 
                 'gruntfile.js'                  = 'CD5C5C'
 
