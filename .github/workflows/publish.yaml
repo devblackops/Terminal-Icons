@@ -9,7 +9,7 @@ jobs:
     name: Publish module
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Publish module
         id: publish
         shell: pwsh
