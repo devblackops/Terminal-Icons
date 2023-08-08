@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Add icon and color for wellknown file `makefile`.
 - Add icon and color for svelte files (.svelte).
 - Add icon and color for generic database files (.db)
+- Add icon and color for Scala Build Tool files (.sbt)
 
 ## [0.11.0] 2023-07-05
 

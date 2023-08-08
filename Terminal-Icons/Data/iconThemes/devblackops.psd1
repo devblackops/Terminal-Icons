@@ -571,6 +571,7 @@
             # Scala
             '.scala'                = 'nf-dev-scala'
             '.sc'                   = 'nf-dev-scala'
+            '.sbt'                  = 'nf-dev-scala'
 
             # Autodesk Inventor
             '.iLogicVb'             = 'nf-md-alpha_i'
