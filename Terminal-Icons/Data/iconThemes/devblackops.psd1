@@ -249,6 +249,8 @@
             # Source Files
             '.c'                    = 'nf-md-language_c'
             '.cpp'                  = 'nf-md-language_cpp'
+            '.cxx'                  = 'nf-md-language_cpp'
+            '.c++'                  = 'nf-md-language_cpp'
             '.go'                   = 'nf-dev-go'
             '.php'                  = 'nf-dev-php'
 

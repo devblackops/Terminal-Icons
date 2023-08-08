@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 - Add icon and color for wellknown file `jenkinsfile`.
+- Add icon and color for c++ files (.cxx and .c++)
 
 ## [0.11.0] 2023-07-05
 

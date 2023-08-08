@@ -245,6 +245,8 @@
             # Source Files
             '.c'                    = 'A9A9A9'
             '.cpp'                  = 'A9A9A9'
+            '.cxx'                  = 'A9A9A9'
+            '.c++'                  = 'A9A9A9'
             '.go'                   = '20B2AA'
             '.php'                  = '6A5ACD'
 
