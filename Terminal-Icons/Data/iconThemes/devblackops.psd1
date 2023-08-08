@@ -47,7 +47,7 @@
                 '.github'               = 'nf-custom-folder_github'
                 'github'                = 'nf-fa-github_alt'
                 'node_modules'          = 'nf-custom-folder_npm'
-                '.azure'                = 'nf-md-microsoft_azure'
+                '.azure'                = 'nf-cod-azure'
                 '.aws'                  = 'nf-dev-aws'
                 '.kube'                 = 'nf-md-ship_wheel'
                 '.docker'               = 'nf-dev-docker'
@@ -99,7 +99,11 @@
                 'jenkinsfile'                   = 'nf-dev-jenkins'
                 'bitbucket-pipelines.yml'       = 'nf-dev-bitbucket'
                 'bitbucket-pipelines.yaml'      = 'nf-dev-bitbucket'
-                '.azure-pipelines.yml'          = 'nf-md-microsoft_azure'
+                '.azure-pipelines.yml'          = 'nf-cod-azure'
+
+                # Angular
+                'angular.json'                  = 'nf-md-angular'
+                '.angular-config.json'          = 'nf-md-angular'
 
                 # Firebase
                 'firebase.json'                 = 'nf-dev-firebase'
@@ -135,6 +139,9 @@
                 'gulpfile.ts'                   = 'nf-dev-gulp'
                 'gulpfile.babel.js'             = 'nf-dev-gulp'
 
+                #Karma
+                'karma.conf.js'                 = 'nf-seti-karma'
+
                 # Javascript
                 'gruntfile.js'                  = 'nf-seti-grunt'
 
@@ -158,6 +165,9 @@
 
                 # Gradle
                 'gradlew'                       = 'nf-md-elephant'
+
+                # EditorConfig
+                '.editorconfig'                 = 'nf-seti-editorconfig'
             }
 
             # Archive files
