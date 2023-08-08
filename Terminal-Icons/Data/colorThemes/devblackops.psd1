@@ -567,6 +567,8 @@
 
             # Autodesk Inventor
             '.iLogicVb'             = 'A63B22'
+
+            '.svelte'               = 'FF3E00'
         }
     }
 }

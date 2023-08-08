@@ -573,6 +573,8 @@
 
             # Autodesk Inventor
             '.iLogicVb'             = 'nf-md-alpha_i'
+
+            '.svelte'               = 'nf-seti-svelte'
         }
     }
 }
