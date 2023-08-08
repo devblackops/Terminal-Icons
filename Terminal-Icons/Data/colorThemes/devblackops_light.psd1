@@ -97,6 +97,7 @@
         'bitbucket-pipelines.yml'       = '87CEFA'
         'bitbucket-pipelines.yaml'      = '87CEFA'
         '.azure-pipelines.yml'          = '00BFFF'
+        'makefile'                      = '6495ED'
 
         # Firebase
         'firebase.json'                 = 'FFA500'

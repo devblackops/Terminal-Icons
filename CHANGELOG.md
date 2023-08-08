@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Add icon and color for wellknown file `jenkinsfile`.
 - Add icon and color for c++ files (.cxx and .c++)
+- Add icon and color for wellknown file `makefile`.
 
 ## [0.11.0] 2023-07-05
 

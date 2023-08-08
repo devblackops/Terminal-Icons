@@ -100,6 +100,7 @@
                 'bitbucket-pipelines.yml'       = 'nf-dev-bitbucket'
                 'bitbucket-pipelines.yaml'      = 'nf-dev-bitbucket'
                 '.azure-pipelines.yml'          = 'nf-md-microsoft_azure'
+                'makefile'                      = 'nf-seti-makefile'
 
                 # Firebase
                 'firebase.json'                 = 'nf-dev-firebase'
