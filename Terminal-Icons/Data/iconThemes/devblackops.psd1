@@ -96,6 +96,7 @@
                 '.travis.yml'                   = 'nf-dev-travis'
                 '.gitlab-ci.yml'                = 'nf-fa-gitlab'
                 '.jenkinsfile'                  = 'nf-dev-jenkins'
+                'jenkinsfile'                   = 'nf-dev-jenkins'
                 'bitbucket-pipelines.yml'       = 'nf-dev-bitbucket'
                 'bitbucket-pipelines.yaml'      = 'nf-dev-bitbucket'
                 '.azure-pipelines.yml'          = 'nf-md-microsoft_azure'

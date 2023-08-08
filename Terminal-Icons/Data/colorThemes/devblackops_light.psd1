@@ -93,6 +93,7 @@
         '.travis.yml'                   = 'ffbe4f'
         '.gitlab-ci.yml'                = 'FF4500'
         '.jenkinsfile'                  = '6495ED'
+        'jenkinsfile'                   = '6495ED'
         'bitbucket-pipelines.yml'       = '87CEFA'
         'bitbucket-pipelines.yaml'      = '87CEFA'
         '.azure-pipelines.yml'          = '00BFFF'
