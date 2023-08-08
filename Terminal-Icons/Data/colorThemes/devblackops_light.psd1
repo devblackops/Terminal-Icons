@@ -287,6 +287,7 @@
       '.pgsql'                = 'ffc200'
       '.postgres'             = 'ffc200'
       '.psql'                 = 'ffc200'
+      '.db'                   = 'ffc200'
 
       # Source Control
       '.patch'                = 'FF4500'

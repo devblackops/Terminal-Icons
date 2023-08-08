@@ -292,6 +292,7 @@
             '.pgsql'                = 'nf-dev-database'
             '.postgres'             = 'nf-dev-database'
             '.psql'                 = 'nf-dev-database'
+            '.db'                   = 'nf-seti-db'
 
             # Source Control
             '.patch'                = 'nf-dev-git'
