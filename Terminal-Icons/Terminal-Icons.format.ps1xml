@@ -53,7 +53,7 @@ https://github.com/DHowett/DirColors -->
                 <TableHeaders>
                     <TableColumnHeader>
                         <Label>Mode</Label>
-                        <Width>7</Width>
+                        <Width>10</Width>
                         <Alignment>left</Alignment>
                     </TableColumnHeader>
                     <TableColumnHeader>
@@ -75,7 +75,9 @@ https://github.com/DHowett/DirColors -->
                         <Wrap/>
                         <TableColumnItems>
                             <TableColumnItem>
-                                <PropertyName>Mode</PropertyName>
+                                <ScriptBlock>
+                                    if ($isWindows) {$_.Mode} else {$_.UnixMode}
+                                </ScriptBlock>
                             </TableColumnItem>
                             <TableColumnItem>
                                 <ScriptBlock>
@@ -164,7 +166,9 @@ https://github.com/DHowett/DirColors -->
                                 <PropertyName>LastAccessTime</PropertyName>
                             </ListItem>
                             <ListItem>
-                                <PropertyName>Mode</PropertyName>
+                                <ScriptBlock>
+                                    if ($isWindows) {$_.Mode} else {$_.UnixMode}
+                                </ScriptBlock>
                             </ListItem>
                             <ListItem>
                                 <PropertyName>LinkType</PropertyName>
