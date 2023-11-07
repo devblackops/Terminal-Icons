@@ -5,43 +5,59 @@ online version:
 schema: 2.0.0
 ---
 
-# Set-TerminalIconsIconTheme
+# Format-TerminalIconsFileLength
 
 ## SYNOPSIS
-Set the Terminal-Icons icon theme.
+{{ Fill in the Synopsis }}
 
 ## SYNTAX
 
 ```
-Set-TerminalIconsIconTheme [-Name] <String> [<CommonParameters>]
+Format-TerminalIconsFileLength [[-FileInfo] <FileSystemInfo>] [[-CurrentSettings] <Hashtable>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Set the Terminal-Icons icon theme to a registered theme.
+{{ Fill in the Description }}
 
 ## EXAMPLES
 
-### EXAMPLE 1
-```
-Set-TerminalIconsIconTheme -Name devblackops
+### Example 1
+```powershell
+PS C:\> {{ Add example code here }}
 ```
 
-Set the icon theme to 'devblackops'.
+{{ Add example description here }}
 
 ## PARAMETERS
 
-### -Name
-The name of a registered icon theme.
+### -FileInfo
+{{ Fill FileInfo Description }}
 
 ```yaml
-Type: String
+Type: FileSystemInfo
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: 1
 Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CurrentSettings
+{{ Fill CurrentSettings Description }}
+
+```yaml
+Type: Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: $script:current
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -50,18 +66,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.String
-### The name of a registered icon theme.
+### None
 ## OUTPUTS
 
-### None.
+### System.Object
 ## NOTES
 
 ## RELATED LINKS
-
-[Set-TerminalIconsColorTheme]()
-
-[Get-TerminalIconsColorTheme]()
-
-[Get-TerminalIconsIconTheme]()
-

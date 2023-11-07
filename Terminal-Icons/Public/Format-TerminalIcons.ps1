@@ -28,15 +28,18 @@ function Format-TerminalIcons {
     [CmdletBinding()]
     param(
         [Parameter(Mandatory, ValueFromPipeline)]
-        [IO.FileSystemInfo]$FileInfo
+        [IO.FileSystemInfo]$FileInfo,
+
+        [Parameter(DontShow)]
+        [hashtable]$CurrentSettings = $script:current
     )
 
     process {
         $displayInfo = Resolve-Icon $FileInfo
         if ($displayInfo.Icon) {
-            "$($displayInfo.Color)$($displayInfo.Icon)  $($FileInfo.Name)$($displayInfo.Target)$($script:colorReset)"
+            "$($displayInfo.Color)$($displayInfo.Icon)  $($CurrentSettings.RendorModeUnicode)$($FileInfo.Name)$($displayInfo.Target)$($script:colorReset)"
         } else {
-            "$($displayInfo.Color)$($FileInfo.Name)$($displayInfo.Target)$($script:colorReset)"
+            "$($displayInfo.Color)$($CurrentSettings.RendorModeUnicode)$($FileInfo.Name)$($displayInfo.Target)$($script:colorReset)"
         }
     }
 }

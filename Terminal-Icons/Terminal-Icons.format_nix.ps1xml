@@ -26,7 +26,7 @@ https://github.com/DHowett/DirColors -->
                                     <Text AssemblyName="System.Management.Automation" BaseName="FileSystemProviderStrings" ResourceId="DirectoryDisplayGrouping"/>
                                     <ExpressionBinding>
                                         <ScriptBlock>
-                                                  $_.PSParentPath.Replace("Microsoft.PowerShell.Core\FileSystem::", "")
+                                            $_.PSParentPath.Replace("Microsoft.PowerShell.Core\FileSystem::", "")
                                         </ScriptBlock>
                                     </ExpressionBinding>
                                     <NewLine/>
@@ -52,8 +52,18 @@ https://github.com/DHowett/DirColors -->
             <TableControl>
                 <TableHeaders>
                     <TableColumnHeader>
-                        <Label>Mode</Label>
+                        <Label>UnixMode</Label>
                         <Width>10</Width>
+                        <Alignment>left</Alignment>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Label>User</Label>
+                        <Width>14</Width>
+                        <Alignment>left</Alignment>
+                    </TableColumnHeader>
+                     <TableColumnHeader>
+                        <Label>Group</Label>
+                        <Width>14</Width>
                         <Alignment>left</Alignment>
                     </TableColumnHeader>
                     <TableColumnHeader>
@@ -75,7 +85,13 @@ https://github.com/DHowett/DirColors -->
                         <Wrap/>
                         <TableColumnItems>
                             <TableColumnItem>
-                                <PropertyName>Mode</PropertyName>
+                                <PropertyName>UnixMode</PropertyName>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <PropertyName>User</PropertyName>
+                            </TableColumnItem>
+                             <TableColumnItem>
+                                <PropertyName>Group</PropertyName>
                             </TableColumnItem>
                             <TableColumnItem>
                                 <ScriptBlock>
@@ -150,7 +166,7 @@ https://github.com/DHowett/DirColors -->
                                 </ScriptBlock>
                             </ListItem>
                             <ListItem>
-                                <PropertyName>Mode</PropertyName>
+                                <PropertyName>UnixMode</PropertyName>
                             </ListItem>
                             <ListItem>
                                 <PropertyName>LinkType</PropertyName>
@@ -184,7 +200,7 @@ https://github.com/DHowett/DirColors -->
                                 <PropertyName>LastAccessTime</PropertyName>
                             </ListItem>
                             <ListItem>
-                                <PropertyName>Mode</PropertyName>
+                                <PropertyName>UnixMode</PropertyName>
                             </ListItem>
                             <ListItem>
                                 <PropertyName>LinkType</PropertyName>
@@ -194,6 +210,9 @@ https://github.com/DHowett/DirColors -->
                                 <ScriptBlock>
                                     Terminal-Icons\Format-TerminalIcons $_
                                 </ScriptBlock>
+                            </ListItem>
+                            <ListItem>
+                                <PropertyName>VersionInfo</PropertyName>
                             </ListItem>
                         </ListItems>
                     </ListEntry>

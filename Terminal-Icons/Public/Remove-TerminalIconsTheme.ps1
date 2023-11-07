@@ -47,6 +47,9 @@ function Remove-TerminalIconsTheme {
         })]
         [string]$ColorTheme,
 
+        [Parameter(DontShow)]
+        [hashtable]$CurrentSettings = $script:current,
+
         [switch]$Force
     )
 
@@ -60,8 +63,8 @@ function Remove-TerminalIconsTheme {
                 Write-Error "Could not find theme file [$themePath]"
             } else {
                 if ($Force -or $PSCmdlet.ShouldProcess($ColorTheme, 'Remove color theme')) {
-                    if ($userThemeData.Themes.Color.ContainsKey($ColorTheme)) {
-                        $userThemeData.Themes.Color.Remove($ColorTheme)
+                    if ($CurrentSettings.Themes.Color.ContainsKey($ColorTheme)) {
+                        $CurrentSettings.Themes.Color.Remove($ColorTheme)
                     } else {
                         # We shouldn't be here
                         Write-Error "Color theme [$ColorTheme] is not registered."
@@ -81,8 +84,8 @@ function Remove-TerminalIconsTheme {
                 Write-Error "Could not find theme file [$themePath]"
             } else {
                 if ($Force -or $PSCmdlet.ShouldProcess($ColorTheme, 'Remove icon theme')) {
-                    if ($userThemeData.Themes.Icon.ContainsKey($IconTheme)) {
-                        $userThemeData.Themes.Icon.Remove($IconTheme)
+                    if ($CurrentSettings.Themes.Icon.ContainsKey($IconTheme)) {
+                        $CurrentSettings.Themes.Icon.Remove($IconTheme)
                     } else {
                         # We shouldn't be here
                         Write-Error "Icon theme [$IconTheme] is not registered."

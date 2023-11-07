@@ -2,7 +2,7 @@ function Save-Preferences {
     [cmdletbinding()]
     param(
         [parameter(Mandatory, ValueFromPipeline)]
-        [hashtable]$Preferences,
+        [Preferences]$Preferences,
 
         [string]$Path = (Join-Path (Get-ThemeStoragePath) 'prefs.xml')
     )

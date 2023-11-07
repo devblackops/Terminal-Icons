@@ -19,20 +19,15 @@ function Get-TerminalIconsTheme {
     .LINK
         Get-TerminalIconsIconTheme
     #>
+    [OutputType([PSCustomObject])]
     [CmdletBinding()]
-    param()
+    param(
+        [Parameter(DontShow)]
+        [hashtable]$CurrentSettings = $script:current
+    )
 
-    $iconTheme = if ($script:userThemeData.CurrentIconTheme) {
-        [pscustomobject]$script:userThemeData.Themes.Icon[$script:userThemeData.CurrentIconTheme]
-    } else {
-        $null
-    }
-
-    $colorTheme = if ($script:userThemeData.CurrentColorTheme) {
-        [pscustomobject]$script:userThemeData.Themes.Color[$script:userThemeData.CurrentColorTheme]
-    } else {
-        $null
-    }
+    $iconTheme  = $CurrentSettings.IconTheme ? [pscustomobject]$CurrentSettings.Themes.Icon[$CurrentSettings.IconTheme] : $null
+    $colorTheme = $CurrentSettings.ColorTheme ? [pscustomobject]$CurrentSettings.Themes.Color[$CurrentSettings.ColorTheme] : $null
 
     [pscustomobject]@{
         PSTypeName = 'TerminalIconsTheme'

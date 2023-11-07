@@ -5,13 +5,13 @@ function Resolve-Icon {
         [Parameter(Mandatory, ValueFromPipeline)]
         [IO.FileSystemInfo]$FileInfo,
 
-        [string]$IconTheme = $script:userThemeData.CurrentIconTheme,
+        [string]$IconTheme = $script:current.IconTheme,
 
-        [string]$ColorTheme = $script:userThemeData.CurrentColorTheme
+        [string]$ColorTheme = $script:current.ColorTheme
     )
 
     begin {
-        $icons  = $script:userThemeData.Themes.Icon[$IconTheme]
+        $icons  = $script:current.Themes.Icon[$IconTheme]
         $colors = $script:colorSequences[$ColorTheme]
     }
 
@@ -39,7 +39,7 @@ function Resolve-Icon {
                 if ($colors) {
                     $colorSeq = $colors.Types.($type)['junction']
                 } else {
-                    $colorSet = $script:colorReset
+                    $colorSeq = $script:colorReset
                 }
                 $displayInfo['Target'] = ' ' + $glyphs['nf-md-arrow_right_thick'] + ' ' + $FileInfo.Target
                 break
@@ -53,7 +53,7 @@ function Resolve-Icon {
                 if ($colors) {
                     $colorSeq = $colors.Types.($type)['symlink']
                 } else {
-                    $colorSet = $script:colorReset
+                    $colorSeq = $script:colorReset
                 }
                 $displayInfo['Target'] = ' ' + $glyphs['nf-md-arrow_right_thick'] + ' ' + $FileInfo.Target
                 break
@@ -63,7 +63,17 @@ function Resolve-Icon {
                     $iconName = $icons.Types.$type.WellKnown[$FileInfo.Name]
                     if (-not $iconName) {
                         if ($FileInfo.PSIsContainer) {
-                            $iconName = $icons.Types.$type[$FileInfo.Name]
+                            $iconName = $icons.Types.Directories[$FileInfo.Name]
+
+                            # Try matching directory name to any regex listings in the theme as a last resort
+                            if (-not $iconName -and $icons.Types.Directories.regex) {
+                                foreach ($directoryRegex in $icons.Types.Directories.regex.GetEnumerator()) {
+                                    if ($FileInfo.Name -match $directoryRegex.Key) {
+                                        $iconName = $directoryRegex.Value
+                                        break
+                                    }
+                                }
+                            }
                         } elseif ($icons.Types.$type.ContainsKey($FileInfo.Extension)) {
                             $iconName = $icons.Types.$type[$FileInfo.Extension]
                         } else {
@@ -75,6 +85,7 @@ function Resolve-Icon {
                                 $iconName = $icons.Types.$type[$fullExtension]
                             }
                         }
+
                         if (-not $iconName) {
                             $iconName = $icons.Types.$type['']
                         }
@@ -95,7 +106,17 @@ function Resolve-Icon {
                     $colorSeq = $colors.Types.$type.WellKnown[$FileInfo.Name]
                     if (-not $colorSeq) {
                         if ($FileInfo.PSIsContainer) {
-                            $colorSeq = $colors.Types.$type[$FileInfo.Name]
+                            $colorSeq = $colors.Types.Directories[$FileInfo.Name]
+
+                            # Try matching directory name to any regex listings in the theme as a last resort
+                            if (-not $colorSeq -and $colors.Types.Directories.regex) {
+                                foreach ($directoryRegex in $colors.Types.Directories.regex.GetEnumerator()) {
+                                    if ($FileInfo.Name -match $directoryRegex.Key) {
+                                        $colorSeq = $directoryRegex.Value
+                                        break
+                                    }
+                                }
+                            }
                         } elseif ($colors.Types.$type.ContainsKey($FileInfo.Extension)) {
                             $colorSeq = $colors.Types.$type[$FileInfo.Extension]
                         } else {

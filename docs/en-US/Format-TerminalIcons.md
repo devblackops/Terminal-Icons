@@ -13,7 +13,7 @@ Prepend a custom icon (with color) to the provided file or folder object when di
 ## SYNTAX
 
 ```
-Format-TerminalIcons [-FileInfo] <FileSystemInfo> [<CommonParameters>]
+Format-TerminalIcons [-FileInfo] <FileSystemInfo> [[-CurrentSettings] <Hashtable>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -50,6 +50,21 @@ Required: True
 Position: 1
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -CurrentSettings
+{{ Fill CurrentSettings Description }}
+
+```yaml
+Type: Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
