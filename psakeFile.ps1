@@ -20,7 +20,9 @@ using namespace System.Collections.ObjectModel
 
 task default -depends Test
 
-task Pester -FromModule PowerShellBuild -Version '0.6.1' -preaction {Remove-Module Terminal-Icons -ErrorAction SilentlyContinue}
+task BuildModule -preaction {Remove-Module Terminal-Icons -ErrorAction SilentlyContinue} -depends CompileTheme, Build {}
+
+task Pester -FromModule PowerShellBuild -Version '0.6.1'
 
 task CompileTheme {
     $escape     = [char]27
