@@ -34,6 +34,14 @@ function Format-TerminalIcons {
         [hashtable]$CurrentSettings = $script:current
     )
 
+    begin {
+        # Load the theme files on first invocation
+        if (-not $script:themeFilesLoaded) {
+            Import-XmlThemes
+            $script:themeFilesLoaded = $true
+        }
+    }
+
     process {
         $displayInfo = Resolve-Icon $FileInfo
         if ($displayInfo.Icon) {

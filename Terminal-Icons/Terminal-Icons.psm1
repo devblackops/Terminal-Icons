@@ -49,18 +49,15 @@ $userThemePath = Get-ThemeStoragePath
 # Load or create default preferences
 $prefs = Import-Preferences
 
-# Load builtin theme data
-$iconThemes     = Import-Clixml -Path $moduleRoot/Data/iconThemes.xml
-$colorThemes    = Import-Clixml -Path $moduleRoot/Data/colorThemes.xml
-$colorSequences = Import-Clixml -Path $moduleRoot/Data/colorSequences.xml
-$glyphs         = Import-Clixml -Path $moduleRoot/Data/glyphs.xml
+# To speed up module load times, the theme files are not imported on module load
+# Instead, the they are loaded on the first invocation of `Format-TerminalIcons`
+$themeFilesLoaded = $false
+$iconThemes       = @{}
+$colorThemes      = @{}
+$colorSequences   = @{}
+$glyphs           = @{}
 
-# Set current settings
 $current = Get-CurrentSettings
-$current.Themes = @{
-    Color = $colorThemes
-    Icon  = $iconThemes
-}
 
 # As of 0.12.0, we no longer save the builtin theme files in the user theme folder
 ('devblackops_color.xml', 'devblackops_light_color.xml', 'devblackops_icon.xml').ForEach({
