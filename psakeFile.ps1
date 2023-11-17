@@ -95,6 +95,14 @@ task TestGHAction -depends Build, InstallAct  {
     act -j test -P ubuntu-latest=nektos/act-environments-ubuntu:18.04
 }
 
+task TestImportPerformance {
+    (Measure-Command { pwsh -nop -c {Import-Module ./Output/Terminal-Icons/0.12.0/Terminal-Icons.psd1}}).TotalMilliseconds
+        | Measure-Object -Average
+
+    $trace = Trace-Script -ScriptBlock {Import-Module ./Output/Terminal-Icons/0.12.0/Terminal-Icons.psd1 -Force }
+    $trace.AllLines | Format-Table
+}
+
 function New-EmptyColorTheme {
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseShouldProcessForStateChangingFunctions', '')]
     [OutputType([hashtable])]
