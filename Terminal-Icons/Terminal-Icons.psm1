@@ -1,14 +1,3 @@
-# Dot source public/private functions
-# $public  = @(Get-ChildItem -Path ([IO.Path]::Combine($PSScriptRoot, 'Public/*.ps1'))  -Recurse -ErrorAction Stop)
-# $private = @(Get-ChildItem -Path ([IO.Path]::Combine($PSScriptRoot, 'Private/*.ps1')) -Recurse -ErrorAction Stop)
-# @($public + $private).ForEach({
-#     try {
-#         . $_.FullName
-#     } catch {
-#         throw $_
-#         $PSCmdlet.ThrowTerminatingError("Unable to dot source [$($import.FullName)]")
-#     }
-# })
 enum RendorMode {
     Normal
     Bold
@@ -54,40 +43,19 @@ $bold          = "${escape}[1m"
 $italic        = "${escape}[3m"
 $underline     = "${escape}[4m"
 $defaultTheme  = 'devblackops'
+$prefsFile     = 'preferences.xml'
 $userThemePath = Get-ThemeStoragePath
 
-# Default settings
-$current = @{
-    IconTheme            = $defaultTheme
-    ColorTheme           = $defaultTheme
-    RendorModeUnicode    = Get-RendorModeUnicode 'Bold'
-    DateTimeFormat       = [DateTimeFormat]::GENERAL_SHORT_TIME
-    DateTimeFormatString = 'g'
-    TimeZoneDisplay      = [TimeZoneDisplay]::Local
-    FileSizeDisplay      = [FileSizeDisplay]::Bytes
-    Themes = @{
-        Color = @{}
-        Icon  = @{}
-    }
-}
+# Load or create default preferences
+$prefs = Import-Preferences
 
 # Load builtin theme data
 $iconThemes     = Import-Clixml -Path $moduleRoot/Data/iconThemes.xml
 $colorThemes    = Import-Clixml -Path $moduleRoot/Data/colorThemes.xml
 $colorSequences = Import-Clixml -Path $moduleRoot/Data/colorSequences.xml
 $glyphs         = Import-Clixml -Path $moduleRoot/Data/glyphs.xml
-
-# Load or create default prefs
-$prefs = Import-Preferences
-
 # Set current settings
-$current.IconTheme            = $prefs.IconTheme
-$current.ColorTheme           = $prefs.ColorTheme
-$current.RendorModeUnicode    = Get-RendorModeUnicode $prefs.RendorMode
-$current.DataTimeFormat       = $prefs.DateTimeFormat
-$current.DateTimeFormatString = Get-DateTimeFormatString $prefs.DateTimeFormat
-$current.TimeZoneDisplay      = $prefs.TimeZoneDisplay
-$current.FileSizeDisplay      = $prefs.FileSizeDisplay
+$current = Get-CurrentSettings
 $current.Themes = @{
     Color = $colorThemes
     Icon  = $iconThemes
@@ -98,20 +66,22 @@ $current.Themes = @{
     Remove-Item $userThemePath/$_ -ErrorAction SilentlyContinue
 })
 
-# Load any user-defined themes]
-(Get-ChildItem $userThemePath -Filter '*_icon.xml').ForEach({
-    $userIconTheme = Import-CliXml -Path $_.FullName
-    $current.Themes.Icon[$userIconTheme.Name] = $userIconTheme
-})
-(Get-ChildItem $userThemePath -Filter '*_color.xml').ForEach({
-    $userColorTheme = Import-CliXml -Path $_.FullName
-    $current.Themes.Color[$userColorTheme.Name] = $userColorTheme
-    $colorSequences[$userColorTheme.Name] = ConvertTo-ColorSequence -ColorData $userColorTheme
-})
+# TODO: Store the user themes pre-processes to speed things up
+# TODO: Also only load user themes if they are the active theme
+# # Load any user-defined themes]
+# $builtinColorThemes = Get-ChildItem $moduleRoot/Data/colorThemes -File
+# (Get-ChildItem $userThemePath -Filter '*_icon.xml').Where({$_.Name -notin $builtinColorThemes.Name}).ForEach({
+#     $userIconTheme = Import-CliXml -Path $_.FullName
+#     $current.Themes.Icon[$userIconTheme.Name] = $userIconTheme
+# })
+# $builtinIconThemes = Get-ChildItem $moduleRoot/Data/iconThemes -File
+# (Get-ChildItem $userThemePath -Filter '*_color.xml').Where({$_.Name -notin $builtinIconThemes.Name}).ForEach({
+#     $userColorTheme = Import-CliXml -Path $_.FullName
+#     $current.Themes.Color[$userColorTheme.Name] = $userColorTheme
+#     $colorSequences[$userColorTheme.Name] = ConvertTo-ColorSequence -ColorData $userColorTheme
+# })
 
 Save-Preferences -Preferences $prefs
 
-# Export-ModuleMember -Function $public.Basename
-
 $formatFile = $IsWindows ? 'Terminal-Icons.format.ps1xml' : 'Terminal-Icons.format_nix.ps1xml'
-Update-FormatData -Prepend ([IO.Path]::Combine($moduleRoot, $formatFile))
+Update-FormatData -AppendPath ([IO.Path]::Combine($moduleRoot, $formatFile))

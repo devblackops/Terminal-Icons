@@ -4,7 +4,7 @@ function Save-Preferences {
         [parameter(Mandatory, ValueFromPipeline)]
         [Preferences]$Preferences,
 
-        [string]$Path = (Join-Path (Get-ThemeStoragePath) 'prefs.xml')
+        [string]$Path = (Get-PreferencesFile)
     )
 
     process {

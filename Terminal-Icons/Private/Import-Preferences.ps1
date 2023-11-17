@@ -4,7 +4,7 @@ function Import-Preferences {
     [cmdletbinding()]
     param(
         [parameter(ValueFromPipeline)]
-        [string]$Path = (Join-Path (Get-ThemeStoragePath) 'prefs.xml')
+        [string]$Path = (Get-PreferencesFile)
     )
 
     begin {
