@@ -2,3 +2,5 @@
 
 # Don't check in the Output dir
 Output/
+
+Terminal-Icons/Data/*.xml
