@@ -29,6 +29,7 @@ function Set-TerminalIconsPreference {
     .LINK
         Get-TerminalIconsPreference
     #>
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseShouldProcessForStateChangingFunctions', '')]
     [cmdletbinding()]
     param(
         [ArgumentCompleter({

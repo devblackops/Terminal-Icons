@@ -1,4 +1,5 @@
 function Save-Preferences {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseSingularNouns', '')]
     [cmdletbinding()]
     param(
         [parameter(Mandatory, ValueFromPipeline)]

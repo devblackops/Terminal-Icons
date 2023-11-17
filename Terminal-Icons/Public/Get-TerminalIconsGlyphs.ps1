@@ -17,6 +17,7 @@
     .LINK
         Set-TerminalIconsIcon
     #>
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseSingularNouns', '')]
     [OutputType([String])]
     [CmdletBinding()]
     param(

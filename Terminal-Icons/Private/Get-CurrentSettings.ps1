@@ -1,4 +1,5 @@
 function Get-CurrentSettings {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseSingularNouns', '')]
     [OutputType([hashtable])]
     param(
         [Preferences]$Preferences = $script:prefs,

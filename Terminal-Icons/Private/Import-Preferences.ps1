@@ -1,5 +1,6 @@
 function Import-Preferences {
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseShouldProcessForStateChangingFunctions', '')]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseSingularNouns', '')]
     [OutputType([Preferences])]
     [cmdletbinding()]
     param(
