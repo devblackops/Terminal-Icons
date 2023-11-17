@@ -54,6 +54,7 @@ $iconThemes     = Import-Clixml -Path $moduleRoot/Data/iconThemes.xml
 $colorThemes    = Import-Clixml -Path $moduleRoot/Data/colorThemes.xml
 $colorSequences = Import-Clixml -Path $moduleRoot/Data/colorSequences.xml
 $glyphs         = Import-Clixml -Path $moduleRoot/Data/glyphs.xml
+
 # Set current settings
 $current = Get-CurrentSettings
 $current.Themes = @{
@@ -63,7 +64,9 @@ $current.Themes = @{
 
 # As of 0.12.0, we no longer save the builtin theme files in the user theme folder
 ('devblackops_color.xml', 'devblackops_light_color.xml', 'devblackops_icon.xml').ForEach({
-    Remove-Item $userThemePath/$_ -ErrorAction SilentlyContinue
+    if (Test-Path $userThemePath/$_) {
+        Remove-Item $userThemePath/$_ -ErrorAction SilentlyContinue
+    }
 })
 
 # TODO: Store the user themes pre-processes to speed things up
@@ -84,4 +87,4 @@ $current.Themes = @{
 Save-Preferences -Preferences $prefs
 
 $formatFile = $IsWindows ? 'Terminal-Icons.format.ps1xml' : 'Terminal-Icons.format_nix.ps1xml'
-Update-FormatData -AppendPath ([IO.Path]::Combine($moduleRoot, $formatFile))
+Update-FormatData -PrependPath ([IO.Path]::Combine($moduleRoot, $formatFile))
