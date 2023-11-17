@@ -24,19 +24,31 @@ function Format-TerminalIcons {
         Outputs a colorized string with an icon prepended.
     #>
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseShouldProcessForStateChangingFunctions', '')]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseSingularNouns', '')]
     [OutputType([string])]
     [CmdletBinding()]
     param(
         [Parameter(Mandatory, ValueFromPipeline)]
-        [IO.FileSystemInfo]$FileInfo
+        [IO.FileSystemInfo]$FileInfo,
+
+        [Parameter(DontShow)]
+        [hashtable]$CurrentSettings = $script:current
     )
+
+    begin {
+        # Load the theme files on first invocation
+        if (-not $script:themeFilesLoaded) {
+            Import-XmlThemes
+            $script:themeFilesLoaded = $true
+        }
+    }
 
     process {
         $displayInfo = Resolve-Icon $FileInfo
         if ($displayInfo.Icon) {
-            "$($displayInfo.Color)$($displayInfo.Icon)  $($FileInfo.Name)$($displayInfo.Target)$($script:colorReset)"
+            "$($displayInfo.Color)$($displayInfo.Icon)  $($CurrentSettings.RendorModeUnicode)$($FileInfo.Name)$($displayInfo.Target)$($script:colorReset)"
         } else {
-            "$($displayInfo.Color)$($FileInfo.Name)$($displayInfo.Target)$($script:colorReset)"
+            "$($displayInfo.Color)$($CurrentSettings.RendorModeUnicode)$($FileInfo.Name)$($displayInfo.Target)$($script:colorReset)"
         }
     }
 }

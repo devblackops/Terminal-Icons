@@ -13,16 +13,16 @@ function Set-Theme {
     )
 
     if ([string]::IsNullOrEmpty($Name)) {
-        $script:userThemeData."Current$($Type)Theme" = $null
-        $script:prefs."Current$($Type)Theme" = ''
+        $script:current."$($Type)Theme" = $null
+        $script:prefs."$($Type)Theme" = ''
         Save-Preferences $script:prefs
     } else {
-        if (-not $script:userThemeData.Themes.$Type.ContainsKey($Name)) {
+        if (-not $script:current.Themes.$Type.ContainsKey($Name)) {
             Write-Error "$Type theme [$Name] not found."
         } else {
-            $script:userThemeData."Current$($Type)Theme" = $Name
-            $script:prefs."Current$($Type)Theme" = $Name
-            Save-Theme -Theme $userThemeData.Themes.$Type[$Name] -Type $type
+            $script:current."$($Type)Theme" = $Name
+            $script:prefs."$($Type)Theme" = $Name
+            Save-Theme -Theme $script:current.Themes.$Type[$Name] -Type $type
             Save-Preferences $script:prefs
         }
     }

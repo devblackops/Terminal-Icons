@@ -5,10 +5,6 @@ function Show-TerminalIconsTheme {
     .DESCRIPTION
         List example directories and files to show the currently applied color and icon themes.
         The directory/file objects show are in memory only, they are not written to the filesystem.
-    .PARAMETER ColorTheme
-        The color theme to use for examples
-    .PARAMETER IconTheme
-        The icon theme to use for examples
     .EXAMPLE
         Show-TerminalIconsTheme
 
@@ -29,7 +25,10 @@ function Show-TerminalIconsTheme {
         Get-TerminalIconsTheme
     #>
     [CmdletBinding()]
-    param()
+    param(
+        [Parameter(DontShow)]
+        [hashtable]$CurrentSettings = $script:current
+    )
 
     $theme = Get-TerminalIconsTheme
 
@@ -42,18 +41,18 @@ function Show-TerminalIconsTheme {
 
     $directories = @(
         [IO.DirectoryInfo]::new('ExampleFolder')
-        $script:userThemeData.Themes.Icon[$themeName].Types.Directories.WellKnown.Keys.ForEach({
+        $CurrentSettings.Themes.Icon[$themeName].Types.Directories.WellKnown.Keys.ForEach({
             [IO.DirectoryInfo]::new($_)
         })
     )
     $wellKnownFiles = @(
         [IO.FileInfo]::new('ExampleFile')
-        $script:userThemeData.Themes.Icon[$themeName].Types.Files.WellKnown.Keys.ForEach({
+        $CurrentSettings.Themes.Icon[$themeName].Types.Files.WellKnown.Keys.ForEach({
             [IO.FileInfo]::new($_)
         })
     )
 
-    $extensions = $script:userThemeData.Themes.Icon[$themeName].Types.Files.Keys.Where({$_ -ne 'WellKnown'}).ForEach({
+    $extensions = $CurrentSettings.Themes.Icon[$themeName].Types.Files.Keys.Where({$_ -ne 'WellKnown'}).ForEach({
         [IO.FileInfo]::new("example$_")
     })
 

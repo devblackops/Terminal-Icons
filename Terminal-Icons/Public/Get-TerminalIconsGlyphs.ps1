@@ -17,11 +17,16 @@
     .LINK
         Set-TerminalIconsIcon
     #>
-    [cmdletbinding()]
-    param()
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseSingularNouns', '')]
+    [OutputType([String])]
+    [CmdletBinding()]
+    param(
+        [Parameter(DontShow)]
+        [hashtable]$Glyphs = $script:glyphs
+    )
 
     # This is also helpful for argument completers needing glyphs -
     # ArgumentCompleterAttribute isn't able to access script variables but it
     # CAN call commands.
-    $script:glyphs.GetEnumerator() | Sort-Object Name
+    $Glyphs.GetEnumerator() | Sort-Object Name
 }

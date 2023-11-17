@@ -1,77 +1,87 @@
-# Dot source public/private functions
-# $public  = @(Get-ChildItem -Path ([IO.Path]::Combine($PSScriptRoot, 'Public/*.ps1'))  -Recurse -ErrorAction Stop)
-# $private = @(Get-ChildItem -Path ([IO.Path]::Combine($PSScriptRoot, 'Private/*.ps1')) -Recurse -ErrorAction Stop)
-# @($public + $private).ForEach({
-#     try {
-#         . $_.FullName
-#     } catch {
-#         throw $_
-#         $PSCmdlet.ThrowTerminatingError("Unable to dot source [$($import.FullName)]")
-#     }
-# })
-
-$moduleRoot    = $PSScriptRoot
-$glyphs        = . $moduleRoot/Data/glyphs.ps1
-$escape        = [char]27
-$colorReset    = "${escape}[0m"
-$defaultTheme  = 'devblackops'
-$userThemePath = Get-ThemeStoragePath
-$userThemeData = @{
-    CurrentIconTheme  = $null
-    CurrentColorTheme = $null
-    Themes = @{
-        Color = @{}
-        Icon  = @{}
-    }
+enum RendorMode {
+    Normal
+    Bold
+    Italic
+    Underline
 }
 
-# Import builtin icon/color themes and convert colors to escape sequences
-$colorSequences = @{}
-$iconThemes     = Import-IconTheme
-$colorThemes    = Import-ColorTheme
-$colorThemes.GetEnumerator().ForEach({
-    $colorSequences[$_.Name] = ConvertTo-ColorSequence -ColorData $_.Value
-})
+enum DateTimeFormat {
+    ISO8601
+    HUMANIZE
+    SORTABLE
+    RFC1123
+    GENERAL_SHORT_TIME
+    GENERAL_LONG_TIME
+    FULL_SHORT_TIME
+    FULL_LONG_TIME
+}
 
-# Load or create default prefs
+enum TimeZoneDisplay {
+    Local
+    UTC
+}
+
+enum FileSizeDisplay {
+    Bytes
+    KB_MB_GB
+}
+
+class Preferences {
+    [string]$IconTheme                = 'devblackops'
+    [string]$ColorTheme               = 'devblackops'
+    [RendorMode]$RendorMode           = [RendorMode]::Bold
+    [DateTimeFormat]$DateTimeFormat   = [DateTimeFormat]::GENERAL_SHORT_TIME
+    [TimeZoneDisplay]$TimeZoneDisplay = [TimeZoneDisplay]::Local
+    [FileSizeDisplay]$FileSizeDisplay = [FileSizeDisplay]::Bytes
+}
+
+# Helper vars
+$moduleRoot    = $PSScriptRoot
+$escape        = [char]27
+$colorReset    = "${escape}[0m"
+$bold          = "${escape}[1m"
+$italic        = "${escape}[3m"
+$underline     = "${escape}[4m"
+$defaultTheme  = 'devblackops'
+$prefsFile     = 'preferences.xml'
+$userThemePath = Get-ThemeStoragePath
+
+# Load or create default preferences
 $prefs = Import-Preferences
 
-# Set current theme
-$userThemeData.CurrentIconTheme  = $prefs.CurrentIconTheme
-$userThemeData.CurrentColorTheme = $prefs.CurrentColorTheme
+# To speed up module load times, the theme files are not imported on module load
+# Instead, the they are loaded on the first invocation of `Format-TerminalIcons`
+$themeFilesLoaded = $false
+$iconThemes       = @{}
+$colorThemes      = @{}
+$colorSequences   = @{}
+$glyphs           = @{}
 
-# Load user icon and color themes
-# We're ignoring the old 'theme.xml' from Terimal-Icons v0.3.1 and earlier
-(Get-ChildItem $userThemePath -Filter '*_icon.xml').ForEach({
-    $userIconTheme = Import-CliXml -Path $_.FullName
-    $userThemeData.Themes.Icon[$userIconTheme.Name] = $userIconTheme
-})
-(Get-ChildItem $userThemePath -Filter '*_color.xml').ForEach({
-    $userColorTheme = Import-CliXml -Path $_.FullName
-    $userThemeData.Themes.Color[$userColorTheme.Name] = $userColorTheme
-    $colorSequences[$userColorTheme.Name] = ConvertTo-ColorSequence -ColorData $userThemeData.Themes.Color[$userColorTheme.Name]
-})
+$current = Get-CurrentSettings
 
-# Update the builtin themes
-$colorThemes.GetEnumerator().ForEach({
-    $userThemeData.Themes.Color[$_.Name] = $_.Value
-})
-$iconThemes.GetEnumerator().ForEach({
-    $userThemeData.Themes.Icon[$_.Name] = $_.Value
+# As of 0.12.0, we no longer save the builtin theme files in the user theme folder
+('devblackops_color.xml', 'devblackops_light_color.xml', 'devblackops_icon.xml').ForEach({
+    if (Test-Path $userThemePath/$_) {
+        Remove-Item $userThemePath/$_ -ErrorAction SilentlyContinue
+    }
 })
 
-# Save all themes to theme path
-$userThemeData.Themes.Color.GetEnumerator().ForEach({
-    $colorThemePath = Join-Path $userThemePath "$($_.Name)_color.xml"
-    $_.Value | Export-Clixml -Path $colorThemePath -Force
-})
-$userThemeData.Themes.Icon.GetEnumerator().ForEach({
-    $iconThemePath = Join-Path $userThemePath "$($_.Name)_icon.xml"
-    $_.Value | Export-Clixml -Path $iconThemePath -Force
-})
+# TODO: Store the user themes pre-processes to speed things up
+# TODO: Also only load user themes if they are the active theme
+# # Load any user-defined themes]
+# $builtinColorThemes = Get-ChildItem $moduleRoot/Data/colorThemes -File
+# (Get-ChildItem $userThemePath -Filter '*_icon.xml').Where({$_.Name -notin $builtinColorThemes.Name}).ForEach({
+#     $userIconTheme = Import-CliXml -Path $_.FullName
+#     $current.Themes.Icon[$userIconTheme.Name] = $userIconTheme
+# })
+# $builtinIconThemes = Get-ChildItem $moduleRoot/Data/iconThemes -File
+# (Get-ChildItem $userThemePath -Filter '*_color.xml').Where({$_.Name -notin $builtinIconThemes.Name}).ForEach({
+#     $userColorTheme = Import-CliXml -Path $_.FullName
+#     $current.Themes.Color[$userColorTheme.Name] = $userColorTheme
+#     $colorSequences[$userColorTheme.Name] = ConvertTo-ColorSequence -ColorData $userColorTheme
+# })
 
 Save-Preferences -Preferences $prefs
 
-# Export-ModuleMember -Function $public.Basename
-
-Update-FormatData -Prepend ([IO.Path]::Combine($moduleRoot, 'Terminal-Icons.format.ps1xml'))
+$formatFile = $IsWindows ? 'Terminal-Icons.format.ps1xml' : 'Terminal-Icons.format_nix.ps1xml'
+Update-FormatData -PrependPath ([IO.Path]::Combine($moduleRoot, $formatFile))

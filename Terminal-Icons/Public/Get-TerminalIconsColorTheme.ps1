@@ -19,5 +19,12 @@ function Get-TerminalIconsColorTheme {
     .LINK
         Get-TerminalIconsTheme
     #>
-    $script:userThemeData.Themes.Color
+    [OutputType([String])]
+    [CmdletBinding()]
+    param(
+        [Parameter(DontShow)]
+        [hashtable]$CurrentSettings = $script:current
+    )
+
+    $CurrentSettings.Themes.Color
 }

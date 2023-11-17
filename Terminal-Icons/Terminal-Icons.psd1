@@ -9,13 +9,16 @@
     PowerShellVersion = '5.1'
     # PowerShellHostName = ''
     # PowerShellHostVersion = ''
-    RequiredModules = @()
+    RequiredModules = @(
+        'PowershellHumanizer'
+    )
     FunctionsToExport = @()
     CmdletsToExport   = @()
     VariablesToExport = @()
     AliasesToExport   = @()
     PrivateData       = @{
         PSData = @{
+            Prerelease   = 'beta1'
             Tags         = @('Color', 'Terminal', 'Console', 'NerdFonts', 'Icon')
             LicenseUri   = 'https://raw.githubusercontent.com/devblackops/Terminal-Icons/master/LICENSE'
             ProjectUri   = 'https://github.com/devblackops/Terminal-Icons'

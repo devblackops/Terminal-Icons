@@ -7,14 +7,27 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [0.12.0] Unreleased
 
+### Fixed
+
+- Module load time is improved due to pre-processing theme files
+
 ### Added
 
+- Add `Get-TerminalIconsPreference` function to retrieve current module preferences
+- Add `Set-TerminalIconsPreference` function to set module preferences
+- Add ability to format file/folder date times in difference formats and display in either local or UTC time
+- Add ability to display file sizes in KB, MB, or GB
+- Add ability to display file/folder name in normal, bold, italic, or underlined font
 - Add icon and color for wellknown file `jenkinsfile`.
 - Add icon and color for c++ files (.cxx and .c++)
 - Add icon and color for wellknown file `makefile`.
 - Add icon and color for svelte files (.svelte).
 - Add icon and color for generic database files (.db)
 - Add icon and color for Scala Build Tool files (.sbt)
+
+### Changed
+
+- On MacOS and Linux, display the `UnixMode` property instead of `Mode`. Also display the `User`, and `Group` properties
 
 ## [0.11.0] 2023-07-05
 

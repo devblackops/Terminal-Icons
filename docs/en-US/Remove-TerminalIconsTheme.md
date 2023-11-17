@@ -13,8 +13,8 @@ Removes a color or icon theme
 ## SYNTAX
 
 ```
-Remove-TerminalIconsTheme [[-IconTheme] <String>] [[-ColorTheme] <String>] [-Force] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Remove-TerminalIconsTheme [[-IconTheme] <String>] [[-ColorTheme] <String>] [[-CurrentSettings] <Hashtable>]
+ [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -65,6 +65,21 @@ Aliases:
 Required: False
 Position: 2
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CurrentSettings
+{{ Fill CurrentSettings Description }}
+
+```yaml
+Type: Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: $script:current
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

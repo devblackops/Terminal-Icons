@@ -13,7 +13,7 @@ Get the currently applied color and icon theme.
 ## SYNTAX
 
 ```
-Get-TerminalIconsTheme [<CommonParameters>]
+Get-TerminalIconsTheme [[-CurrentSettings] <Hashtable>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -29,6 +29,21 @@ Get-TerminalIconsTheme
 Get the currently applied Terminal-Icons color and icon theme.
 
 ## PARAMETERS
+
+### -CurrentSettings
+{{ Fill CurrentSettings Description }}
+
+```yaml
+Type: Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: $script:current
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).

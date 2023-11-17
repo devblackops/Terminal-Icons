@@ -1,10 +1,11 @@
 function Save-Preferences {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseSingularNouns', '')]
     [cmdletbinding()]
     param(
         [parameter(Mandatory, ValueFromPipeline)]
-        [hashtable]$Preferences,
+        [Preferences]$Preferences,
 
-        [string]$Path = (Join-Path (Get-ThemeStoragePath) 'prefs.xml')
+        [string]$Path = (Get-PreferencesFile)
     )
 
     process {

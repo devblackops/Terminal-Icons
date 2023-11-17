@@ -19,5 +19,12 @@ function Get-TerminalIconsIconTheme {
     .LINK
         Get-TerminalIconsTheme
     #>
-    $script:userThemeData.Themes.Icon
+    [OutputType([String])]
+    [CmdletBinding()]
+    param(
+        [Parameter(DontShow)]
+        [hashtable]$CurrentSettings = $script:current
+    )
+
+    $CurrentSettings.Themes.Icon
 }

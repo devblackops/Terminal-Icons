@@ -52,27 +52,30 @@ Describe 'Help' {
             $help = Get-Help $Name -ErrorAction SilentlyContinue
             $parameters = $Command.ParameterSets.Parameters |
                 Sort-Object -Property Name -Unique |
-                Where-Object { $_.Name -notin $commonParameters }
-            $parameterNames = $parameters.Name
+                Where-Object { $_.Name -notin $commonParameters -and $_.Attributes.DontShow -ne $true }
+
+            $hiddenParameters = $parameters | Where-Object { $_.Attributes.DontShow -eq $true }
 
             # Without the filter, WhatIf and Confirm parameters are still flagged in "finds help parameter in code" test
             $helpParameters = $help.Parameters.Parameter |
                 Where-Object { $_.Name -notin $commonParameters } |
                 Sort-Object -Property Name -Unique
-            $helpParameterNames = $helpParameters.Name
 
             foreach ($parameter in $parameters) {
                 $parameterName = $parameter.Name
-                $parameterHelp = $help.parameters.parameter | Where-Object Name -eq $parameterName
+                $parameterHelp = $helpParameters | Where-Object Name -eq $parameterName
                 $parameterHelp.Description.Text | Should -Not -BeNullOrEmpty
 
                 $codeMandatory = $parameter.IsMandatory.toString()
                 $parameterHelp.Required | Should -Be $codeMandatory
 
                 $codeType = $parameter.ParameterType.Name
-                # To avoid calling Trim method on a null object.
-                $helpType = if ($parameterHelp.parameterValue) { $parameterHelp.parameterValue.Trim() }
-                $helpType | Should -Be $codeType
+                # Skip parameters of type enum
+                if (-not $parameterHelp.parameterValueGroup) {
+                    $helpType = if ($parameterHelp.parameterValue) { $parameterHelp.parameterValue.Trim() }
+                    $helpType | Should -Be $codeType
+                }
+
             }
         }
     }

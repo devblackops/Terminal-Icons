@@ -11,8 +11,8 @@ InModuleScope 'Terminal-Icons' {
 
             it 'Good theme should be added' {
                 Add-TerminalIconsColorTheme -Path $PSScriptRoot/../MyAwesomeColorTheme.psd1 # $goodTheme.FullName -Force
-                $script:userThemeData.Themes.Color['MyAwesomeTheme']      | Should -BeOfType System.Collections.Hashtable
-                $script:userThemeData.Themes.Color['MyAwesomeTheme'].Name | Should -Be 'MyAwesomeTheme'
+                $script:current.Themes.Color['MyAwesomeTheme']      | Should -BeOfType System.Collections.Hashtable
+                $script:current.Themes.Color['MyAwesomeTheme'].Name | Should -Be 'MyAwesomeTheme'
             }
 
             it 'Bad theme path should throw' {

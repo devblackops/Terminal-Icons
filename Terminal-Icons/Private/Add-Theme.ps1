@@ -45,7 +45,7 @@ function Add-Theme {
                 $confirmMsg = "Are you sure you want to add file [$resolvedPath]?"
                 $operation  = "Add $($Type.ToLower())"
                 if ($PSCmdlet.ShouldProcess($statusMsg, $confirmMsg, $operation) -or $Force.IsPresent) {
-                    if (-not $script:userThemeData.Themes.$Type.ContainsKey($item.BaseName) -or $Force.IsPresent) {
+                    if (-not $script:current.Themes.$Type.ContainsKey($item.BaseName) -or $Force.IsPresent) {
 
                         $theme = Import-PowerShellDataFile $item.FullName
 
@@ -70,7 +70,7 @@ function Add-Theme {
                             })
                         }
 
-                        $script:userThemeData.Themes.$Type[$theme.Name] = $theme
+                        $script:current.Themes.$Type[$theme.Name] = $theme
                         Save-Theme -Theme $theme -Type $Type
                     } else {
                         Write-Error "$Type theme [$($theme.Name)] already exists. Use the -Force switch to overwrite."
