@@ -41,7 +41,7 @@ function Resolve-Icon {
                 } else {
                     $colorSet = $script:colorReset
                 }
-                $displayInfo['Target'] = ' ' + $glyphs['nf-md-arrow_right_thick'] + ' ' + $FileInfo.Target
+                $displayInfo['Target'] = ' ' + $glyphs['nf-md-arrow_right_thick'] + ' ' + (&$script:PathResolver $FileInfo.Target)
                 break
             }
             'SymbolicLink' {
@@ -55,7 +55,7 @@ function Resolve-Icon {
                 } else {
                     $colorSet = $script:colorReset
                 }
-                $displayInfo['Target'] = ' ' + $glyphs['nf-md-arrow_right_thick'] + ' ' + $FileInfo.Target
+                $displayInfo['Target'] = ' ' + $glyphs['nf-md-arrow_right_thick'] + ' ' + (&$script:PathResolver $FileInfo.Target)
                 break
             } default {
                 if ($icons) {

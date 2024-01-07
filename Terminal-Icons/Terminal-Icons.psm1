@@ -24,6 +24,10 @@ $userThemeData = @{
         Icon  = @{}
     }
 }
+$PathResolver = {
+    param($Path)
+    $Path
+}
 
 # Import builtin icon/color themes and convert colors to escape sequences
 $colorSequences = @{}
