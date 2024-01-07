@@ -66,6 +66,7 @@ Set-TerminalIconsColorTheme | **DEPRECATED** Set the Terminal-Icons color theme.
 Set-TerminalIconsIconTheme  | **DEPRECATED** Set the Terminal-Icons icon theme.
 Set-TerminalIconsTheme      | Set the Terminal-Icons icon and/or color theme.
 Show-TerminalIconsTheme     | List example directories and files to show the currently applied color and icon themes.
+Set-TerminalIconPathResolver| Set the path resolver script block to handle target of symlinks before it be display.
 
 ## Screenshots
 
