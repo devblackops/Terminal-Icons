@@ -435,6 +435,7 @@
       '.exr'                  = '20B2AA'
       '.fpx'                  = '20B2AA'
       '.gbr'                  = '20B2AA'
+      '.heic'                 = '20B2AA'
       '.jbig2'                = '20B2AA'
       '.jb2'                  = '20B2AA'
       '.jng'                  = '20B2AA'
@@ -468,6 +469,9 @@
       '.mpe'                  = 'FFA500'
       '.mpv'                  = 'FFA500'
       '.m2v'                  = 'FFA500'
+      '.m4v'                  = 'FFA500'
+      '.3gp'                  = 'FFA500'
+      '.3g2'                  = 'FFA500'
 
       # Email
       '.ics'                  = '00CED1'

@@ -440,6 +440,7 @@
             '.exr'                  = 'nf-fa-file_image_o'
             '.fpx'                  = 'nf-fa-file_image_o'
             '.gbr'                  = 'nf-fa-file_image_o'
+            '.heic'                 = 'nf-fa-file_image_o'
             '.jbig2'                = 'nf-fa-file_image_o'
             '.jb2'                  = 'nf-fa-file_image_o'
             '.jng'                  = 'nf-fa-file_image_o'
@@ -473,6 +474,9 @@
             '.mpe'                  = 'nf-fa-file_video_o'
             '.mpv'                  = 'nf-fa-file_video_o'
             '.m2v'                  = 'nf-fa-file_video_o'
+            '.m4v'                  = 'nf-fa-file_video_o'
+            '.3gp'                  = 'nf-fa-file_video_o'
+            '.3g2'                  = 'nf-fa-file_video_o'
 
             # Email
             '.ics'                  = 'nf-fa-calendar'

@@ -436,6 +436,7 @@
             '.exr'                  = '6272a4'
             '.fpx'                  = '6272a4'
             '.gbr'                  = '6272a4'
+            '.heic'                 = '6272a4'
             '.jbig2'                = '6272a4'
             '.jb2'                  = '6272a4'
             '.jng'                  = '6272a4'
@@ -469,6 +470,9 @@
             '.mpe'                  = 'ffb86c'
             '.mpv'                  = 'ffb86c'
             '.m2v'                  = 'ffb86c'
+            '.m4v'                  = 'ffb86c'
+            '.3gp'                  = 'ffb86c'
+            '.3g2'                  = 'ffb86c'
 
             # Email
             '.ics'                  = '8be9fd'
