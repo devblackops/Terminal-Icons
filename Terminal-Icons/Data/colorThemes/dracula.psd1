@@ -470,6 +470,7 @@
             '.mpe'                  = 'ffb86c'
             '.mpv'                  = 'ffb86c'
             '.m2v'                  = 'ffb86c'
+            '.m4v'                  = 'ffb86c'
             '.3gp'                  = 'ffb86c'
             '.3g2'                  = 'ffb86c'
 
