@@ -259,6 +259,7 @@
             '.csproj'               = 'nf-dev-visualstudio'
             '.ruleset'              = 'nf-dev-visualstudio'
             '.sln'                  = 'nf-dev-visualstudio'
+            '.slnx'                 = 'nf-dev-visualstudio'
             '.slnf'                 = 'nf-dev-visualstudio'
             '.suo'                  = 'nf-dev-visualstudio'
             '.vb'                   = 'nf-dev-visualstudio'

@@ -254,6 +254,7 @@
       '.csproj'               = 'EE82EE'
       '.ruleset'              = 'EE82EE'
       '.sln'                  = 'EE82EE'
+      '.slnx'                 = 'EE82EE'
       '.slnf'                 = 'EE82EE'
       '.suo'                  = 'EE82EE'
       '.vb'                   = 'EE82EE'

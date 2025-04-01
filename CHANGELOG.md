@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Add icon and color for svelte files (.svelte).
 - Add icon and color for generic database files (.db)
 - Add icon and color for Scala Build Tool files (.sbt)
+- Add icon and color for Visual Studio solution files (.slnx)
 
 ## [0.11.0] 2023-07-05
 

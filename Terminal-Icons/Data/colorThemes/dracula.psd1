@@ -255,6 +255,7 @@
             '.csproj'               = 'ff79c6'
             '.ruleset'              = 'ff79c6'
             '.sln'                  = 'ff79c6'
+            '.slnx'                 = 'ff79c6'
             '.slnf'                 = 'ff79c6'
             '.suo'                  = 'ff79c6'
             '.vb'                   = 'ff79c6'
