@@ -3,7 +3,16 @@ function Resolve-Icon {
     [CmdletBinding()]
     param(
         [Parameter(Mandatory, ValueFromPipeline)]
-        [IO.FileSystemInfo]$FileInfo,
+        [ValidateScript({
+            # Accept both local FileSystemInfo objects and deserialized objects from remoting
+            if ($_ -is [IO.FileSystemInfo]) {
+                return $true
+            }
+            # Check TypeNames array for deserialized objects
+            $matches = $_.PSObject.TypeNames -match '^Deserialized\.System\.IO\.(DirectoryInfo|FileInfo)$'
+            return ($null -ne $matches -and $matches.Count -gt 0)
+        })]
+        [PSObject]$FileInfo,
 
         [string]$IconTheme = $script:userThemeData.CurrentIconTheme,
 
@@ -22,13 +31,40 @@ function Resolve-Icon {
             Target   = ''
         }
 
-        if ($FileInfo.PSIsContainer) {
+        # Safe property access for both local and deserialized objects
+        $isContainer = if ($FileInfo.PSObject.Properties['PSIsContainer']) {
+            $FileInfo.PSIsContainer
+        } else {
+            $false
+        }
+        $linkType = if ($FileInfo.PSObject.Properties['LinkType']) {
+            $FileInfo.LinkType
+        } else {
+            $null
+        }
+        $target = if ($FileInfo.PSObject.Properties['Target']) {
+            $FileInfo.Target
+        } else {
+            $null
+        }
+        $name = if ($FileInfo.PSObject.Properties['Name']) {
+            $FileInfo.Name
+        } else {
+            ''
+        }
+        $extension = if ($FileInfo.PSObject.Properties['Extension']) {
+            $FileInfo.Extension
+        } else {
+            ''
+        }
+
+        if ($isContainer) {
             $type = 'Directories'
         } else {
             $type = 'Files'
         }
 
-        switch ($FileInfo.LinkType) {
+        switch ($linkType) {
             # Determine symlink or junction icon and color
             'Junction' {
                 if ($icons) {
@@ -41,7 +77,9 @@ function Resolve-Icon {
                 } else {
                     $colorSet = $script:colorReset
                 }
-                $displayInfo['Target'] = ' ' + $glyphs['nf-md-arrow_right_thick'] + ' ' + $FileInfo.Target
+                if ($target) {
+                    $displayInfo['Target'] = ' ' + $glyphs['nf-md-arrow_right_thick'] + ' ' + $target
+                }
                 break
             }
             'SymbolicLink' {
@@ -55,23 +93,25 @@ function Resolve-Icon {
                 } else {
                     $colorSet = $script:colorReset
                 }
-                $displayInfo['Target'] = ' ' + $glyphs['nf-md-arrow_right_thick'] + ' ' + $FileInfo.Target
+                if ($target) {
+                    $displayInfo['Target'] = ' ' + $glyphs['nf-md-arrow_right_thick'] + ' ' + $target
+                }
                 break
             } default {
                 if ($icons) {
                     # Determine normal directory icon and color
-                    $iconName = $icons.Types.$type.WellKnown[$FileInfo.Name]
+                    $iconName = $icons.Types.$type.WellKnown[$name]
                     if (-not $iconName) {
-                        if ($FileInfo.PSIsContainer) {
-                            $iconName = $icons.Types.$type[$FileInfo.Name]
-                        } elseif ($icons.Types.$type.ContainsKey($FileInfo.Extension)) {
-                            $iconName = $icons.Types.$type[$FileInfo.Extension]
+                        if ($isContainer) {
+                            $iconName = $icons.Types.$type[$name]
+                        } elseif ($icons.Types.$type.ContainsKey($extension)) {
+                            $iconName = $icons.Types.$type[$extension]
                         } else {
                             # File probably has multiple extensions
                             # Fallback to computing the full extension
-                            $firstDot = $FileInfo.Name.IndexOf('.')
+                            $firstDot = $name.IndexOf('.')
                             if ($firstDot -ne -1) {
-                                $fullExtension = $FileInfo.Name.Substring($firstDot)
+                                $fullExtension = $name.Substring($firstDot)
                                 $iconName = $icons.Types.$type[$fullExtension]
                             }
                         }
@@ -81,7 +121,7 @@ function Resolve-Icon {
 
                         # Fallback if everything has gone horribly wrong
                         if (-not $iconName) {
-                            if ($FileInfo.PSIsContainer) {
+                            if ($isContainer) {
                                 $iconName = 'nf-oct-file_directory'
                             } else {
                                 $iconName = 'nf-fa-file'
@@ -92,18 +132,18 @@ function Resolve-Icon {
                     $iconName = $null
                 }
                 if ($colors) {
-                    $colorSeq = $colors.Types.$type.WellKnown[$FileInfo.Name]
+                    $colorSeq = $colors.Types.$type.WellKnown[$name]
                     if (-not $colorSeq) {
-                        if ($FileInfo.PSIsContainer) {
-                            $colorSeq = $colors.Types.$type[$FileInfo.Name]
-                        } elseif ($colors.Types.$type.ContainsKey($FileInfo.Extension)) {
-                            $colorSeq = $colors.Types.$type[$FileInfo.Extension]
+                        if ($isContainer) {
+                            $colorSeq = $colors.Types.$type[$name]
+                        } elseif ($colors.Types.$type.ContainsKey($extension)) {
+                            $colorSeq = $colors.Types.$type[$extension]
                         } else {
                             # File probably has multiple extensions
                             # Fallback to computing the full extension
-                            $firstDot = $FileInfo.Name.IndexOf('.')
+                            $firstDot = $name.IndexOf('.')
                             if ($firstDot -ne -1) {
-                                $fullExtension = $FileInfo.Name.Substring($firstDot)
+                                $fullExtension = $name.Substring($firstDot)
                                 $colorSeq = $colors.Types.$type[$fullExtension]
                             }
                         }
@@ -111,13 +151,24 @@ function Resolve-Icon {
                             $colorSeq = $colors.Types.$type['']
                         }
 
-                        # Fallback if everything has gone horribly wrong
+                        # Final fallback: use hardcoded default colors
                         if (-not $colorSeq) {
-                            $colorSeq = $script:colorReset
+                            if ($isContainer) {
+                                # Default directory color: steel blue
+                                $colorSeq = "${script:escape}[38;2;70;130;180m"
+                            } else {
+                                # Default file color: light gray
+                                $colorSeq = "${script:escape}[38;2;211;211;211m"
+                            }
                         }
                     }
                 } else {
-                    $colorSeq = $script:colorReset
+                    # No theme colors available: use default colors
+                    if ($isContainer) {
+                        $colorSeq = "${script:escape}[38;2;70;130;180m"
+                    } else {
+                        $colorSeq = "${script:escape}[38;2;211;211;211m"
+                    }
                 }
             }
         }

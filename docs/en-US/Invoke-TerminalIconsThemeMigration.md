@@ -14,12 +14,13 @@ Used to migrate your terminal icon themes to Nerd Fonts v3.
 
 ### Path
 ```
-Invoke-TerminalIconsThemeMigration [-Path] <String[]> [<CommonParameters>]
+Invoke-TerminalIconsThemeMigration [-Path] <String[]> [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ### LiteralPath
 ```
-Invoke-TerminalIconsThemeMigration [-LiteralPath] <String[]> [<CommonParameters>]
+Invoke-TerminalIconsThemeMigration [-LiteralPath] <String[]> [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -63,6 +64,21 @@ Required: True
 Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+{{ Fill ProgressAction Description }}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

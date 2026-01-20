@@ -17,7 +17,8 @@ function Format-TerminalIcons {
     .INPUTS
         System.IO.FileSystemInfo
 
-        You can pipe an objects that derive from System.IO.FileSystemInfo (System.IO.DIrectoryInfo and System.IO.FileInfo) to 'Format-TerminalIcons'.
+        You can pipe objects that derive from System.IO.FileSystemInfo (System.IO.DirectoryInfo and System.IO.FileInfo) to 'Format-TerminalIcons'.
+        Also supports deserialized FileSystemInfo objects from PowerShell remoting sessions.
     .OUTPUTS
         System.String
 
@@ -28,7 +29,16 @@ function Format-TerminalIcons {
     [CmdletBinding()]
     param(
         [Parameter(Mandatory, ValueFromPipeline)]
-        [IO.FileSystemInfo]$FileInfo
+        [ValidateScript({
+            # Accept both local FileSystemInfo objects and deserialized objects from remoting
+            if ($_ -is [IO.FileSystemInfo]) {
+                return $true
+            }
+            # Check TypeNames array for deserialized objects
+            $matches = $_.PSObject.TypeNames -match '^Deserialized\.System\.IO\.(DirectoryInfo|FileInfo)$'
+            return ($null -ne $matches -and $matches.Count -gt 0)
+        })]
+        [PSObject]$FileInfo
     )
 
     process {

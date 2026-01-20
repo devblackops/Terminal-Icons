@@ -13,7 +13,7 @@ Prepend a custom icon (with color) to the provided file or folder object when di
 ## SYNTAX
 
 ```
-Format-TerminalIcons [-FileInfo] <FileSystemInfo> [<CommonParameters>]
+Format-TerminalIcons [-FileInfo] <PSObject> [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -42,7 +42,7 @@ Get a file object and pass directly to Format-TerminalIcons.
 The file or folder to display
 
 ```yaml
-Type: FileSystemInfo
+Type: PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -50,6 +50,21 @@ Required: True
 Position: 1
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+{{ Fill ProgressAction Description }}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

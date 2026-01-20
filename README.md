@@ -51,6 +51,32 @@ Get-ChildItem | Format-List
 Get-ChildItem | Format-Wide
 ```
 
+## PowerShell Remoting Support
+
+Terminal-Icons now supports displaying icons for file and folder objects returned from remote PowerShell sessions. When you use `Invoke-Command` or `Enter-PSSession` to retrieve directory listings from remote machines, the objects are automatically deserialized during transmission. Terminal-Icons handles these deserialized objects seamlessly.
+
+### Examples
+
+Display files from a remote server:
+```powershell
+Invoke-Command -ComputerName Server01 -ScriptBlock { Get-ChildItem C:\Logs }
+```
+
+Use with Format-TerminalIcons directly:
+```powershell
+Invoke-Command -ComputerName Server01 -ScriptBlock { Get-ChildItem } | Format-TerminalIcons
+```
+
+Interactive remote session:
+```powershell
+Enter-PSSession -ComputerName Server01
+Get-ChildItem  # Icons will display automatically
+```
+
+### How It Works
+
+PowerShell remoting serializes objects when sending them across the network. FileSystemInfo objects (DirectoryInfo and FileInfo) become `Deserialized.System.IO.DirectoryInfo` and `Deserialized.System.IO.FileInfo` objects. Terminal-Icons automatically detects and handles these deserialized objects, ensuring icons display correctly regardless of whether the files are local or remote.
+
 ## Commands
 
 | Command | Description

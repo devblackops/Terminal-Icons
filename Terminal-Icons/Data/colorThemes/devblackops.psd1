@@ -2,6 +2,7 @@
     Name  = 'devblackops'
     Types = @{
         Directories = @{
+            ''       = '4682B4' # Default directory color (steel blue)
             symlink  = '7373ff'
             junction = '7373ff'
             WellKnown = @{
@@ -53,6 +54,7 @@
             }
         }
         Files = @{
+            ''       = 'D3D3D3' # Default file color (light gray)
             symlink  = '7373ff'
             junction = '7373ff'
             WellKnown = @{

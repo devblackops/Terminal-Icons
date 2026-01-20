@@ -15,23 +15,26 @@ swapping one glyph for another.
 
 ### FileExtension (Default)
 ```
-Set-TerminalIconsIcon -FileExtension <String> -Glyph <String> [-Force] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Set-TerminalIconsIcon -FileExtension <String> -Glyph <String> [-Force] [-ProgressAction <ActionPreference>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Directory
 ```
-Set-TerminalIconsIcon -Directory <String> -Glyph <String> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-TerminalIconsIcon -Directory <String> -Glyph <String> [-Force] [-ProgressAction <ActionPreference>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### FileName
 ```
-Set-TerminalIconsIcon -FileName <String> -Glyph <String> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-TerminalIconsIcon -FileName <String> -Glyph <String> [-Force] [-ProgressAction <ActionPreference>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### SwapGlyph
 ```
-Set-TerminalIconsIcon -NewGlyph <String> -Glyph <String> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-TerminalIconsIcon -NewGlyph <String> -Glyph <String> [-Force] [-ProgressAction <ActionPreference>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -188,6 +191,21 @@ Prompts you for confirmation before running the cmdlet.
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+{{ Fill ProgressAction Description }}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
 
 Required: False
 Position: Named
