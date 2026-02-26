@@ -9,6 +9,8 @@ https://github.com/DHowett/DirColors -->
             <Types>
                 <TypeName>System.IO.DirectoryInfo</TypeName>
                 <TypeName>System.IO.FileInfo</TypeName>
+                <TypeName>Deserialized.System.IO.DirectoryInfo</TypeName>
+                <TypeName>Deserialized.System.IO.FileInfo</TypeName>
             </Types>
         </SelectionSet>
     </SelectionSets>
