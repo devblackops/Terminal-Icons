@@ -9,6 +9,6 @@ function Save-Preferences {
 
     process {
         Write-Debug ('Saving preferendces to [{0}]' -f $Path)
-        $Preferences | Export-CliXml -Path $Path -Force
+        $Preferences | Export-CliXmlAtomic -Path $Path
     }
 }

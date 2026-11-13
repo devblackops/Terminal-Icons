@@ -19,7 +19,7 @@ function Import-Preferences {
     process {
         if (Test-Path $Path) {
             try {
-                Import-Clixml -Path $Path -ErrorAction Stop
+                Import-CliXmlWithRetry -Path $Path
             } catch {
                 Write-Warning "Unable to parse [$Path]. Setting default preferences."
                 $defaultPrefs

@@ -42,14 +42,31 @@ $userThemeData.CurrentColorTheme = $prefs.CurrentColorTheme
 
 # Load user icon and color themes
 # We're ignoring the old 'theme.xml' from Terimal-Icons v0.3.1 and earlier
+# A corrupt theme file is skipped so it doesn't break module import
 (Get-ChildItem $userThemePath -Filter '*_icon.xml').ForEach({
-    $userIconTheme = Import-CliXml -Path $_.FullName
-    $userThemeData.Themes.Icon[$userIconTheme.Name] = $userIconTheme
+    $themeFile = $_.FullName
+    try {
+        $userIconTheme = Import-CliXmlWithRetry -Path $themeFile
+    } catch {
+        Write-Warning "Unable to parse [$themeFile]. Skipping icon theme."
+        return
+    }
+    if ($userIconTheme.Name) {
+        $userThemeData.Themes.Icon[$userIconTheme.Name] = $userIconTheme
+    }
 })
 (Get-ChildItem $userThemePath -Filter '*_color.xml').ForEach({
-    $userColorTheme = Import-CliXml -Path $_.FullName
-    $userThemeData.Themes.Color[$userColorTheme.Name] = $userColorTheme
-    $colorSequences[$userColorTheme.Name] = ConvertTo-ColorSequence -ColorData $userThemeData.Themes.Color[$userColorTheme.Name]
+    $themeFile = $_.FullName
+    try {
+        $userColorTheme = Import-CliXmlWithRetry -Path $themeFile
+    } catch {
+        Write-Warning "Unable to parse [$themeFile]. Skipping color theme."
+        return
+    }
+    if ($userColorTheme.Name) {
+        $userThemeData.Themes.Color[$userColorTheme.Name] = $userColorTheme
+        $colorSequences[$userColorTheme.Name] = ConvertTo-ColorSequence -ColorData $userThemeData.Themes.Color[$userColorTheme.Name]
+    }
 })
 
 # Update the builtin themes
@@ -63,11 +80,11 @@ $iconThemes.GetEnumerator().ForEach({
 # Save all themes to theme path
 $userThemeData.Themes.Color.GetEnumerator().ForEach({
     $colorThemePath = Join-Path $userThemePath "$($_.Name)_color.xml"
-    $_.Value | Export-Clixml -Path $colorThemePath -Force
+    $_.Value | Export-CliXmlAtomic -Path $colorThemePath
 })
 $userThemeData.Themes.Icon.GetEnumerator().ForEach({
     $iconThemePath = Join-Path $userThemePath "$($_.Name)_icon.xml"
-    $_.Value | Export-Clixml -Path $iconThemePath -Force
+    $_.Value | Export-CliXmlAtomic -Path $iconThemePath
 })
 
 Save-Preferences -Preferences $prefs
