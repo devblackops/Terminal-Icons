@@ -16,6 +16,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Add icon and color for generic database files (.db)
 - Add icon and color for Scala Build Tool files (.sbt)
 
+### Fixed
+
+- Fix `Import-Clixml` and `Index operation failed; the array index evaluated to null` errors on import when several PowerShell sessions start at the same time. Theme and preference files are now written to a temp file and renamed into place, reads retry while another session holds the file, and a corrupt theme file is skipped with a warning instead of breaking the import (via [@zettersten](https://github.com/zettersten))
+
 ## [0.11.0] 2023-07-05
 
 ### Added
